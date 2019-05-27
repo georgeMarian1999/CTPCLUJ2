@@ -19,7 +19,7 @@ Ora::Ora(const Ora& A){
     ora=A.ora;
     minute=A.minute;
 }
-Ora& Ora::operator=(const Ora & A){
+ Ora& Ora::operator=(const Ora & A){
     if(this!=&A){
         ora=A.ora;
         minute=A.minute;
