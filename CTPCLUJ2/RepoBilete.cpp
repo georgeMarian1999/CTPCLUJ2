@@ -45,4 +45,10 @@ RepoBilete::RepoBilete(const vector<Bilet> & vect):Repo<Bilet>(vect){
 RepoBilete::RepoBilete():Repo<Bilet>(){
 
 }
+string RepoBilete::toString(){
+	string str;
+	for(int i=0; i<this->vect.size();i++)
+		str=str+this->vect[i].toString()+"\n";
+	return str;
+}
 

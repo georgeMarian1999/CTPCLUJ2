@@ -234,8 +234,28 @@ bool Tests::test_Autobuz()
 	assert(a.getNumar() == 34);
 	return true;
 }
+bool Tests::test_Clientlogat(){
+	Card a(4140, 123);
+	Bilet b(1, 2);
+	Bilet c(3, 4);
+	vector<Bilet> v;
+	v.push_back(b);
+	v.push_back(c);
+	RepoBilete r(v);
+	ClientLogat client(a, "Ana", "1234", r);
+	assert(client.getInfoCard()==a);
+	assert(client.getUserName()=="Ana");
+	assert(client.getParola()=="1234");
+	assert(client.getBilete()==r);
+	client.setParola("11");
+	assert(client.getParola()=="11");
+	ClientLogat x=client;
+	assert(x==client);
+
+	return true;
+}
 void Tests::RunAllTests(){
    
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat())
         cout<<"Tests ok!"<<endl;
 }
