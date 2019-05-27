@@ -17,15 +17,15 @@ class Matrice{
 protected:
     int nrlinii;
     int nrcol;
-    vector<vector<Ora>> V;
+    vector<vector<Ora> > V;
 public:
     Matrice();
-    Matrice(vector<vector<Ora>>);
+    Matrice(vector<vector<Ora> >);
     Matrice(const Matrice&);
     Matrice& operator=(const Matrice&);
     ~Matrice();
     Ora& operator()(int,int);
-    vector<vector<Ora>> getAll();
+    vector<vector<Ora> > getAll();
     Ora& getElem(int,int);
     int getnrlin()const;
     int getnrcol()const;
