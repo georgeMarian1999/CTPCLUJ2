@@ -16,6 +16,7 @@ Orar::Orar(vector<Statie> V,Matrice A){
         for(int j=0;j<A.getnrcol();j++)
             Timpi(i,j)=A(i, j);
 }
+
 Orar::~Orar(){
     Statii.clear();
 }
