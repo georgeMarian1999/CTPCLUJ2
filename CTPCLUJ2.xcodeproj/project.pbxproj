@@ -9,16 +9,17 @@
 /* Begin PBXBuildFile section */
 		C19DD5B0229C08EB009A44C8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5AF229C08EB009A44C8 /* main.cpp */; };
 		C19DD5B7229C0903009A44C8 /* Autobuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5B6229C0903009A44C8 /* Autobuz.cpp */; };
-		C19DD5D5229C098B009A44C8 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5CF229C098B009A44C8 /* Card.cpp */; };
 		C19DD5D6229C098B009A44C8 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5D0229C098B009A44C8 /* Client.cpp */; };
-		C19DD5D7229C098B009A44C8 /* Bilet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5D2229C098B009A44C8 /* Bilet.cpp */; };
 		C19DD5E0229C09A9009A44C8 /* Tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5D9229C09A9009A44C8 /* Tests.cpp */; };
 		C19DD5E1229C09A9009A44C8 /* Statie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5DC229C09A9009A44C8 /* Statie.cpp */; };
 		C19DD5E2229C09A9009A44C8 /* RepoBilete.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5DD229C09A9009A44C8 /* RepoBilete.cpp */; };
-		C19DD5E6229C09D9009A44C8 /* Matrice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5E5229C09D9009A44C8 /* Matrice.cpp */; };
 		C19DD5ED229C0AC3009A44C8 /* Orar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5E7229C0AC3009A44C8 /* Orar.cpp */; };
 		C19DD5EE229C0AC3009A44C8 /* ClientLogat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5E8229C0AC3009A44C8 /* ClientLogat.cpp */; };
 		C19DD5EF229C0AC3009A44C8 /* Ora.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5EC229C0AC3009A44C8 /* Ora.cpp */; };
+		C1B8804B229C1434008D20F5 /* Bilet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B8804A229C1434008D20F5 /* Bilet.cpp */; };
+		C1B8804E229C1606008D20F5 /* Matrice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B8804D229C1606008D20F5 /* Matrice.cpp */; };
+		C1B88054229C1685008D20F5 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B88051229C1684008D20F5 /* Card.cpp */; };
+		C1B88055229C1685008D20F5 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B88053229C1685008D20F5 /* Client.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,13 +38,8 @@
 		C19DD5AC229C08EB009A44C8 /* CTPCLUJ2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CTPCLUJ2; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19DD5AF229C08EB009A44C8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C19DD5B6229C0903009A44C8 /* Autobuz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Autobuz.cpp; sourceTree = "<group>"; };
-		C19DD5CE229C098B009A44C8 /* ClientLogat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ClientLogat.hpp; path = ../../../../.Trash/ClientLogat.hpp; sourceTree = "<group>"; };
-		C19DD5CF229C098B009A44C8 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Card.cpp; path = ../../../../.Trash/Card.cpp; sourceTree = "<group>"; };
 		C19DD5D0229C098B009A44C8 /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Client.cpp; path = ../../../../.Trash/Client.cpp; sourceTree = "<group>"; };
 		C19DD5D1229C098B009A44C8 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = ../../../../.Trash/Client.h; sourceTree = "<group>"; };
-		C19DD5D2229C098B009A44C8 /* Bilet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bilet.cpp; path = ../../../../.Trash/Bilet.cpp; sourceTree = "<group>"; };
-		C19DD5D3229C098B009A44C8 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = ../../../../.Trash/Card.h; sourceTree = "<group>"; };
-		C19DD5D4229C098B009A44C8 /* Bilet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bilet.h; path = ../../../../.Trash/Bilet.h; sourceTree = "<group>"; };
 		C19DD5D8229C09A9009A44C8 /* Statie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Statie.hpp; sourceTree = "<group>"; };
 		C19DD5D9229C09A9009A44C8 /* Tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tests.cpp; sourceTree = "<group>"; };
 		C19DD5DA229C09A9009A44C8 /* Tests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tests.hpp; sourceTree = "<group>"; };
@@ -51,14 +47,21 @@
 		C19DD5DC229C09A9009A44C8 /* Statie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Statie.cpp; sourceTree = "<group>"; };
 		C19DD5DD229C09A9009A44C8 /* RepoBilete.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RepoBilete.cpp; sourceTree = "<group>"; };
 		C19DD5DF229C09A9009A44C8 /* Repo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
-		C19DD5E4229C09D9009A44C8 /* Matrice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Matrice.hpp; path = ../../../../.Trash/Matrice.hpp; sourceTree = "<group>"; };
-		C19DD5E5229C09D9009A44C8 /* Matrice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Matrice.cpp; path = ../../../../.Trash/Matrice.cpp; sourceTree = "<group>"; };
 		C19DD5E7229C0AC3009A44C8 /* Orar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orar.cpp; sourceTree = "<group>"; };
 		C19DD5E8229C0AC3009A44C8 /* ClientLogat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientLogat.cpp; sourceTree = "<group>"; };
 		C19DD5E9229C0AC3009A44C8 /* Orar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Orar.hpp; sourceTree = "<group>"; };
 		C19DD5EA229C0AC3009A44C8 /* Autobuz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Autobuz.h; sourceTree = "<group>"; };
 		C19DD5EB229C0AC3009A44C8 /* Ora.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ora.hpp; sourceTree = "<group>"; };
 		C19DD5EC229C0AC3009A44C8 /* Ora.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ora.cpp; sourceTree = "<group>"; };
+		C1B88049229C1415008D20F5 /* Bilet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bilet.h; sourceTree = "<group>"; };
+		C1B8804A229C1434008D20F5 /* Bilet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bilet.cpp; sourceTree = "<group>"; };
+		C1B8804C229C15F3008D20F5 /* Matrice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrice.hpp; sourceTree = "<group>"; };
+		C1B8804D229C1606008D20F5 /* Matrice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrice.cpp; sourceTree = "<group>"; };
+		C1B8804F229C1648008D20F5 /* ClientLogat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ClientLogat.hpp; sourceTree = "<group>"; };
+		C1B88050229C1684008D20F5 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		C1B88051229C1684008D20F5 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		C1B88052229C1685008D20F5 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		C1B88053229C1685008D20F5 /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,17 +96,19 @@
 			children = (
 				C19DD5B6229C0903009A44C8 /* Autobuz.cpp */,
 				C19DD5EA229C0AC3009A44C8 /* Autobuz.h */,
-				C19DD5D2229C098B009A44C8 /* Bilet.cpp */,
-				C19DD5D4229C098B009A44C8 /* Bilet.h */,
-				C19DD5CF229C098B009A44C8 /* Card.cpp */,
-				C19DD5D3229C098B009A44C8 /* Card.h */,
+				C1B8804A229C1434008D20F5 /* Bilet.cpp */,
+				C1B88049229C1415008D20F5 /* Bilet.h */,
+				C1B88051229C1684008D20F5 /* Card.cpp */,
+				C1B88052229C1685008D20F5 /* Card.h */,
 				C19DD5D0229C098B009A44C8 /* Client.cpp */,
+				C1B88053229C1685008D20F5 /* Client.cpp */,
 				C19DD5D1229C098B009A44C8 /* Client.h */,
+				C1B88050229C1684008D20F5 /* Client.h */,
 				C19DD5E8229C0AC3009A44C8 /* ClientLogat.cpp */,
-				C19DD5CE229C098B009A44C8 /* ClientLogat.hpp */,
+				C1B8804F229C1648008D20F5 /* ClientLogat.hpp */,
 				C19DD5AF229C08EB009A44C8 /* main.cpp */,
-				C19DD5E5229C09D9009A44C8 /* Matrice.cpp */,
-				C19DD5E4229C09D9009A44C8 /* Matrice.hpp */,
+				C1B8804D229C1606008D20F5 /* Matrice.cpp */,
+				C1B8804C229C15F3008D20F5 /* Matrice.hpp */,
 				C19DD5EC229C0AC3009A44C8 /* Ora.cpp */,
 				C19DD5EB229C0AC3009A44C8 /* Ora.hpp */,
 				C19DD5E7229C0AC3009A44C8 /* Orar.cpp */,
@@ -175,18 +180,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C19DD5D5229C098B009A44C8 /* Card.cpp in Sources */,
 				C19DD5E1229C09A9009A44C8 /* Statie.cpp in Sources */,
 				C19DD5E2229C09A9009A44C8 /* RepoBilete.cpp in Sources */,
 				C19DD5EE229C0AC3009A44C8 /* ClientLogat.cpp in Sources */,
 				C19DD5B7229C0903009A44C8 /* Autobuz.cpp in Sources */,
-				C19DD5D7229C098B009A44C8 /* Bilet.cpp in Sources */,
 				C19DD5EF229C0AC3009A44C8 /* Ora.cpp in Sources */,
+				C1B8804B229C1434008D20F5 /* Bilet.cpp in Sources */,
 				C19DD5E0229C09A9009A44C8 /* Tests.cpp in Sources */,
-				C19DD5E6229C09D9009A44C8 /* Matrice.cpp in Sources */,
 				C19DD5D6229C098B009A44C8 /* Client.cpp in Sources */,
+				C1B8804E229C1606008D20F5 /* Matrice.cpp in Sources */,
 				C19DD5B0229C08EB009A44C8 /* main.cpp in Sources */,
 				C19DD5ED229C0AC3009A44C8 /* Orar.cpp in Sources */,
+				C1B88055229C1685008D20F5 /* Client.cpp in Sources */,
+				C1B88054229C1685008D20F5 /* Card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
