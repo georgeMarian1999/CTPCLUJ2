@@ -16,8 +16,6 @@ public:
 	Orar getOrar();
 	void setNumar(const int);
 	void setOrar(Orar);
-	
-
 };
 
 //cacat

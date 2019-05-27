@@ -17,7 +17,11 @@
 #include"Card.h"
 #include"Client.h"
 #include "Autobuz.h"
+
 #include"BazaDateClienti.h"
+
+#include "ClientLogat.hpp"
+
 using namespace std;
 class Tests{
 public:

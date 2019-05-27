@@ -82,4 +82,5 @@ string ClientLogat::toString(){
 	str=str+this->infoCard.toString()+" "+this->username+" "+this->parola+"\n";
 	str=str+"Lista de bilete detinute este:"+"\n";
 	str=str+this->bilete.toString();
+    return str;
 }
