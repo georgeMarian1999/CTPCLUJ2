@@ -14,6 +14,9 @@ class RepoBilete: public Repo<Bilet>{
 public:
 	friend ostream& operator<<(ostream & , const RepoBilete& );
 	RepoBilete& operator=(const RepoBilete&);
+	friend ostream& operator<<(ostream & , const RepoBilete& );
+	RepoBilete& operator=(const RepoBilete&);
+	bool operator==(const RepoBilete&);
 };
 
 
