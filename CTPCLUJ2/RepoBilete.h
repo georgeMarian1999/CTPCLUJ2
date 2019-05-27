@@ -17,6 +17,7 @@ public:
 	friend ostream& operator<<(ostream & , const RepoBilete& );
 	RepoBilete& operator=(const RepoBilete&);
 	bool operator==(const RepoBilete&);
+	string toString();
 };
 
 

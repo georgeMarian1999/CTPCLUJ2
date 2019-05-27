@@ -37,7 +37,6 @@
 		C19DD5AC229C08EB009A44C8 /* CTPCLUJ2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CTPCLUJ2; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19DD5AF229C08EB009A44C8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C19DD5B6229C0903009A44C8 /* Autobuz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Autobuz.cpp; sourceTree = "<group>"; };
-		C19DD5D1229C098B009A44C8 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = ../../../../.Trash/Client.h; sourceTree = "<group>"; };
 		C19DD5D8229C09A9009A44C8 /* Statie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Statie.hpp; sourceTree = "<group>"; };
 		C19DD5D9229C09A9009A44C8 /* Tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tests.cpp; sourceTree = "<group>"; };
 		C19DD5DA229C09A9009A44C8 /* Tests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tests.hpp; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		C1B88051229C1684008D20F5 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		C1B88052229C1685008D20F5 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		C1B88053229C1685008D20F5 /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
+		C1B88056229C2BDF008D20F5 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 				C1B88051229C1684008D20F5 /* Card.cpp */,
 				C1B88052229C1685008D20F5 /* Card.h */,
 				C1B88053229C1685008D20F5 /* Client.cpp */,
-				C19DD5D1229C098B009A44C8 /* Client.h */,
+				C1B88056229C2BDF008D20F5 /* Client.h */,
 				C19DD5E8229C0AC3009A44C8 /* ClientLogat.cpp */,
 				C1B8804F229C1648008D20F5 /* ClientLogat.hpp */,
 				C19DD5AF229C08EB009A44C8 /* main.cpp */,
