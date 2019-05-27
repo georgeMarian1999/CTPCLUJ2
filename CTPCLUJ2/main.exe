@@ -20413,13 +20413,13 @@ private:
  Orar orar;
 public:
  Autobuz();
- Autobuz(const Autobuz&);
+ Autobuz(Autobuz&);
  Autobuz(int, Orar);
  ~Autobuz();
  int getNumar();
  Orar getOrar();
  void setNumar(const int);
- void setOrar(const Orar);
+ void setOrar(Orar);
 
 
 };
@@ -20442,7 +20442,7 @@ int main(int argc, const char * argv[]) {
 
     std::cout << "Hello, World!\n";
     Tests t;
-    t.RunAllTests();
+
     std::cout<<"All tests are ok";
     return 0;
 }
