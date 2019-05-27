@@ -28,6 +28,7 @@ public:
     int getnrlin();
     vector<Ora> getTimpiStatie(Statie);
     Matrice getTimpi();
+    void setMatrice(Matrice);
     void setStatii(vector<Statie>);
     void setTimpi(int,int,Ora);
     void setnrcol(int);

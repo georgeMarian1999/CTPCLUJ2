@@ -227,9 +227,7 @@ bool Tests::test_Autobuz()
     Orar U(v,Mat);
 	Autobuz a(25, U);
 	assert(a.getNumar() == 25);
-    cout<<a.getOrar().getTimpi().getnrlin();
-    cout<<"Delimfidnsgjnsfjlgnvirszbj`wnGWNSfjkltbw`kjrgnvlaekwmg";
-    cout<<U.getTimpi();
+    assert(a.getOrar()==U);
 	a.setNumar(34);
 	assert(a.getNumar() == 34);
 	return true;
@@ -256,10 +254,7 @@ bool Tests::test_Clientlogat(){
 }
 void Tests::RunAllTests(){
    
-<<<<<<< HEAD
-   // if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz())
-=======
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat())
->>>>>>> 4a79ec6b61503c48bf0a4e9ab3d9cee506e10cf8
+
+if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat())
         cout<<"Tests ok!"<<endl;
 }

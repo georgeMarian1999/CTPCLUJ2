@@ -46,6 +46,9 @@ vector<Ora> Orar::getTimpiStatie(Statie S){
 Matrice Orar::getTimpi(){
     return Timpi;
 }
+void Orar::setMatrice(Matrice M){
+    Timpi=M;
+}
 void Orar::setStatii(vector<Statie> V){
     Statii=V;
 }
@@ -72,9 +75,8 @@ Orar& Orar::operator=(Orar& r)
 }
 bool Orar::operator==(const Orar &O){
     for(int i=0;i<Statii.size();i++)
-    {   cout<<(Statii[i]==O.Statii[i]);
         if(Statii[i]!=O.Statii[i])
-            return false;}
+            return false;
     return Timpi==O.Timpi;
 }
 bool Orar::operator!=(const Orar &O){

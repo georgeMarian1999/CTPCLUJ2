@@ -8,12 +8,14 @@ Autobuz::Autobuz()
 Autobuz::Autobuz(Autobuz& a)
 {
 	this->numar = a.numar;
-    this->orar = a.orar;
+    this->orar .setMatrice(a.orar.getTimpi());
+    this->orar.setStatii(a.orar.getStatii());
 }
 Autobuz::Autobuz(int nr,Orar r)
 {
 	this->numar=nr;
-	this->orar=r;
+    this->orar.setMatrice(r.getTimpi());
+    this->orar.setStatii(r.getStatii());
 }
 Autobuz::~Autobuz()
 {
