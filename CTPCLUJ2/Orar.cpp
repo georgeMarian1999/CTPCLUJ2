@@ -68,23 +68,19 @@ Orar& Orar::operator=(Orar& r)
     return *this;
 
 }
-/*bool Orar::operator==(const Orar &O){
+bool Orar::operator==(const Orar &O){
     for(int i=0;i<Statii.size();i++)
         if(Statii[i]!=O.Statii[i])
             return false;
-    return O.Timpi.operator==();
+    return Timpi==O.Timpi;
 }
 bool Orar::operator!=(const Orar &O){
     for(int i=0;i<Statii.size();i++)
         if(Statii[i]==O.Statii[i])
             return false;
-    for(int j=0;j<Statii.size();j++)
-        for(int k=0;k<O.Timpi.getnrcol();k++)
-            if(Timpi(j,k)==O.Timpi(j,k))
-                return false;
-    return true;
+    return Timpi==O.Timpi;
 }
-ostream& operator<<(ostream& os,const Orar& O){
+/*ostream& operator<<(ostream& os,const Orar& O){
     for(int i=0;i<O.Statii.size();i++)
     {
         os<<"Autobuzul ajunge in statia:"<<endl<<O.Statii[i];

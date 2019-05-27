@@ -32,8 +32,8 @@ public:
     void setTimpi(int,int,Ora);
     void setnrcol(int);
     void setnrlin(int);
-    //bool operator==(const Orar&);
-    //bool operator!=(const Orar&);
+    bool operator==(const Orar&);
+    bool operator!=(const Orar&);
     Orar& operator=( Orar&);
     void loadfromfile(string);
     //friend ostream& operator<<(ostream&,const Orar&);

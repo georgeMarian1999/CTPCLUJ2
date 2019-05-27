@@ -130,9 +130,6 @@ bool Tests::test_Matrix() {
 	assert(Mat == Mat2);
 	Ora X(0, 0);
 	Mat.setElem(0, 1, X);
-	cout << Mat;
-	cout << "DELIMITATION" << endl;
-	cout << Mat2;
 	assert(Mat != Mat2);
 	return true;
 }
@@ -163,10 +160,12 @@ bool Tests::test_Autobuz()
 	test3.push_back(H);
 	test.push_back(test3);
 	Matrice Mat(test);
+    cout<<Mat;
 	Orar r(v, Mat);
 	Autobuz a(25, r);
+    cout<<r.getTimpi();
 	assert(a.getNumar() == 25);
-	//assert(a.getOrar() == r);
+	assert(a.getOrar() == r);
 	a.setNumar(34);
 	assert(a.getNumar() == 34);
 	return true;
