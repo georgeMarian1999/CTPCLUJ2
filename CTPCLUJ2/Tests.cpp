@@ -228,6 +228,12 @@ bool Tests::test_Autobuz()
 	Autobuz a(25, U);
 	assert(a.getNumar() == 25);
     assert(a.getOrar()==U);
+    vector<Ora> Aux;
+    Aux.push_back(A);
+    Aux.push_back(D);
+    Aux.push_back(G);
+    for(int i=0;i<a.getOrar().getTimpiStatie(S).size();i++)
+        assert(a.getOrar().getTimpiStatie(S)[i]==Aux[i]);
 	a.setNumar(34);
 	assert(a.getNumar() == 34);
 	return true;

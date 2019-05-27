@@ -39,8 +39,8 @@ vector<Ora> Orar::getTimpiStatie(Statie S){
         i++;
     }
     vector<Ora> o;
-    for(int j=0;j<Timpi.getnrcol();j++)
-        o.push_back(Timpi(found,j));
+    for(int j=0;j<Timpi.getnrlin();j++)
+        o.push_back(Timpi(j,found));
     return o;
 }
 Matrice Orar::getTimpi(){
