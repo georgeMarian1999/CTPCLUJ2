@@ -67,5 +67,9 @@ ostream& operator<<(ostream &os, const Card &c){
 	return os;
 }
 
-
+string Card::toString(){
+	string s;
+	s=s+to_string(this->nrCard)+" "+to_string(this->pin);
+	return s;
+}
 

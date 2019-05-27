@@ -25,6 +25,7 @@ public:
 	void setNrCard(int);
 	void setPin(int);
 	friend ostream& operator<<(ostream &os, const Card &);
+	string toString();
 };
 
 
