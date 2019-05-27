@@ -47,5 +47,9 @@ bool Client::operator==(const Client &c){
 	return(this->infoCard==c.infoCard);
 }
 
-
+string Client::toString(){
+	string s;
+	s=this->infoCard.toString();
+	return s;
+}
 
