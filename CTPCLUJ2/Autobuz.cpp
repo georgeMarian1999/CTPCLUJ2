@@ -8,9 +8,9 @@ Autobuz::Autobuz()
 Autobuz::Autobuz(Autobuz& a)
 {
 	this->numar = a.numar;
-	this->orar = a.orar;
+        
 }
-Autobuz::Autobuz(int nr, Orar r)
+Autobuz::Autobuz(int nr,Orar r)
 {
 	this->numar=nr;
 	this->orar=r;

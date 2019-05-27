@@ -14,7 +14,7 @@
 #include <vector>
 using namespace std;
 class Matrice{
-private:
+protected:
     int nrlinii;
     int nrcol;
     vector<vector<Ora>> V;

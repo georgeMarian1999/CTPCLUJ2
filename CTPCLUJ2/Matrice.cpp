@@ -29,6 +29,7 @@ Matrice& Matrice::operator=(const Matrice &M){
     if(this!=&M){
         nrlinii=M.nrlinii;
         nrcol=M.nrcol;
+        V.clear();
         V=M.V;
     }
     return *this;
@@ -61,15 +62,18 @@ void Matrice::setElem(int n, int m, Ora O){
     V[n][m]=O;
 }
 bool Matrice::operator==(const Matrice &M){
+    int ok=0;
     if(nrlinii!=M.nrlinii)
         return false;
     if(nrcol!=M.nrcol)
         return false;
     for(int i=0;i<nrlinii;i++)
         for(int j=0;j<nrcol;j++)
-            if(V[i][j]!=M.V[i][j])
-                return false;
-    return true;
+            if(V[i][j]==M.V[i][j])
+                ok++;
+    if(ok==nrlinii*nrcol)
+        return true;
+    return false;
 }
 bool Matrice::operator!=(const Matrice &M){
     int ok=0;
@@ -80,7 +84,6 @@ bool Matrice::operator!=(const Matrice &M){
     if(ok==nrlinii*nrcol)
         return false;
     return true;
-    //return V!=M.V;
 }
 ostream& operator<<(ostream& os,const Matrice& M){
     for(int i=0;i<M.nrlinii;i++){

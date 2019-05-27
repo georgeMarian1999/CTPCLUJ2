@@ -13,6 +13,5 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     Tests t;
     t.RunAllTests();
-    std::cout<<"All tests are ok";
     return 0;
 }
