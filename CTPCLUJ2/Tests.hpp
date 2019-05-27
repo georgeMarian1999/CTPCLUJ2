@@ -28,6 +28,7 @@ public:
     bool test_Card();
     bool test_Client();
 	bool test_Autobuz();
+	bool test_Clientlogat();
     void RunAllTests();
 };
 #endif /* Tests_hpp */

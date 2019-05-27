@@ -77,3 +77,9 @@ ClientLogat::ClientLogat(const ClientLogat& c):Client(c){
 	this->parola=c.parola;
 	this->bilete=c.bilete;
 }
+string ClientLogat::toString(){
+	string str;
+	str=str+this->infoCard.toString()+" "+this->username+" "+this->parola+"\n";
+	str=str+"Lista de bilete detinute este:"+"\n";
+	str=str+this->bilete.toString();
+}

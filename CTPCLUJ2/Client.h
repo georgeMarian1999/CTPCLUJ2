@@ -23,6 +23,8 @@ public:
 	Client& operator=(const Client &);
 	bool operator==(const Client &);
     string toString();
+	virtual string toString();
+
 };
 
 
