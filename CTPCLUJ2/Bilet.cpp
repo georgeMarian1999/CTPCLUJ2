@@ -49,4 +49,9 @@ ostream& operator<<(ostream &os, const Bilet &b){
 	os<< "Biletul are pretul "<<b.pret<<" si este pentru zona "<<b.zona <<endl;
 	return os;
 }
+string Bilet::toString(){
+	string s;
+		s=s+"Pret: "+to_string(this->pret)+" Zona: "+to_string(this->zona);
+		return s;
+}
 

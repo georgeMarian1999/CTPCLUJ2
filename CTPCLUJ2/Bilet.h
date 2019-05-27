@@ -24,6 +24,7 @@ public:
 	void setZona(int);
 	bool operator==(const Bilet&);
 	friend ostream& operator<<(ostream &os, const Bilet &);
+	string toString();
 };
 
 
