@@ -17,7 +17,11 @@
 #include"Card.h"
 #include"Client.h"
 #include "Autobuz.h"
+
+#include"BazaDateClienti.h"
+
 #include "ClientLogat.hpp"
+
 using namespace std;
 class Tests{
 public:
@@ -30,6 +34,7 @@ public:
     bool test_Client();
 	bool test_Autobuz();
 	bool test_Clientlogat();
+	bool test_BazaDateClienti();
     void RunAllTests();
 };
 #endif /* Tests_hpp */

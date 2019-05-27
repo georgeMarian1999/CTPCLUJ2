@@ -258,9 +258,30 @@ bool Tests::test_Clientlogat(){
 
 	return true;
 }
+bool Tests::test_BazaDateClienti(){
+	Card a(4140, 123);
+		Bilet b(1, 2);
+		Bilet c(3, 4);
+		vector<Bilet> v;
+		v.push_back(b);
+		v.push_back(c);
+		RepoBilete r(v);
+		Client* client1=new ClientLogat(a, "Ana", "1234", r);
+		Card a2(1234, 101);
+		Client* client2=new Client(a2);
+		BazaDateClienti baza;
+		baza.addClient(client1);
+		assert(baza.getAll()[0]==client1);
+		baza.addClient(client2);
+		assert(baza.getAll()[1]==client2);
+		baza.update(client2, 0);
+		assert(baza.getAll()[0]==client2);
+	return true;
+}
 void Tests::RunAllTests(){
    
 
-if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti())
+
         cout<<"Tests ok!"<<endl;
 }
