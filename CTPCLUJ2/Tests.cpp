@@ -185,6 +185,6 @@ bool Tests::test_Autobuz()
 }
 void Tests::RunAllTests(){
     bool testOra=test_Ora(),testStatie=test_Statie(), testBilet=test_Bilet(), testCard=test_Card(), testClient=test_Client();
-    if(testOra&&testStatie and test_Autobuz() and test_Matrix())
+    if(testOra&&testStatie && test_Autobuz() && test_Matrix())
         cout<<"Tests ok!"<<endl;
 }
