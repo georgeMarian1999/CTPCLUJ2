@@ -38,6 +38,11 @@ void Bilet::setZona(int z){
 	this->zona=z;
 }
 
+bool Bilet::operator==(const Bilet& b){
+
+	return (this->pret==b.pret && this->zona==b.zona);
+	cout<<"lalala"<<endl;
+}
 ostream& operator<<(ostream &os, const Bilet &b){
 	//operator de redirectare a iesirii
 
