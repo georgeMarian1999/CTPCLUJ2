@@ -22,7 +22,6 @@ public:
 	void setCard(Card);
 	Client& operator=(const Client &);
 	bool operator==(const Client &);
-	virtual string toString();
 
 };
 
