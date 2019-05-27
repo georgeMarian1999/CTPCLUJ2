@@ -22,6 +22,7 @@ public:
 	int getZona();
 	void setPret(int);
 	void setZona(int);
+	bool operator==(const Bilet&);
 	friend ostream& operator<<(ostream &os, const Bilet &);
 };
 
