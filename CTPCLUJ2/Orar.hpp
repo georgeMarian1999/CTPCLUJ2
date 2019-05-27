@@ -35,7 +35,6 @@ public:
     bool operator==(const Orar&);
     bool operator!=(const Orar&);
     void loadfromfile(string);
-	void addStatieOra(Statie, Ora);
     //friend ostream& operator<<(ostream&,const Orar&);
 };
 #endif /* Orar_hpp */

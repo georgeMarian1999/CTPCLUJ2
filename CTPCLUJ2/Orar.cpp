@@ -16,7 +16,6 @@ Orar::Orar(vector<Statie> V,Matrice A){
         for(int j=0;j<A.getnrcol();j++)
             Timpi(i,j)=A(i, j);
 }
-
 Orar::~Orar(){
     Statii.clear();
 }
@@ -58,11 +57,7 @@ void Orar::setnrlin(int n){
 void Orar::setnrcol(int m){
     Timpi.setnrcol(m);
 }
-void Orar::addStatieOra(Statie s, Ora o)
-{
-	this->Statii.push_back(s);
-	//ADD ORA???????????????????????
-}
+
 /*bool Orar::operator==(const Orar &O){
     for(int i=0;i<Statii.size();i++)
         if(Statii[i]!=O.Statii[i])

@@ -10,12 +10,13 @@ private:
 public:
 	Autobuz();
 	Autobuz(const Autobuz&);
+	Autobuz(int, Orar);
 	~Autobuz();
 	int getNumar();
 	Orar getOrar();
 	void setNumar(const int);
 	void setOrar(const Orar);
-	void addOra(Statie, Ora);
+	
 
 };
 

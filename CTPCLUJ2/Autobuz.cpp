@@ -10,6 +10,11 @@ Autobuz::Autobuz(const Autobuz& a)
 	this->numar = a.numar;
 	this->orar = a.orar;
 }
+Autobuz::Autobuz(int nr, Orar r)
+{
+	this->numar=nr;
+	this->orar=r;
+}
 Autobuz::~Autobuz()
 {
 
@@ -30,9 +35,5 @@ Orar Autobuz::getOrar()
 {
 	return this->orar;
 }
-void Autobuz::addOra(Statie s, Ora o)
-{
-	this->orar.addStatieOra(s, o);
 
-}
 
