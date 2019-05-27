@@ -12,9 +12,8 @@ Orar::Orar(){
 }
 Orar::Orar(vector<Statie> V,Matrice A){
     Statii=V;
-    for(int i=0;i<A.getnrlin();i++)
-        for(int j=0;j<A.getnrcol();j++)
-            Timpi(i,j)=A(i, j);
+    Timpi=A;
+            
 }
 Orar::~Orar(){
     Statii.clear();

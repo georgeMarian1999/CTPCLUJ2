@@ -5,7 +5,7 @@ Autobuz::Autobuz()
 {
 
 }
-Autobuz::Autobuz(const Autobuz& a)
+Autobuz::Autobuz(Autobuz& a)
 {
 	this->numar = a.numar;
 	this->orar = a.orar;
@@ -23,7 +23,7 @@ void Autobuz::setNumar(const int nr)
 {
 	this->numar = nr;
 }
-void Autobuz::setOrar(const Orar o)
+void Autobuz::setOrar( Orar o)
 {
 	this->orar = o;
 }

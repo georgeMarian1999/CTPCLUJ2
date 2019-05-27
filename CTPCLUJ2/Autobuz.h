@@ -9,13 +9,13 @@ private:
 	Orar orar;
 public:
 	Autobuz();
-	Autobuz(const Autobuz&);
+	Autobuz(Autobuz&);
 	Autobuz(int, Orar);
 	~Autobuz();
 	int getNumar();
 	Orar getOrar();
 	void setNumar(const int);
-	void setOrar(const Orar);
+	void setOrar(Orar);
 	
 
 };
