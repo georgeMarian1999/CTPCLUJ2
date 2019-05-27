@@ -11,7 +11,7 @@
 #include "Card.h"
 
 class Client{
-private:
+protected:
 	Card infoCard;
 public:
 	Client();
