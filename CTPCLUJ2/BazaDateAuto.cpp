@@ -29,9 +29,9 @@ vector<Autobuz> BazaDateAutobuze::getall(){
 void BazaDateAutobuze::setall(vector<Autobuz> X){
     V=X;
 }
-//void BazaDateAutobuze::addElement(Autobuz A){
-  //  V.push_back(A);
-//}
+void BazaDateAutobuze::addElement(Autobuz A){
+    V.push_back(A);
+}
 bool BazaDateAutobuze::operator==(const BazaDateAutobuze &B){
     if(V.size()!=B.V.size())
         return false;

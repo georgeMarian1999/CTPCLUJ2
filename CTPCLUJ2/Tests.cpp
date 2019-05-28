@@ -321,9 +321,8 @@ bool Tests::test_BazaDateAutobuze(){
 		Autobuz a(25, r);
         cout<<a.toString();
 		BazaDateAutobuze baza;
-		//baza.addElement(a);
-		cout<<"LALA"<<endl;
-        //cout<<baza.getall()[0].toString();
+		baza.addElement(a);
+        cout<<baza.getall()[0].toString();
 
 
 	return true;

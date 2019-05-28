@@ -22,7 +22,7 @@ public:
     ~BazaDateAutobuze();
     vector<Autobuz> getall();
     void setall(vector<Autobuz>);
-    //void addElement(Autobuz);
+    void addElement(Autobuz);
     bool operator==(const BazaDateAutobuze&);
     bool operator!=(const BazaDateAutobuze&);
     string toString();
