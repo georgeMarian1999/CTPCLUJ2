@@ -6,6 +6,15 @@
  */
 
 #include"BazaDateClienti.h"
+#include<fstream>
+using namespace std;
+#include<string.h>
+#include"Client.h"
+#include<vector>
+#include<iostream>
+#include "RepoBilete.h"
+#include "Card.h"
+#include <string>
 
 BazaDateClienti::BazaDateClienti(){
 
@@ -96,8 +105,9 @@ void BazaDateClienti::LoadFromFile(const char* filename)
 				r.addElement(b);
 			}
 		}
+		
 		Client* c=new ClientLogat(cd,username,parola,r);
-		this->addClient(c);
+		this->addClient(c); 
 
 
 		f.close();
