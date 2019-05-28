@@ -26,5 +26,6 @@ public:
     bool operator==(const BazaDateAutobuze&);
     bool operator!=(const BazaDateAutobuze&);
     string toString();
+    void LoadFromFile(const char*);
 };
 #endif /* BazaDateAuto_hpp */

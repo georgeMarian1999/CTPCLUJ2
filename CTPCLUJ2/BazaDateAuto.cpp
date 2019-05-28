@@ -6,6 +6,7 @@
 //
 
 #include "BazaDateAuto.hpp"
+#include <fstream>
 BazaDateAutobuze::BazaDateAutobuze(){
 }
 BazaDateAutobuze::BazaDateAutobuze(vector<Autobuz> X){
@@ -55,4 +56,30 @@ string BazaDateAutobuze::toString(){
         s=s+"\n";
     }
     return s;
+}
+void BazaDateAutobuze::LoadFromFile(const char* filename)
+{
+    ifstream f(filename);
+    int n;
+    for(int i=1;i<=n;i+=1)
+    {
+        int nrAuto;
+        f>>nrAuto;
+        int nrStatii;
+        f>>nrStatii;
+        for(int j=0;j<9;j+=1)
+            {
+                for(int k=0;k<nrStatii+1;k+=1)
+                {
+                    string p;
+                    f>>p;
+                    cout<<p<<" ";
+                    
+                
+                }
+                cout<<'\n';
+            }
+    }
+    f.close();
+
 }
