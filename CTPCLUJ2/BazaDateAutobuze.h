@@ -9,7 +9,7 @@
 #define BAZADATEAUTOBUZE_H_
 #include "Repo.h"
 #include "Autobuz.h"
-
+#include <iostream>
 class BazaDateAutobuze: public Repo<Autobuz>{
 public:
 	BazaDateAutobuze();

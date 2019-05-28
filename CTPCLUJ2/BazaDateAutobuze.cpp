@@ -5,8 +5,6 @@
  *      Author: user
  */
 #include "BazaDateAutobuze.h"
-#include "iostream"
-using namespace std;
 BazaDateAutobuze& BazaDateAutobuze::operator=(BazaDateAutobuze& r){
 	if(this!=&r){
 		this->vect.clear();
