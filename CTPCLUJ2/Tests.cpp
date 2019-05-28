@@ -280,11 +280,15 @@ bool Tests::test_BazaDateClienti(){
 	return true;
 }
 bool Tests::test_BazaDateAutobuze(){
-	Statie S("gara", 2);
+	    Statie S("gara", 2);
 		Statie P("tralala", 4);
+        Statie X("sora",3);
+        Statie J("centru",1);
 		vector<Statie> v;
 		v.push_back(S);
 		v.push_back(P);
+        v.push_back(X);
+        v.push_back(J);
 		vector<vector<Ora>> test;
 		Ora A(10, 20);
 		Ora B(11, 30);
