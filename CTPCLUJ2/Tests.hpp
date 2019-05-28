@@ -18,6 +18,7 @@
 #include"Client.h"
 #include "Autobuz.h"
 #include"BazaDateClienti.h"
+#include"BazaDateAutobuze.h"
 #include "ClientLogat.hpp"
 
 using namespace std;
@@ -33,6 +34,7 @@ public:
 	bool test_Autobuz();
 	bool test_Clientlogat();
 	bool test_BazaDateClienti();
+	bool test_BazaDateAutobuze();
     void RunAllTests();
 };
 #endif /* Tests_hpp */

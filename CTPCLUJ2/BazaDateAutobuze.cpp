@@ -47,7 +47,7 @@ BazaDateAutobuze::BazaDateAutobuze():Repo<Autobuz>(){
 string BazaDateAutobuze::toString(){
 	string str;
 	for(int i=0; i<this->vect.size();i++)
-	//	str=str+this->vect[i].toString()+"\n";
+		str=str+this->vect[i].toString()+"\n";
 	return str;
 }
 
