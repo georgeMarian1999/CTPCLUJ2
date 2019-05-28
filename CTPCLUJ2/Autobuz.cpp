@@ -3,13 +3,21 @@
 
 Autobuz::Autobuz()
 {
-
+    numar=0;
 }
 Autobuz::Autobuz(Autobuz& a)
 {
 	this->numar = a.numar;
-    this->orar .setMatrice(a.orar.getTimpi());
+    this->orar.setMatrice(a.orar.getTimpi());
     this->orar.setStatii(a.orar.getStatii());
+}
+Autobuz& Autobuz::operator=(Autobuz &a){
+    if(this!=&a){
+        this->numar = a.numar;
+        this->orar.setMatrice(a.orar.getTimpi());
+        this->orar.setStatii(a.orar.getStatii());
+    }
+    return *this;
 }
 Autobuz::Autobuz(int nr,Orar r)
 {

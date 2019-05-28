@@ -5,9 +5,7 @@
  *      Author: user
  */
 #include "BazaDateAutobuze.h"
-#include "iostream"
-using namespace std;
-BazaDateAutobuze& BazaDateAutobuze::operator=(const BazaDateAutobuze& r){
+BazaDateAutobuze& BazaDateAutobuze::operator=(BazaDateAutobuze& r){
 	if(this!=&r){
 		this->vect.clear();
 		for(int i=0; i<r.vect.size();i++)

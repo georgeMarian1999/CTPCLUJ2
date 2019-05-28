@@ -65,6 +65,7 @@
 		C1B88058229C7A7C008D20F5 /* BazaDateClienti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BazaDateClienti.cpp; sourceTree = "<group>"; };
 		C1B8805B229D7116008D20F5 /* BazaDateAutobuze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BazaDateAutobuze.cpp; sourceTree = "<group>"; };
 		C1B8805C229D7116008D20F5 /* BazaDateAutobuze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaDateAutobuze.h; sourceTree = "<group>"; };
+		C1B8805E229D71DB008D20F5 /* BazaDateClienti.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BazaDateClienti.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				C1B8805C229D7116008D20F5 /* BazaDateAutobuze.h */,
 				C1B88058229C7A7C008D20F5 /* BazaDateClienti.cpp */,
 				C1B88057229C7A74008D20F5 /* BazaDateClienti.h */,
+				C1B8805E229D71DB008D20F5 /* BazaDateClienti.txt */,
 				C1B8804A229C1434008D20F5 /* Bilet.cpp */,
 				C1B88049229C1415008D20F5 /* Bilet.h */,
 				C1B88051229C1684008D20F5 /* Card.cpp */,

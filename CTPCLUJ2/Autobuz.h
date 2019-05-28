@@ -10,6 +10,7 @@ private:
 public:
 	Autobuz();
 	Autobuz(Autobuz&);
+    Autobuz& operator=(Autobuz&);
 	Autobuz(int, Orar);
 	~Autobuz();
 	int getNumar();
