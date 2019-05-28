@@ -7,10 +7,10 @@
 
 #ifndef BAZADATECLIENTI_H_
 #define BAZADATECLIENTI_H_
-using namespace std;
 #include <iostream>
-#include"Client.h"
-#include<vector>
+#include "Client.h"
+#include <vector>
+using namespace std;
 class BazaDateClienti{
 private:
 	vector<Client*> elements;
