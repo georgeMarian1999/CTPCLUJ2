@@ -85,14 +85,13 @@ bool Orar::operator!=(const Orar &O){
             return false;
     return Timpi==O.Timpi;
 }
-/*ostream& operator<<(ostream& os,const Orar& O){
-    for(int i=0;i<O.Statii.size();i++)
-    {
-        os<<"Autobuzul ajunge in statia:"<<endl<<O.Statii[i];
-        os<<"la orele: "<<endl;
-        for(int j=0;j<O.Timpi.getnrcol();j++)
-            os<<O.Timpi(i,j);
-        os<<endl;
+string Orar::toString(){
+    string s;
+    for(int i=0;i<Timpi.getnrlin();i++){
+        s=s+"Din statia: "+Statii[i].getnume()+" pleaca la orele\n";
+        for(int j=0;j<Timpi.getnrlin();j++)
+            s=s+Timpi(i,j).toString()+" ";
+        s=s+"\n";
     }
-    return os;
-}*/
+    return s;
+}

@@ -73,7 +73,8 @@ bool Ora::operator<(const Ora &A){
     }
     return false;
 }
-ostream& operator<<(ostream& os,const Ora &A){
-    os<<"Ora la care ajunge autobuzul in statie este"<<" "<<A.ora<<":"<<A.minute<<endl;
-    return os;
+string Ora::toString(){
+    string s;
+    s=s+to_string(ora)+":"+to_string(minute);
+    return s;
 }
