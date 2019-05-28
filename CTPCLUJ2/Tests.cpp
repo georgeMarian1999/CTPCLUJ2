@@ -279,6 +279,54 @@ bool Tests::test_BazaDateClienti(){
 		assert(baza.getAll()[0]==client2);
 	return true;
 }
+bool Tests::test_BazaDateAutobuze(){
+	Statie S("gara", 2);
+		Statie P("tralala", 4);
+		vector<Statie> v;
+		v.push_back(S);
+		v.push_back(P);
+		vector<vector<Ora>> test;
+		Ora A(10, 20);
+		Ora B(11, 30);
+		Ora C(12, 40);
+		Ora A1(2, 20);
+		vector<Ora> test1;
+		test1.push_back(A);
+		test1.push_back(B);
+		test1.push_back(C);
+		test1.push_back(A1);
+		test.push_back(test1);
+		vector<Ora> test2;
+		Ora D(13, 50);
+		Ora E(14, 0);
+		Ora F(15, 10);
+		Ora A2(1, 2);
+		test2.push_back(D);
+		test2.push_back(E);
+		test2.push_back(F);
+		test2.push_back(A2);
+		test.push_back(test2);
+		Ora G(16, 20);
+		Ora H(18, 30);
+		Ora I(19, 40);
+		Ora A3(4, 8);
+		vector<Ora> test3;
+		test3.push_back(A);
+		test3.push_back(B);
+		test3.push_back(C);
+		test3.push_back(A3);
+		test.push_back(test3);
+		Matrice Mat(test);
+		Orar r(v, Mat);
+		Autobuz a(25, r);
+		BazaDateAutobuze baza;
+		baza.addElement(a);
+		cout<<"LALA"<<endl;
+		cout<<baza.getAll()[0].toString();
+
+
+	return true;
+}
 void Tests::RunAllTests(){
    
 
