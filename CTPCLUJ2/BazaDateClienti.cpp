@@ -70,51 +70,60 @@ void BazaDateClienti::update(Client* s, int pos){
 	//	throw Exception("pozitia trebuie sa fie intre 0 si dimensiunea vectorului...");
 	this->elements[pos]=s;
 }
-void BazaDateClienti::LoadFromFile(const char* filename)
+string BazaDateClienti::toString(){
+    string s;
+    for(int i=0;i<elements.size();i++)
+        s=s+elements[i]->toString();
+    return s;
+}
+void BazaDateClienti::LoadFromFile(string filename)
 {
-	ifstream f(filename);
-	while(!f.eof())
-	{
-		char* string=new char[100];
-		int nrcard,nrpin;
-		char* username=new char[100];
-		char* parola=new char[100];
-		int pret, zona;
-	
-		f.getline(string,100);
-		char* p=strtok(string,",");
-		nrcard=atoi(p);
-		p=strtok(NULL,",");
-		nrpin=atoi(p);
-		p=strtok(NULL,",");
-		strcpy(username,p);
-		p=strtok(NULL,",");
-		strcpy(parola,p);
-		p=strtok(NULL,",");
-		Card cd(nrcard,nrpin);
-		RepoBilete r;
-		if(p)
-		{
-			while(p)
-			{
-				pret=atoi(p);
-				p=strtok(NULL,",");
-				zona=atoi(p);
-				p=strtok(NULL,",");
-				Bilet b(pret,zona);
-				r.addElement(b);
-			}
-		}
-		
+    ifstream f;
+    f.open(filename);
+    if(!f)
+        cout<<"error"<<endl;
+    string nrclienti;
+    getline(f,nrclienti,'\n');
+    cout<<nrclienti<<endl;
+    for(int i=0;i<stoi(nrclienti);i++){
+        Card cd;
+        string nrcard,pin,username,parola,nrbilete,pret,zona;
+        RepoBilete r;
+        getline(f,nrcard,',');
+        getline(f,pin,',');
+        getline(f,username,',');
+        getline(f,parola,',');
+        getline(f,nrbilete,',');
+        for(int i=0;i<stoi(nrbilete);i++)
+        {
+            getline(f,pret,',');
+            getline(f,zona,',');
+            Bilet B(stoi(pret),stoi(zona));
+            r.addElement(B);
+        }
+        string end;
+        getline(f,end,'\n');
+        cd.setNrCard(stoi(nrcard));
+        cd.setPin(stoi(pin));
 		Client* c=new ClientLogat(cd,username,parola,r);
 		this->addClient(c); 
-
-
+    }
 		f.close();
-
-
-
 	}
+bool BazaDateClienti::operator==(const BazaDateClienti &R){
+    if(elements.size()!=R.elements.size())
+        return false;
+    for(int i=0;i<elements.size();i++)
+        if(elements[i]!=R.elements[i])
+            return false;
+    return true;
 }
-
+bool BazaDateClienti::operator!=(const BazaDateClienti &R){
+    if(elements.size()!=R.elements.size())
+        return true;
+    for(int i=0;i<elements.size();i++)
+        if(elements[i]!=R.elements[i])
+            return true;
+    return false;
+}
 

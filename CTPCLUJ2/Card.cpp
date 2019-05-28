@@ -32,7 +32,10 @@ bool Card::operator==(const Card& c){
 
 	return (this->nrCard==c.nrCard && this->pin==c.pin);
 }
-
+bool Card::operator!=(const Card& c){
+    
+    return (!(this->nrCard==c.nrCard && this->pin==c.pin));
+}
 Card& Card::operator=(const Card& c){
 	if(this!=&c){
 		this->nrCard=c.nrCard;

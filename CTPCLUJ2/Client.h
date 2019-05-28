@@ -21,7 +21,8 @@ public:
 	Card getInfoCard();
 	void setCard(Card);
 	Client& operator=(const Client &);
-	bool operator==(const Client &);
+	virtual bool operator==(const Client &);
+    virtual bool operator!=(const Client&);
 	virtual string toString();
 
 };

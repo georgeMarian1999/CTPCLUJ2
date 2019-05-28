@@ -70,7 +70,9 @@ bool ClientLogat::operator==(const ClientLogat& c){
 
 	return(this->username==c.username && this->parola==c.parola &&  this->bilete==c.bilete && this->infoCard==c.infoCard);
 }
-
+bool ClientLogat::operator!=(const ClientLogat &c){
+    return(!(this->username==c.username && this->parola==c.parola &&  this->bilete==c.bilete && this->infoCard==c.infoCard));
+}
 ClientLogat::ClientLogat(const ClientLogat& c):Client(c){
 
 	this->username=c.username;

@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string.h>
 #include "Client.h"
+#include <string>
 #include <vector>
 #include <iostream>
 #include "RepoBilete.h"
@@ -28,7 +29,10 @@ public:
 	vector<Client*> getAll();
 	void addClient(Client* el);
 	void update(Client*, int);
-	void LoadFromFile(const char*);
+    string toString();
+	void LoadFromFile(string);
+    bool operator==(const BazaDateClienti&);
+    bool operator!=(const BazaDateClienti&);
 
 };
 

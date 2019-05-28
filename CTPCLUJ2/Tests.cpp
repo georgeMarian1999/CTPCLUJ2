@@ -260,7 +260,7 @@ bool Tests::test_Clientlogat(){
 	return true;
 }
 bool Tests::test_BazaDateClienti(){
-	Card a(4140, 123);
+	    Card a(4140, 123);
 		Bilet b(1, 2);
 		Bilet c(3, 4);
 		vector<Bilet> v;
@@ -277,7 +277,9 @@ bool Tests::test_BazaDateClienti(){
 		assert(baza.getAll()[1]==client2);
 		baza.update(client2, 0);
 		assert(baza.getAll()[0]==client2);
-	return true;
+        BazaDateClienti baza2=baza;
+        assert(baza==baza2);
+        return true;
 }
 bool Tests::test_BazaDateAutobuze(){
 	    Statie S("gara", 2);
@@ -331,10 +333,78 @@ bool Tests::test_BazaDateAutobuze(){
 
 	return true;
 }
+bool Tests::test_Ctrl(){
+    Card a(4140, 123);
+    Bilet b(1, 2);
+    Bilet c(3, 4);
+    vector<Bilet> v;
+    v.push_back(b);
+    v.push_back(c);
+    RepoBilete r(v);
+    Client* client1=new ClientLogat(a, "Ana", "1234", r);
+    Card a2(1234, 101);
+    Client* client2=new Client(a2);
+    BazaDateClienti baza;
+    baza.addClient(client1);
+    baza.addClient(client2);
+    Statie S("gara", 2);
+    Statie P("tralala", 4);
+    Statie X("sora",3);
+    Statie J("centru",1);
+    vector<Statie> Statii;
+    Statii.push_back(S);
+    Statii.push_back(P);
+    Statii.push_back(X);
+    Statii.push_back(J);
+    vector<vector<Ora>> test;
+    Ora A(10, 20);
+    Ora B(11, 30);
+    Ora C(12, 40);
+    Ora A1(2, 20);
+    vector<Ora> test1;
+    test1.push_back(A);
+    test1.push_back(B);
+    test1.push_back(C);
+    test1.push_back(A1);
+    test.push_back(test1);
+    vector<Ora> test2;
+    Ora D(13, 50);
+    Ora E(14, 0);
+    Ora F(15, 10);
+    Ora A2(1, 2);
+    test2.push_back(D);
+    test2.push_back(E);
+    test2.push_back(F);
+    test2.push_back(A2);
+    test.push_back(test2);
+    Ora G(16, 20);
+    Ora H(18, 30);
+    Ora I(19, 40);
+    Ora A3(4, 8);
+    vector<Ora> test3;
+    test3.push_back(A);
+    test3.push_back(B);
+    test3.push_back(C);
+    test3.push_back(A3);
+    test.push_back(test3);
+    Matrice Mat(test);
+    Orar orer(Statii, Mat);
+    Autobuz autob(25, orer);
+    BazaDateAutobuze baza2;
+    baza2.addElement(autob);
+    Ctrl Controler;
+    Controler.setbazaauto(baza2);
+    Controler.setbazaclienti(baza);
+    cout<<Controler.getClienti().toString();
+    cout<<"Test la controler"<<endl;
+    cout<<Controler.getAutobuze().toString();
+    return true;
+    
+}
 void Tests::RunAllTests(){
    
 
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl())
 
         cout<<"Tests ok!"<<endl;
 }

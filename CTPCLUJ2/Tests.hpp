@@ -20,6 +20,7 @@
 #include "ClientLogat.hpp"
 #include "BazaDateAuto.hpp"
 #include "BazaDateClienti.h"
+#include "Ctrl.hpp"
 using namespace std;
 class Tests{
 public:
@@ -34,6 +35,7 @@ public:
 	bool test_Clientlogat();
 	bool test_BazaDateClienti();
 	bool test_BazaDateAutobuze();
+    bool test_Ctrl();
     void RunAllTests();
 };
 #endif /* Tests_hpp */

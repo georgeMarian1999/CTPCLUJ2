@@ -19,6 +19,7 @@ public:
 	Card(int, int);
 	Card(const Card&);
 	bool operator==(const Card&);
+    bool operator!=(const Card&);
 	Card& operator=(const Card&);
 	int getNrCard();
 	int getPin();

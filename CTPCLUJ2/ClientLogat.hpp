@@ -26,6 +26,7 @@ public:
 	void setBilete(RepoBilete);
 	ClientLogat& operator=(const ClientLogat&);
 	bool operator==(const ClientLogat&);
+    bool operator!=(const ClientLogat&);
 	ClientLogat(const ClientLogat&);
 	string toString();
 };
