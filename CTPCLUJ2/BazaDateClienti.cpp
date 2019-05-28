@@ -15,7 +15,7 @@ using namespace std;
 #include "RepoBilete.h"
 #include "Card.h"
 #include <string>
-#include "ClientLogat.h"
+#include "ClientLogat.hpp"
 
 BazaDateClienti::BazaDateClienti() {
 
