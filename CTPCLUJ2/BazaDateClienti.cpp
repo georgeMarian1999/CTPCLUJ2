@@ -12,6 +12,9 @@ using namespace std;
 #include"Client.h"
 #include<vector>
 #include<iostream>
+#include "RepoBilete.h"
+#include "Card.h"
+
 
 BazaDateClienti::BazaDateClienti(){
 
@@ -76,7 +79,7 @@ void BazaDateClienti::LoadFromFile(const char* filename)
 		int nrcard,nrpin;
 		char* username=new char[100];
 		char* parola=new char[100];
-		int nrbilete, zona;
+		int pret, zona;
 	
 		f.getline(string,100);
 		char* p=strtok(string,",");
@@ -87,13 +90,25 @@ void BazaDateClienti::LoadFromFile(const char* filename)
 		strcpy(username,p);
 		p=strtok(NULL,",");
 		strcpy(parola,p);
-		while(p)
+		p=strtok(NULL,",");
+		Card cd(nrcard,nrpin);
+		RepoBilete r;
+		if(p)
 		{
-			if(p[0]=='0')
-				nrbilete=0,zona=0;
-
-			
+			while(p)
+			{
+				pret=atoi(p);
+				p=strtok(NULL,",");
+				zona=atoi(p);
+				p=strtok(NULL,",");
+				Bilet b(pret,zona);
+				r.addElement(b);
+			}
 		}
+		Client* c=new ClientLogat(username,parola,r);
+		this->addClient(c);
+
+
 		f.close();
 
 
