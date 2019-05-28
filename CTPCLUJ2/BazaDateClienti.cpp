@@ -104,7 +104,7 @@ void BazaDateClienti::LoadFromFile(string filename)
         cd.setNrCard(stoi(nrcard));
         cd.setPin(stoi(pin));
 		Client* c=new ClientLogat(cd,username,parola,r);
-		this->addClient(c); 
+		this->addClient(c);
     }
 		f.close();
 	}
