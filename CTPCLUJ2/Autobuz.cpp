@@ -19,7 +19,22 @@ Autobuz::Autobuz(int nr,Orar r)
 }
 Autobuz::~Autobuz()
 {
-
+}
+bool Autobuz::operator==(const Autobuz &A){
+    if(numar!=A.numar)
+        return false;
+    return orar==A.orar;
+}
+bool Autobuz::operator!=(const Autobuz&A){
+    if(numar==A.numar)
+        return false;
+    return orar!=A.orar;
+}
+string Autobuz::toString(){
+    string s;
+    s=s+"Autobuzul cu numarul "+to_string(numar)+" are orarul:\n";
+    s=s+orar.toString();
+    return s;
 }
 void Autobuz::setNumar(const int nr)
 {

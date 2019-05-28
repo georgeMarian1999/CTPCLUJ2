@@ -31,6 +31,6 @@ public:
     bool operator!=(const Ora&);
     bool operator>(const Ora&);
     bool operator<(const Ora&);
-    friend ostream& operator<<(ostream&,const Ora&);
+    string toString();
 };
 #endif /* Ora_hpp */

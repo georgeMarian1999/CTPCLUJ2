@@ -226,6 +226,7 @@ bool Tests::test_Autobuz()
     v.push_back(J);
     Orar U(v,Mat);
 	Autobuz a(25, U);
+    cout<<a.toString();
 	assert(a.getNumar() == 25);
     assert(a.getOrar()==U);
     vector<Ora> Aux;
