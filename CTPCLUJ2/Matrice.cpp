@@ -85,11 +85,12 @@ bool Matrice::operator!=(const Matrice &M){
         return false;
     return true;
 }
-ostream& operator<<(ostream& os,const Matrice& M){
-    for(int i=0;i<M.nrlinii;i++){
-        for(int j=0;j<M.nrcol;j++)
-            os<<M.V[i][j]<<" ";
-        os<<endl;
+string Matrice::toString(){
+    string s;
+    for(int i=0;i<nrlinii;i++){
+        for(int j=0;j<nrcol;j++)
+            s=s+V[i][j].toString()+" ";
+        s=s+"\n";
     }
-    return os;
+    return s;
 }

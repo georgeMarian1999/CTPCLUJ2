@@ -37,6 +37,6 @@ public:
     bool operator!=(const Orar&);
     Orar& operator=( Orar&);
     void loadfromfile(string);
-    //friend ostream& operator<<(ostream&,const Orar&);
+    string toString();
 };
 #endif /* Orar_hpp */

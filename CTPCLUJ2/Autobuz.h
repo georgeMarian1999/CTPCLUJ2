@@ -14,6 +14,9 @@ public:
 	~Autobuz();
 	int getNumar();
 	Orar getOrar();
+    bool operator==(const Autobuz&);
+    bool operator!=(const Autobuz&);
+    string toString();
 	void setNumar(const int);
 	void setOrar(Orar);
 };

@@ -34,7 +34,7 @@ public:
     void setElem(int,int,Ora);
     bool operator==(const Matrice&);
     bool operator!=(const Matrice&);
-    friend ostream& operator<<(ostream&,const Matrice&);
+    string toString();
     
 };
 #endif /* AlfaMatrix_hpp */
