@@ -12,6 +12,9 @@ using namespace std;
 #include"Client.h"
 #include<vector>
 #include<iostream>
+#include "RepoBilete.h"
+#include "Card.h"
+
 
 BazaDateClienti::BazaDateClienti(){
 
@@ -41,7 +44,7 @@ BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r){
 
 
 int BazaDateClienti::getSize(){
-	return int(elements.size());
+	return elements.size();
 }
 
 
@@ -66,6 +69,51 @@ void BazaDateClienti::update(Client* s, int pos){
 	//if(pos<0 || pos>=elements.size())
 	//	throw Exception("pozitia trebuie sa fie intre 0 si dimensiunea vectorului...");
 	this->elements[pos]=s;
+}
+void BazaDateClienti::LoadFromFile(const char* filename)
+{
+	ifstream f(filename);
+	while(!f.eof())
+	{
+		char* string=new char[100];
+		int nrcard,nrpin;
+		char* username=new char[100];
+		char* parola=new char[100];
+		int pret, zona;
+	
+		f.getline(string,100);
+		char* p=strtok(string,",");
+		nrcard=atoi(p);
+		p=strtok(NULL,",");
+		nrpin=atoi(p);
+		p=strtok(NULL,",");
+		strcpy(username,p);
+		p=strtok(NULL,",");
+		strcpy(parola,p);
+		p=strtok(NULL,",");
+		Card cd(nrcard,nrpin);
+		RepoBilete r;
+		if(p)
+		{
+			while(p)
+			{
+				pret=atoi(p);
+				p=strtok(NULL,",");
+				zona=atoi(p);
+				p=strtok(NULL,",");
+				Bilet b(pret,zona);
+				r.addElement(b);
+			}
+		}
+		Client* c=new ClientLogat(username,parola,r);
+		this->addClient(c);
+
+
+		f.close();
+
+
+
+	}
 }
 
 
