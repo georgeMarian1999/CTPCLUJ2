@@ -61,15 +61,12 @@ void Orar::setnrlin(int n){
 void Orar::setnrcol(int m){
     Timpi.setnrcol(m);
 }
-Orar& Orar::operator=(Orar& r)
-{
-    this->Statii=r.Statii;
-    for(int i=0;i<this->Timpi.getnrlin();i+=1)
-        for(int j=0;j<this->Timpi.getnrcol();j+=1)
-        {
-            this->Timpi(i,j)=r.Timpi(i,j);
-
-        }
+Orar& Orar::operator=(const Orar& r)
+{   if(this!=&r)
+    {
+        this->Statii=r.Statii;
+        Timpi=r.Timpi;
+    }
     return *this;
 
 }

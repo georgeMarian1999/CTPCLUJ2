@@ -319,10 +319,11 @@ bool Tests::test_BazaDateAutobuze(){
 		Matrice Mat(test);
 		Orar r(v, Mat);
 		Autobuz a(25, r);
+        cout<<a.toString();
 		BazaDateAutobuze baza;
 		//baza.addElement(a);
 		cout<<"LALA"<<endl;
-        cout<<baza.getall()[0].toString();
+        //cout<<baza.getall()[0].toString();
 
 
 	return true;

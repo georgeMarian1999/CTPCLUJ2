@@ -6,17 +6,15 @@ Autobuz::Autobuz()
     numar=0;
     Orar orar;
 }
-Autobuz::Autobuz(Autobuz& a)
+Autobuz::Autobuz(const Autobuz& a)
 {
 	this->numar = a.numar;
-    this->orar.setMatrice(a.orar.getTimpi());
-    this->orar.setStatii(a.orar.getStatii());
+    this->orar=a.orar;
 }
-Autobuz& Autobuz::operator=(Autobuz &a){
+Autobuz& Autobuz::operator=(const Autobuz &a){
     if(this!=&a){
         this->numar = a.numar;
-        this->orar.setMatrice(a.orar.getTimpi());
-        this->orar.setStatii(a.orar.getStatii());
+        this->orar=a.orar;
     }
     return *this;
 }
