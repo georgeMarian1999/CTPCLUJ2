@@ -8,10 +8,10 @@
 #include"BazaDateClienti.h"
 #include<fstream>
 using namespace std;
-#include<string.h>
-#include"Client.h"
-#include<vector>
-#include<iostream>
+#include <string.h>
+#include "Client.h"
+#include <vector>
+#include <iostream>
 #include "RepoBilete.h"
 #include "Card.h"
 #include <string>
@@ -35,17 +35,14 @@ BazaDateClienti::~BazaDateClienti() {
 
 BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r) {
 	if (this != &r) {
-		elements.clear();
-		elements.reserve(r.elements.size());
-		for (unsigned int i = 0; i < r.elements.size(); i++)
-			elements[i] = r.elements[i];
+        elements=r.elements;
 	}
 	return *this;
 }
 
 
 int BazaDateClienti::getSize() {
-	return elements.size();
+	return int(elements.size());
 }
 
 

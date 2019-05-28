@@ -24,6 +24,7 @@ bool Tests::test_Ora(){
     assert(B>A);
     B.setora(10);
     assert(B>A);
+    cout<<"test la ora ok"<<endl;
     return true;
 }
 bool Tests::test_Statie(){
@@ -40,6 +41,7 @@ bool Tests::test_Statie(){
     assert(S==B);
     S.setzona(3);
     assert(S!=B);
+    cout<<"test la statie ok"<<endl;
     return true;
 }
 bool Tests::test_Bilet(){
@@ -54,7 +56,7 @@ bool Tests::test_Bilet(){
 	assert(b==c);
 	Bilet e=c;
 	assert(e==c);
-
+    cout<<"test bilet ok"<<endl;
 	return true;
 }
 
@@ -68,7 +70,7 @@ bool Tests::test_Card(){
 	assert(c==d);
 	Card e(d);
 	assert(e==d);
-
+    cout<<"test card ok"<<endl;
 	return true;
 }
 
@@ -81,7 +83,7 @@ bool Tests::test_Client(){
 	assert(c.getInfoCard()==d);
 	Client e=c;
 	assert(e==c);
-
+    cout<<"test client ok"<<endl;
 	return true;
 
 
@@ -131,6 +133,7 @@ bool Tests::test_Matrix() {
 	Ora X(0, 0);
 	Mat.setElem(0, 1, X);
 	assert(Mat != Mat2);
+    cout<<"Test matrice ok"<<endl;
 	return true;
 }
 bool Tests::test_Orar(){
@@ -179,6 +182,7 @@ bool Tests::test_Orar(){
     for(int i=0;i<U.getStatii().size();i++)
         assert(U.getStatii()[i]==v[i]);
     assert(U.getTimpi()==Mat);
+    cout<<"test orar ok"<<endl;
     return true;
 }
 bool Tests::test_Autobuz()
@@ -226,7 +230,6 @@ bool Tests::test_Autobuz()
     v.push_back(J);
     Orar U(v,Mat);
 	Autobuz a(25, U);
-    cout<<a.toString();
 	assert(a.getNumar() == 25);
     assert(a.getOrar()==U);
     vector<Ora> Aux;
@@ -237,6 +240,7 @@ bool Tests::test_Autobuz()
         assert(a.getOrar().getTimpiStatie(S)[i]==Aux[i]);
 	a.setNumar(34);
 	assert(a.getNumar() == 34);
+    cout<<"Test la Autobuz ok"<<endl;
 	return true;
 }
 bool Tests::test_Clientlogat(){
@@ -256,7 +260,7 @@ bool Tests::test_Clientlogat(){
 	assert(client.getParola()=="11");
 	ClientLogat x=client;
 	assert(x==client);
-
+    cout<<"Test la client logat ok"<<endl;
 	return true;
 }
 bool Tests::test_BazaDateClienti(){
@@ -279,6 +283,7 @@ bool Tests::test_BazaDateClienti(){
 		assert(baza.getAll()[0]==client2);
         BazaDateClienti baza2=baza;
         assert(baza==baza2);
+    cout<<"Test la baza date client ok"<<endl;
         return true;
 }
 bool Tests::test_BazaDateAutobuze(){
@@ -325,11 +330,10 @@ bool Tests::test_BazaDateAutobuze(){
 		Matrice Mat(test);
 		Orar r(v, Mat);
 		Autobuz a(25, r);
-        cout<<a.toString();
 		BazaDateAutobuze baza;
 		baza.addElement(a);
-        cout<<baza.getall()[0].toString();
-
+        assert(baza.getall()[0]==a);
+    cout<<"Test la Bazadateautobuze ok"<<endl;
 
 	return true;
 }
@@ -392,12 +396,11 @@ bool Tests::test_Ctrl(){
     Autobuz autob(25, orer);
     BazaDateAutobuze baza2;
     baza2.addElement(autob);
-    Ctrl Controler;
-    Controler.setbazaauto(baza2);
-    Controler.setbazaclienti(baza);
-    cout<<Controler.getClienti().toString();
-    cout<<"Test la controler"<<endl;
-    cout<<Controler.getAutobuze().toString();
+    Ctrl Controler(baza,baza2);
+    assert(Controler.getClienti()==baza);
+    assert(Controler.getAutobuze()==baza2);
+    cout<<"Test la controler ok"<<endl;
+
     return true;
     
 }

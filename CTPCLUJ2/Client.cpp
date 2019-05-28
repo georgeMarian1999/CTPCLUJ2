@@ -51,7 +51,7 @@ bool Client::operator!=(const Client &c){
 }
 string Client::toString(){
 	string s;
-	s=this->infoCard.toString();
+	s=this->infoCard.toString()+"\n";
 	return s;
 }
 
