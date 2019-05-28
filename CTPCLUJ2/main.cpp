@@ -12,6 +12,8 @@ int main(int argc, const char * argv[]) {
     cout << "Hello, World!\n";
     Tests t;
     t.RunAllTests();
+    BazaDateAutobuze b;
+    b.LoadFromFile("BazaDateAutobuze.txt");
     return 0;
 }
 //IMI BAG PUUUUUUUUUULLLLLLLLAAAAAAAAAAAQ

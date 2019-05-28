@@ -60,25 +60,29 @@ string BazaDateAutobuze::toString(){
 void BazaDateAutobuze::LoadFromFile(const char* filename)
 {
     ifstream f(filename);
-    int n;
+    int n=4;
     for(int i=1;i<=n;i+=1)
     {
         int nrAuto;
         f>>nrAuto;
         int nrStatii;
         f>>nrStatii;
+        for(i=1;i<=nrStatii;i++){
+            string statie;
+            f>>statie;
+            cout<<statie<<endl;
+        }
         for(int j=0;j<9;j+=1)
             {
-                for(int k=0;k<nrStatii+1;k+=1)
+                for(int k=0;k<nrStatii;k+=1)
                 {
                     string p;
                     f>>p;
                     cout<<p<<" ";
-                    
-                
                 }
                 cout<<'\n';
             }
+        cout<<'\n';
     }
     f.close();
 

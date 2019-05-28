@@ -68,6 +68,7 @@
 		C1B88063229D80B9008D20F5 /* BazaDateAuto.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BazaDateAuto.cpp; path = "/Users/mariangeorge/Documents/Xcode:C++/CTPCLUJ2/CTPCLUJ2/BazaDateAuto.cpp"; sourceTree = "<absolute>"; };
 		C1B8808E229D94F5008D20F5 /* Ctrl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ctrl.cpp; sourceTree = "<group>"; };
 		C1B8808F229D94F5008D20F5 /* Ctrl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ctrl.hpp; sourceTree = "<group>"; };
+		C1B88091229DA3B7008D20F5 /* BazaDateAutobuze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BazaDateAutobuze.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +130,7 @@
 				C19DD5DC229C09A9009A44C8 /* Statie.cpp */,
 				C19DD5D8229C09A9009A44C8 /* Statie.hpp */,
 				C19DD5D9229C09A9009A44C8 /* Tests.cpp */,
+				C1B88091229DA3B7008D20F5 /* BazaDateAutobuze.txt */,
 				C19DD5DA229C09A9009A44C8 /* Tests.hpp */,
 			);
 			path = CTPCLUJ2;
