@@ -15,8 +15,8 @@ public:
 	BazaDateAutobuze();
 	BazaDateAutobuze(const vector<Autobuz> &);
     ~BazaDateAutobuze();
-	friend ostream& operator<<(ostream & , const BazaDateAutobuze& );
-	BazaDateAutobuze& operator=(const BazaDateAutobuze&);
+	//friend ostream& operator<<(ostream & , const BazaDateAutobuze& );
+	BazaDateAutobuze& operator=(BazaDateAutobuze&);
 	bool operator==(const BazaDateAutobuze&);
 	string toString();
 };
