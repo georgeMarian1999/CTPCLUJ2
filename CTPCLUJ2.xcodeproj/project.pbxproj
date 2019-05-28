@@ -20,6 +20,7 @@
 		C1B88054229C1685008D20F5 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B88051229C1684008D20F5 /* Card.cpp */; };
 		C1B88055229C1685008D20F5 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B88053229C1685008D20F5 /* Client.cpp */; };
 		C1B88059229C7A7C008D20F5 /* BazaDateClienti.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B88058229C7A7C008D20F5 /* BazaDateClienti.cpp */; };
+		C1B8805D229D7116008D20F5 /* BazaDateAutobuze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B8805B229D7116008D20F5 /* BazaDateAutobuze.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +63,8 @@
 		C1B88056229C2BDF008D20F5 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		C1B88057229C7A74008D20F5 /* BazaDateClienti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaDateClienti.h; sourceTree = "<group>"; };
 		C1B88058229C7A7C008D20F5 /* BazaDateClienti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BazaDateClienti.cpp; sourceTree = "<group>"; };
+		C1B8805B229D7116008D20F5 /* BazaDateAutobuze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BazaDateAutobuze.cpp; sourceTree = "<group>"; };
+		C1B8805C229D7116008D20F5 /* BazaDateAutobuze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaDateAutobuze.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				C19DD5B6229C0903009A44C8 /* Autobuz.cpp */,
 				C19DD5EA229C0AC3009A44C8 /* Autobuz.h */,
+				C1B8805B229D7116008D20F5 /* BazaDateAutobuze.cpp */,
+				C1B8805C229D7116008D20F5 /* BazaDateAutobuze.h */,
 				C1B88058229C7A7C008D20F5 /* BazaDateClienti.cpp */,
 				C1B88057229C7A74008D20F5 /* BazaDateClienti.h */,
 				C1B8804A229C1434008D20F5 /* Bilet.cpp */,
@@ -188,6 +193,7 @@
 				C1B8804B229C1434008D20F5 /* Bilet.cpp in Sources */,
 				C19DD5E0229C09A9009A44C8 /* Tests.cpp in Sources */,
 				C1B8804E229C1606008D20F5 /* Matrice.cpp in Sources */,
+				C1B8805D229D7116008D20F5 /* BazaDateAutobuze.cpp in Sources */,
 				C19DD5B0229C08EB009A44C8 /* main.cpp in Sources */,
 				C19DD5ED229C0AC3009A44C8 /* Orar.cpp in Sources */,
 				C1B88055229C1685008D20F5 /* Client.cpp in Sources */,

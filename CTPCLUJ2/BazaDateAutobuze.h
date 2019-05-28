@@ -14,6 +14,7 @@ class BazaDateAutobuze: public Repo<Autobuz>{
 public:
 	BazaDateAutobuze();
 	BazaDateAutobuze(const vector<Autobuz> &);
+    ~BazaDateAutobuze();
 	friend ostream& operator<<(ostream & , const BazaDateAutobuze& );
 	BazaDateAutobuze& operator=(const BazaDateAutobuze&);
 	bool operator==(const BazaDateAutobuze&);

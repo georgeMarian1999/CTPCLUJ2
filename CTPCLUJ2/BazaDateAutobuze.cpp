@@ -7,14 +7,6 @@
 #include "BazaDateAutobuze.h"
 #include "iostream"
 using namespace std;
-
-ostream& operator<<(ostream& os, const BazaDateAutobuze &r){
-
-	for(int i=0; i<r.vect.size(); i++)
-	//	cout<<r.vect[i];
-	return os;
-}
-
 BazaDateAutobuze& BazaDateAutobuze::operator=(const BazaDateAutobuze& r){
 	if(this!=&r){
 		this->vect.clear();
@@ -37,7 +29,9 @@ bool BazaDateAutobuze::operator==(const BazaDateAutobuze& r){
 	else
 		return false;
 }
-
+BazaDateAutobuze::~BazaDateAutobuze(){
+    
+}
 BazaDateAutobuze::BazaDateAutobuze(const vector<Autobuz> & vect):Repo<Autobuz>(vect){
 
 }
@@ -47,7 +41,7 @@ BazaDateAutobuze::BazaDateAutobuze():Repo<Autobuz>(){
 string BazaDateAutobuze::toString(){
 	string str;
 	for(int i=0; i<this->vect.size();i++)
-	//	str=str+this->vect[i].toString()+"\n";
+		str=str+this->vect[i].toString()+"\n";
 	return str;
 }
 
