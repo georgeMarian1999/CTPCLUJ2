@@ -14,7 +14,7 @@ using namespace std;
 #include<iostream>
 #include "RepoBilete.h"
 #include "Card.h"
-
+#include <string>
 
 BazaDateClienti::BazaDateClienti(){
 
@@ -44,7 +44,7 @@ BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r){
 
 
 int BazaDateClienti::getSize(){
-	return elements.size();
+	return int(elements.size());
 }
 
 
@@ -105,8 +105,9 @@ void BazaDateClienti::LoadFromFile(const char* filename)
 				r.addElement(b);
 			}
 		}
-		Client* c=new ClientLogat(username,parola,r);
-		this->addClient(c);
+		
+		Client* c=new ClientLogat(cd,username,parola,r);
+		this->addClient(c); 
 
 
 		f.close();

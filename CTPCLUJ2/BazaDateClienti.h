@@ -7,9 +7,14 @@
 
 #ifndef BAZADATECLIENTI_H_
 #define BAZADATECLIENTI_H_
+#include <fstream>
+#include <string.h>
+#include "Client.h"
+#include <vector>
 #include <iostream>
-#include"Client.h"
-#include<vector>
+#include "RepoBilete.h"
+#include "ClientLogat.hpp"
+#include "Card.h"
 using namespace std;
 class BazaDateClienti{
 private:
