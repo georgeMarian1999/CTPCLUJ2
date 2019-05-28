@@ -17,8 +17,6 @@
 #include "Card.h"
 #include "Client.h"
 #include "Autobuz.h"
-#include"BazaDateClienti.h"
-#include"BazaDateAutobuze.h"
 #include "ClientLogat.hpp"
 #include "BazaDateAutobuze.h"
 using namespace std;
