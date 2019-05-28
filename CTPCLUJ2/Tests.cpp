@@ -270,7 +270,7 @@ bool Tests::test_BazaDateClienti(){
 		Client* client1=new ClientLogat(a, "Ana", "1234", r);
 		Card a2(1234, 101);
 		Client* client2=new Client(a2);
-		BazaDateClienti baza;
+        BazaDateClienti baza;
 		baza.addClient(client1);
 		assert(baza.getAll()[0]==client1);
 		baza.addClient(client2);
@@ -320,9 +320,9 @@ bool Tests::test_BazaDateAutobuze(){
 		Orar r(v, Mat);
 		Autobuz a(25, r);
 		BazaDateAutobuze baza;
-		baza.addElement(a);
+		//baza.addElement(a);
 		cout<<"LALA"<<endl;
-		cout<<baza.getAll()[0].toString();
+        cout<<baza.getall()[0].toString();
 
 
 	return true;
@@ -330,7 +330,7 @@ bool Tests::test_BazaDateAutobuze(){
 void Tests::RunAllTests(){
    
 
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze())
 
         cout<<"Tests ok!"<<endl;
 }

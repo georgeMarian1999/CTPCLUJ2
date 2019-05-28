@@ -18,7 +18,8 @@
 #include "Client.h"
 #include "Autobuz.h"
 #include "ClientLogat.hpp"
-#include "BazaDateAutobuze.h"
+#include "BazaDateAuto.hpp"
+#include "BazaDateClienti.h"
 using namespace std;
 class Tests{
 public:

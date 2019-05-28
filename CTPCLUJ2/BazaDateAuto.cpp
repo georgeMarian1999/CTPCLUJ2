@@ -1,12 +1,12 @@
-/*
- * BazaDateAutobuze.cpp
- *
- *  Created on: May 28, 2019
- *      Author: user
- */
-#include "BazaDateAutobuze.h"
+//
+//  BazaDateAuto.cpp
+//  
+//
+//  Created by Marian George on 28/05/2019.
+//
+
+#include "BazaDateAuto.hpp"
 BazaDateAutobuze::BazaDateAutobuze(){
-    V.reserve(0);
 }
 BazaDateAutobuze::BazaDateAutobuze(vector<Autobuz> X){
     V=X;
@@ -29,9 +29,9 @@ vector<Autobuz> BazaDateAutobuze::getall(){
 void BazaDateAutobuze::setall(vector<Autobuz> X){
     V=X;
 }
-void BazaDateAutobuze::addElement(Autobuz A){
-    V.push_back(A);
-}
+//void BazaDateAutobuze::addElement(Autobuz A){
+  //  V.push_back(A);
+//}
 bool BazaDateAutobuze::operator==(const BazaDateAutobuze &B){
     if(V.size()!=B.V.size())
         return false;

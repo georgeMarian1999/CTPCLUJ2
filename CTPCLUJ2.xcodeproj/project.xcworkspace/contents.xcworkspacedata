@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mariangeorge/Documents/Xcode:C++/CTPCLUJ2/CTPCLUJ2/BazaDateAuto.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/mariangeorge/Documents/Xcode:C++/CTPCLUJ2/CTPCLUJ2/BazaDateAuto.hpp">
+   </FileRef>
+   <FileRef
       location = "group:../CTPCLUJ2/BazaDateAutobuze.cpp">
    </FileRef>
    <FileRef

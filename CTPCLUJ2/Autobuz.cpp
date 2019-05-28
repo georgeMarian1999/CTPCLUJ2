@@ -4,6 +4,7 @@
 Autobuz::Autobuz()
 {
     numar=0;
+    Orar orar;
 }
 Autobuz::Autobuz(Autobuz& a)
 {
