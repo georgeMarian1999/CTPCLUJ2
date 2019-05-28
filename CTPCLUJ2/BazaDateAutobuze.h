@@ -7,18 +7,22 @@
 
 #ifndef BAZADATEAUTOBUZE_H_
 #define BAZADATEAUTOBUZE_H_
-#include "Repo.h"
 #include "Autobuz.h"
 #include <iostream>
-class BazaDateAutobuze: public Repo<Autobuz>{
+class BazaDateAutobuze{
+private:
+    vector<Autobuz> V;
 public:
-	BazaDateAutobuze();
-	BazaDateAutobuze(const vector<Autobuz> &);
+    BazaDateAutobuze();
+    BazaDateAutobuze(vector<Autobuz>);
+    BazaDateAutobuze& operator=(const BazaDateAutobuze&);
+    BazaDateAutobuze(const BazaDateAutobuze&);
     ~BazaDateAutobuze();
-	//friend ostream& operator<<(ostream & , const BazaDateAutobuze& );
-	BazaDateAutobuze& operator=(BazaDateAutobuze&);
-	bool operator==(const BazaDateAutobuze&);
-	string toString();
+    vector<Autobuz> getall();
+    void setall(vector<Autobuz>);
+    bool operator==(const BazaDateAutobuze&);
+    bool operator!=(const BazaDateAutobuze&);
+    string toString();
 };
 
 

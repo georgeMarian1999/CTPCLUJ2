@@ -5,43 +5,43 @@
  *      Author: user
  */
 #include "BazaDateAutobuze.h"
-BazaDateAutobuze& BazaDateAutobuze::operator=(BazaDateAutobuze& r){
-	if(this!=&r){
-		this->vect.clear();
-		for(int i=0; i<r.vect.size();i++)
-			this->vect.push_back(r.vect[i]);
-	}
-	return *this;
+BazaDateAutobuze::BazaDateAutobuze(){
+    
 }
-
-bool BazaDateAutobuze::operator==(const BazaDateAutobuze& r){
-	int ok=0;
-	if(this->vect.size()!=r.vect.size())
-		return false;
-	else
-		for(int i=0; i<this->vect.size();i++)
-			if(this->vect[i]==r.vect[i])
-				ok++;
-	if(ok==this->vect.size())
-		return true;
-	else
-		return false;
+BazaDateAutobuze::BazaDateAutobuze(vector<Autobuz> X){
+    V=X;
+}
+BazaDateAutobuze::BazaDateAutobuze(const BazaDateAutobuze& B){
+    V=B.V;
+}
+BazaDateAutobuze& BazaDateAutobuze:: operator=(const BazaDateAutobuze &B){
+    if(this!=&B){
+        V=B.V;
+    }
+    return *this;
 }
 BazaDateAutobuze::~BazaDateAutobuze(){
     
 }
-BazaDateAutobuze::BazaDateAutobuze(const vector<Autobuz> & vect):Repo<Autobuz>(vect){
-
+vector<Autobuz> BazaDateAutobuze::getall(){
+    return V;
 }
-BazaDateAutobuze::BazaDateAutobuze():Repo<Autobuz>(){
-
+void BazaDateAutobuze::setall(vector<Autobuz> X){
+    V=X;
 }
-string BazaDateAutobuze::toString(){
-	string str;
-	for(int i=0; i<this->vect.size();i++)
-		str=str+this->vect[i].toString()+"\n";
-	return str;
+bool BazaDateAutobuze::operator==(const BazaDateAutobuze &B){
+    if(V.size()!=B.V.size())
+        return false;
+    for(int i=0;i<V.size();i++)
+        if(V[i]!=B.V[i])
+            return false;
+    return true;
 }
-
-
-
+bool BazaDateAutobuze::operator!=(const BazaDateAutobuze &B){
+    if(V.size()!=B.V.size())
+        return true;
+    for(int i=0;i<V.size();i++)
+        if(V[i]!=B.V[i])
+            return true;
+    return false;
+}

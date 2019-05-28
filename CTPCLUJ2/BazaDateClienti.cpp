@@ -6,15 +6,6 @@
  */
 
 #include"BazaDateClienti.h"
-#include<fstream>
-using namespace std;
-#include<string.h>
-#include"Client.h"
-#include<vector>
-#include<iostream>
-#include "RepoBilete.h"
-#include "Card.h"
-
 
 BazaDateClienti::BazaDateClienti(){
 
@@ -44,7 +35,7 @@ BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r){
 
 
 int BazaDateClienti::getSize(){
-	return elements.size();
+	return int(elements.size());
 }
 
 
@@ -105,7 +96,7 @@ void BazaDateClienti::LoadFromFile(const char* filename)
 				r.addElement(b);
 			}
 		}
-		Client* c=new ClientLogat(username,parola,r);
+		Client* c=new ClientLogat(cd,username,parola,r);
 		this->addClient(c);
 
 
