@@ -35,7 +35,7 @@ public:
     void setnrlin(int);
     bool operator==(const Orar&);
     bool operator!=(const Orar&);
-    Orar& operator=( Orar&);
+    Orar& operator=(const Orar&);
     void loadfromfile(string);
     string toString();
 };

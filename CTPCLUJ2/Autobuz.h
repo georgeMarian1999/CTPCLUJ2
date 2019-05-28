@@ -9,8 +9,8 @@ private:
 	Orar orar;
 public:
 	Autobuz();
-	Autobuz(Autobuz&);
-    Autobuz& operator=(Autobuz&);
+	Autobuz(const Autobuz&);
+    Autobuz& operator=(const Autobuz&);
 	Autobuz(int, Orar);
 	~Autobuz();
 	int getNumar();

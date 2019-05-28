@@ -1,12 +1,12 @@
-/*
- * BazaDateAutobuze.cpp
- *
- *  Created on: May 28, 2019
- *      Author: user
- */
-#include "BazaDateAutobuze.h"
+//
+//  BazaDateAuto.cpp
+//  
+//
+//  Created by Marian George on 28/05/2019.
+//
+
+#include "BazaDateAuto.hpp"
 BazaDateAutobuze::BazaDateAutobuze(){
-    V.reserve(0);
 }
 BazaDateAutobuze::BazaDateAutobuze(vector<Autobuz> X){
     V=X;

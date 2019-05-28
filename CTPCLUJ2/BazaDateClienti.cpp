@@ -44,7 +44,7 @@ BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r){
 
 
 int BazaDateClienti::getSize(){
-	return elements.size();
+	return int(elements.size());
 }
 
 

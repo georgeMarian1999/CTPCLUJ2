@@ -13,13 +13,13 @@
 #include "Orar.hpp"
 #include "Statie.hpp"
 #include "Ora.hpp"
-#include"Bilet.h"
-#include"Card.h"
-#include"Client.h"
+#include "Bilet.h"
+#include "Card.h"
+#include "Client.h"
 #include "Autobuz.h"
-#include"BazaDateClienti.h"
 #include "ClientLogat.hpp"
-
+#include "BazaDateAuto.hpp"
+#include "BazaDateClienti.h"
 using namespace std;
 class Tests{
 public:
@@ -33,6 +33,7 @@ public:
 	bool test_Autobuz();
 	bool test_Clientlogat();
 	bool test_BazaDateClienti();
+	bool test_BazaDateAutobuze();
     void RunAllTests();
 };
 #endif /* Tests_hpp */
