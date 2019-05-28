@@ -9,7 +9,7 @@
 #include <iostream>
 #include "Tests.hpp"
 int main(int argc, const char * argv[]) {
-    std::cout << "Hello, World!\n";
+    cout << "Hello, World!\n";
     Tests t;
     t.RunAllTests();
     return 0;
