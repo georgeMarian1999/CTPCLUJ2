@@ -41,7 +41,7 @@ BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r){
 
 
 int BazaDateClienti::getSize(){
-	return int(elements.size());
+	return elements.size();
 }
 
 
@@ -66,6 +66,39 @@ void BazaDateClienti::update(Client* s, int pos){
 	//if(pos<0 || pos>=elements.size())
 	//	throw Exception("pozitia trebuie sa fie intre 0 si dimensiunea vectorului...");
 	this->elements[pos]=s;
+}
+void BazaDateClienti::LoadFromFile(const char* filename)
+{
+	ifstream f(filename);
+	while(!f.eof())
+	{
+		char* string=new char[100];
+		int nrcard,nrpin;
+		char* username=new char[100];
+		char* parola=new char[100];
+		int nrbilete, zona;
+	
+		f.getline(string,100);
+		char* p=strtok(string,",");
+		nrcard=atoi(p);
+		p=strtok(NULL,",");
+		nrpin=atoi(p);
+		p=strtok(NULL,",");
+		strcpy(username,p);
+		p=strtok(NULL,",");
+		strcpy(parola,p);
+		while(p)
+		{
+			if(p[0]=='0')
+				nrbilete=0,zona=0;
+
+			
+		}
+		f.close();
+
+
+
+	}
 }
 
 
