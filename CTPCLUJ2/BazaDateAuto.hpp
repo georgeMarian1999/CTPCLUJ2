@@ -27,5 +27,7 @@ public:
     bool operator!=(const BazaDateAutobuze&);
     string toString();
     void LoadFromFile(const char*);
+    vector<Autobuz> filterByNr(int);
+    vector<Autobuz> filterByStatie(string);
 };
 #endif /* BazaDateAuto_hpp */

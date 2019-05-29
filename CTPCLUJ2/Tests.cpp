@@ -396,10 +396,25 @@ bool Tests::test_Ctrl(){
     return true;
     
 }
+bool Tests::test_Filtre(){
+	BazaDateAutobuze baza;
+	baza.LoadFromFile("BazaDateAutobuze.txt");
+	vector<Autobuz> aux;
+	aux.push_back(baza.getall()[0]);
+	assert(baza.filterByNr(24)==aux);
+
+	vector<Autobuz> aux2;
+	aux2.push_back(baza.getall()[0]);
+	aux2.push_back(baza.getall()[3]);
+	assert(baza.filterByStatie("Memo")==aux2);
+
+	return true;
+
+}
 void Tests::RunAllTests(){
    
 
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl()&&test_Filtre())
 
         cout<<"Tests ok!"<<endl;
 }

@@ -32,5 +32,7 @@ public:
     void addClient(Client*);
     void loadClienti(string);
     void loadAutobuze(string);
+    vector<Autobuz> filterByNr(int);
+    vector<Autobuz> filterByStatie(string);
 };
 #endif /* Ctrl_hpp */

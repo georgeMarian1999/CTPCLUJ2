@@ -107,3 +107,31 @@ void BazaDateAutobuze::LoadFromFile(const char* filename)
     }
 
 }
+
+vector<Autobuz> BazaDateAutobuze::filterByNr(int nr){
+	/*Descr:filtreaza autobuzele cu numarul nr
+	 * In:nr
+	 * Out:vector de autobuze cu prop ceruta
+	 */
+	vector<Autobuz> aux;
+	for(int i=0;i<V.size();i++)
+		if(V[i].getNumar()==nr)
+			aux.push_back(V[i]);
+	return aux;
+}
+vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
+	/*Descr:filtreaza autobuzele care trec prin statia "name"
+		 * In:name
+		 * Out:vector de autobuze cu prop ceruta
+		 */
+	vector<Autobuz> aux;
+	for(int i=0;i<V.size();i++)
+		for(int j=0; j<V[i].getOrar().getStatii().size();j++)
+			if(V[i].getOrar().getStatii()[j].getnume()==name){
+				aux.push_back(V[i]);
+				j=V[i].getOrar().getStatii().size();
+			}
+	return aux;
+
+
+}
