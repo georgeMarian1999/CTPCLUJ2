@@ -23,6 +23,7 @@ void UI::client_nelogat()
     if(optiune==1)
     {
         //filtrare_numar();
+        
     }
     else if(optiune==2)
     {
@@ -35,7 +36,8 @@ void UI::client_nelogat()
 }
 void UI::run()
 
-{   
+{   this->c.loadClienti("BazaDateClienti.txt");
+    this->c.loadAutobuze("BazaDateAutobuze.txt");
     if(decide_client())
     {
         client_logat();
