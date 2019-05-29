@@ -14,6 +14,6 @@ int main(int argc, const char * argv[]) {
     t.RunAllTests();
     BazaDateAutobuze b;
     b.LoadFromFile("BazaDateAutobuze.txt");
+    cout<<b.toString();
     return 0;
 }
-//IMI BAG PUUUUUUUUUULLLLLLLLAAAAAAAAAAAQ

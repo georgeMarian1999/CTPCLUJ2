@@ -84,10 +84,10 @@ bool Orar::operator!=(const Orar &O){
 }
 string Orar::toString(){
     string s;
-    for(int i=0;i<Timpi.getnrlin();i++){
+    for(int i=0;i<Timpi.getnrcol();i++){
         s=s+"Din statia: "+Statii[i].getnume()+" pleaca la orele\n";
         for(int j=0;j<Timpi.getnrlin();j++)
-            s=s+Timpi(i,j).toString()+" ";
+            s=s+Timpi(j,i).toString()+" ";
         s=s+"\n";
     }
     return s;

@@ -60,30 +60,50 @@ string BazaDateAutobuze::toString(){
 void BazaDateAutobuze::LoadFromFile(const char* filename)
 {
     ifstream f(filename);
-    int n=4;
-    for(int i=1;i<=n;i+=1)
-    {
-        int nrAuto;
-        f>>nrAuto;
-        int nrStatii;
-        f>>nrStatii;
-        for(i=1;i<=nrStatii;i++){
-            string statie;
-            f>>statie;
-            cout<<statie<<endl;
+    string nrautobuz,nrStatii,nume,zona,ora,min,linie;
+    string ultimaora,ultimmin;
+    vector<vector<Ora>> Ore;
+    vector<Ora> Aux;
+    while(!f.eof()){
+        getline(f,nrautobuz,'\n');
+        getline(f,nrStatii,'\n');
+        vector<Statie> Statii;
+        for(int i=0;i<stoi(nrStatii);i++){
+            getline(f,nume,',');
+            getline(f,zona,'\n');
+            Statie S;
+            S.setnume(nume);
+            S.setzona(stoi(zona));
+            Statii.push_back(S);
         }
-        for(int j=0;j<9;j+=1)
-            {
-                for(int k=0;k<nrStatii;k+=1)
-                {
-                    string p;
-                    f>>p;
-                    cout<<p<<" ";
-                }
-                cout<<'\n';
+        Ore.clear();
+        for(int i=0;i<8;i++){
+            for(int j=1;j<stoi(nrStatii);j++){
+                getline(f,ora,',');
+                getline(f,min,' ');
+                Ora O;
+                O.setora(stoi(ora));
+                O.setminute(stoi(min));
+                Aux.push_back(O);
             }
-        cout<<'\n';
+            getline(f,ultimaora,',');
+            getline(f,ultimmin,'\n');
+            Ora O;
+            O.setminute(stoi(ultimmin));
+            O.setora(stoi(ultimaora));
+            Aux.push_back(O);
+            Ore.push_back(Aux);
+            Aux.clear();
+
+        }
+        Orar OrarAux;
+        OrarAux.setStatii(Statii);
+        Matrice Mat(Ore);
+        OrarAux.setMatrice(Mat);
+        Autobuz A;
+        A.setOrar(OrarAux);
+        A.setNumar(stoi(nrautobuz));
+        addElement(A);
     }
-    f.close();
 
 }
