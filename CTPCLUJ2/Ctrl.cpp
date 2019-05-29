@@ -55,6 +55,7 @@ void Ctrl::addAutobuz(Autobuz A){
 void Ctrl::loadClienti(string filename){
     Clienti.LoadFromFile(filename);
 }
+
 vector<Autobuz> Ctrl::filterByNr(int nr){
 	/*Descr:filtreaza autobuzele cu numarul nr
 		 * In:nr
@@ -69,5 +70,10 @@ vector<Autobuz> Ctrl::filterByStatie(string name){
 			 * Out:vector de autobuze cu prop ceruta
 			 */
 	return this->Autobuze.filterByStatie(name);
+}
+
+
+void Ctrl::loadAutobuze(const char* filename){
+    Autobuze.LoadFromFile(filename);
 }
 

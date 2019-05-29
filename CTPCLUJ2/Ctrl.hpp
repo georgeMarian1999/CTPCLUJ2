@@ -34,5 +34,7 @@ public:
     void loadAutobuze(string);
     vector<Autobuz> filterByNr(int);
     vector<Autobuz> filterByStatie(string);
+    void loadAutobuze(const char*);
+
 };
 #endif /* Ctrl_hpp */

@@ -1,6 +1,10 @@
 #include "UI.h"
-
-
+UI::UI(){
+    
+}
+UI::~UI(){
+    
+}
 bool UI::decide_client()
 {
     std::cout<<"1.Autentificare"<<'\n';
@@ -36,11 +40,13 @@ void UI::client_nelogat()
 }
 void UI::run()
 
-{   this->c.loadClienti("BazaDateClienti.txt");
+{   this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
+    cout<<c.getAutobuze().toString();
+    cout<<c.getClienti().toString();
     if(decide_client())
     {
-        client_logat();
+        //client_logat();
 
     }
     else {
