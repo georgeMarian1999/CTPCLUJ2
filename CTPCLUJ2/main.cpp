@@ -8,12 +8,12 @@
 
 #include <iostream>
 #include "Tests.hpp"
+#include "UI.h"
 int main(int argc, const char * argv[]) {
     cout << "Hello, World!\n";
     Tests t;
     t.RunAllTests();
-    BazaDateAutobuze b;
-    b.LoadFromFile("BazaDateAutobuze.txt");
-    cout<<b.toString();
+    UI U;
+    U.run();
     return 0;
 }

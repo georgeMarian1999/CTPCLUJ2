@@ -31,6 +31,6 @@ public:
     void addAutobuz(Autobuz);
     void addClient(Client*);
     void loadClienti(string);
-    void loadAutobuze(string);
+    void loadAutobuze(const char*);
 };
 #endif /* Ctrl_hpp */

@@ -24,6 +24,7 @@
 		C1B88064229D80B9008D20F5 /* BazaDateAuto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B88063229D80B9008D20F5 /* BazaDateAuto.cpp */; };
 		C1B88090229D94F5008D20F5 /* Ctrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1B8808E229D94F5008D20F5 /* Ctrl.cpp */; };
 		C1D6941F229EFC0A00AC26F0 /* Nod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1D6941D229EFC0A00AC26F0 /* Nod.cpp */; };
+		C1D69422229F077100AC26F0 /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1D69421229F077000AC26F0 /* UI.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +76,8 @@
 		C1B88091229DA3B7008D20F5 /* BazaDateAutobuze.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BazaDateAutobuze.txt; sourceTree = "<group>"; };
 		C1D6941D229EFC0A00AC26F0 /* Nod.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Nod.cpp; sourceTree = "<group>"; };
 		C1D6941E229EFC0A00AC26F0 /* Nod.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Nod.hpp; sourceTree = "<group>"; };
+		C1D69420229F077000AC26F0 /* UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
+		C1D69421229F077000AC26F0 /* UI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				C19DD5DC229C09A9009A44C8 /* Statie.cpp */,
 				C19DD5D8229C09A9009A44C8 /* Statie.hpp */,
 				C19DD5D9229C09A9009A44C8 /* Tests.cpp */,
+				C1D69421229F077000AC26F0 /* UI.cpp */,
+				C1D69420229F077000AC26F0 /* UI.h */,
 				C19DD5DA229C09A9009A44C8 /* Tests.hpp */,
 			);
 			path = CTPCLUJ2;
@@ -209,6 +214,7 @@
 				C1D6941F229EFC0A00AC26F0 /* Nod.cpp in Sources */,
 				C19DD5EF229C0AC3009A44C8 /* Ora.cpp in Sources */,
 				C1B8804B229C1434008D20F5 /* Bilet.cpp in Sources */,
+				C1D69422229F077100AC26F0 /* UI.cpp in Sources */,
 				C19DD5E0229C09A9009A44C8 /* Tests.cpp in Sources */,
 				C1B88064229D80B9008D20F5 /* BazaDateAuto.cpp in Sources */,
 				C1B8804E229C1606008D20F5 /* Matrice.cpp in Sources */,

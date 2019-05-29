@@ -55,3 +55,6 @@ void Ctrl::addAutobuz(Autobuz A){
 void Ctrl::loadClienti(string filename){
     Clienti.LoadFromFile(filename);
 }
+void Ctrl::loadAutobuze(const char* filename){
+    Autobuze.LoadFromFile(filename);
+}
