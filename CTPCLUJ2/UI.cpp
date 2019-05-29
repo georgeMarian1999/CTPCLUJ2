@@ -34,7 +34,7 @@ void UI::client_nelogat()
         aux=this->c.filterByNr(nr);
         std::cout<<"Autobuzul "<<nr<<" are urmatorul orar: "<<'\n';
         std::cout<<aux[0].toString()<<'\n';
-        
+
         
     }
     else if(optiune==2)
@@ -51,6 +51,13 @@ void UI::client_nelogat()
                 std::cout<<aux[i].getNumar()<<'\n';
             }
 
+    }
+    else if(optiune==3)
+    {
+        std::cout<<"Preturile biletelor sunt: "<<'\n';
+        std::cout<<"5RON/Bilet Zona 1( Opera, Sora, Regio) "<<'\n';
+        std::cout<<"3/RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
+        
     }
 }
 void UI::run()
