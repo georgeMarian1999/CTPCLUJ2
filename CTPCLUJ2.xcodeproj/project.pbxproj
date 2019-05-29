@@ -144,9 +144,9 @@
 				C19DD5DC229C09A9009A44C8 /* Statie.cpp */,
 				C19DD5D8229C09A9009A44C8 /* Statie.hpp */,
 				C19DD5D9229C09A9009A44C8 /* Tests.cpp */,
+				C19DD5DA229C09A9009A44C8 /* Tests.hpp */,
 				C1D69421229F077000AC26F0 /* UI.cpp */,
 				C1D69420229F077000AC26F0 /* UI.h */,
-				C19DD5DA229C09A9009A44C8 /* Tests.hpp */,
 			);
 			path = CTPCLUJ2;
 			sourceTree = "<group>";
