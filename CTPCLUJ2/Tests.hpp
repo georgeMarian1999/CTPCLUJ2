@@ -21,6 +21,8 @@
 #include "BazaDateAuto.hpp"
 #include "BazaDateClienti.h"
 #include "Ctrl.hpp"
+#include "Nod.hpp"
+#include "Harta.hpp"
 using namespace std;
 class Tests{
 public:
@@ -36,6 +38,8 @@ public:
 	bool test_BazaDateClienti();
 	bool test_BazaDateAutobuze();
     bool test_Ctrl();
+    bool test_Nod();
+    bool test_Harta();
     void RunAllTests();
 };
 #endif /* Tests_hpp */

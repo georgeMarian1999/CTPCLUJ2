@@ -394,12 +394,69 @@ bool Tests::test_Ctrl(){
     assert(Controler.getClienti()==BazaGoala);
     assert(Controler.getAutobuze()==bazagoala);
     return true;
-    
+}
+bool Tests::test_Nod(){
+    vector<string> v;
+    for(int i=0;i<4;i++)
+        v.push_back("test");
+    Nod N("testinfo",v);
+    assert(N.getinfo()=="testinfo");
+    for(int i=0;i<4;i++)
+        assert(v[i]==N.getvecini()[i]);
+    N.setinfo("INFO");
+    vector<string> v2;
+    v2.push_back("TEST");
+    v2.push_back("TEsT");
+    N.setvecini(v2);
+    assert(N.getinfo()=="INFO");
+    for(int i=0;i<v2.size();i++)
+        assert(v2[i]==N.getvecini()[i]);
+    Nod M=N;
+    assert(N==M);
+    N.setinfo("nimic");
+    assert(N!=M);
+    return true;
+}
+bool Tests::test_Harta(){
+    vector<string> v1;
+    v1.push_back("info");
+    v1.push_back("nod");
+    Nod N1("test",v1);
+    vector<string> v2;
+    v2.push_back("test");
+    v2.push_back("nod");
+    v2.push_back("test2");
+    Nod N2("info",v2);
+    vector<string> v3;
+    v3.push_back("info");
+    v3.push_back("info2");
+    v3.push_back("test");
+    Nod N3("nod",v3);
+    vector<string> v4;
+    v4.push_back("nod");
+    Nod N4("info2",v4);
+    vector<string> v5;
+    v5.push_back("info");
+    Nod N5("test2",v5);
+    vector<Nod> Graf;
+    Graf.push_back(N1);
+    Graf.push_back(N2);
+    Graf.push_back(N3);
+    Graf.push_back(N4);
+    Graf.push_back(N5);
+    Harta H(Graf);
+    for(int i=0;i<H.getGraf().size();i++)
+        assert(H.getGraf()[i]==Graf[i]);
+    for(int i=0;i<v2.size();i++)
+        assert(H.getvecini("info")[i]==v2[i]);
+    for(int i=0;i<v1.size();i++)
+        assert(H.getvecini("test")[i]==v1[i]);
+    Harta H2=H;
+    assert(H==H2);
+    return true;
 }
 void Tests::RunAllTests(){
-   
-
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl()&&test_Nod()&&test_Harta())
 
         cout<<"Tests ok!"<<endl;
 }
