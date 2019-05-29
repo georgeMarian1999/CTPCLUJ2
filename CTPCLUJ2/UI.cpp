@@ -26,7 +26,15 @@ void UI::client_nelogat()
     std::cout<<'\n';
     if(optiune==1)
     {
-        //filtrare_numar();
+        std::cout<<"Introduceti numarul autobuzului dorit: ";
+        int nr;
+        std::cin>>nr;
+        std::cout<<'\n';
+        vector<Autobuz> aux;
+        aux=this->c.filterByNr(nr);
+        std::cout<<"Autobuzul "<<nr<<" are urmatorul orar: "<<'\n';
+        std::cout<<aux[0].toString()<<'\n';
+        
         
     }
     else if(optiune==2)
@@ -35,6 +43,13 @@ void UI::client_nelogat()
         string statie;
         std::cin>>statie;
         std::cout<<'\n';
+        vector<Autobuz> aux;
+        aux=this->c.filterByStatie(statie);
+        std::cout<<"Autobuzele ce trec prin statia "<<statie<<" sunt: "<<'\n';
+        for(unsigned int i=0;i<aux.size();i+=1)
+            {
+                std::cout<<aux[i].getNumar()<<'\n';
+            }
 
     }
 }
