@@ -129,7 +129,7 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 		for(int j=0; j<V[i].getOrar().getStatii().size();j++)
 			if(V[i].getOrar().getStatii()[j].getnume()==name){
 				aux.push_back(V[i]);
-				j=V[i].getOrar().getStatii().size();
+				j=int(V[i].getOrar().getStatii().size());
 			}
 	return aux;
 

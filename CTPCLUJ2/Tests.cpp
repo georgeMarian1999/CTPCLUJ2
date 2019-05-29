@@ -460,13 +460,12 @@ bool Tests::test_Filtre(){
 	baza.LoadFromFile("BazaDateAutobuze.txt");
 	vector<Autobuz> aux;
 	aux.push_back(baza.getall()[0]);
-	assert(baza.filterByNr(24)==aux);
-
+    assert(baza.filterByNr(24)[0]==aux[0]);
 	vector<Autobuz> aux2;
 	aux2.push_back(baza.getall()[0]);
 	aux2.push_back(baza.getall()[3]);
-	assert(baza.filterByStatie("Memo")==aux2);
-
+    assert(baza.filterByStatie("Memo")[0]==baza.getall()[0]);
+    assert(baza.filterByStatie("Memo")[1]==baza.getall()[3]);
 	return true;
 
 }
