@@ -13,7 +13,10 @@ public:
     void run();
     bool decide_client();
     void client_logat();
-    void client_nelogat();
+    void client_nelogat( );
+    void filtrare_nr();
+    void filtrare_statie();
+    void situatie_cont(int);
 };
 
 

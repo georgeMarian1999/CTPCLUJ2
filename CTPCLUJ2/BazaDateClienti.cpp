@@ -124,4 +124,9 @@ bool BazaDateClienti::operator!=(const BazaDateClienti &R){
             return true;
     return false;
 }
+ClientLogat* BazaDateClienti::getClient(int pos)
+{
+    return this->elements[pos];
+
+}
 
