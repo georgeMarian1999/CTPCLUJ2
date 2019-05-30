@@ -467,13 +467,17 @@ bool Tests::test_Filtre(){
     assert(baza.filterByStatie("Memo")[0]==baza.getall()[0]);
     assert(baza.filterByStatie("Memo")[1]==baza.getall()[3]);
 	return true;
-
+}
+bool Tests::test_Exception(){
+    Exception E("Test");
+    assert(E.getmessage()=="Test");
+    return true;
 }
 void Tests::RunAllTests(){
 
    
 
 
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl()&&test_Nod()&&test_Harta()&& test_Filtre())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl()&&test_Nod()&&test_Harta()&& test_Filtre()&&test_Exception())
         cout<<"Tests ok!"<<endl;
 }

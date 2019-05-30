@@ -23,6 +23,7 @@
 #include "Ctrl.hpp"
 #include "Nod.hpp"
 #include "Harta.hpp"
+#include "Exception.hpp"
 using namespace std;
 class Tests{
 public:
@@ -41,7 +42,7 @@ public:
     bool test_Filtre();
     bool test_Nod();
     bool test_Harta();
-
+    bool test_Exception();
     void RunAllTests();
 };
 #endif /* Tests_hpp */

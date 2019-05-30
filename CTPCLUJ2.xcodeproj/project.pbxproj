@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C1326333229EF8D80021007F /* Harta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1326331229EF8D80021007F /* Harta.cpp */; };
+		C132995F22A05377008A4034 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C132995D22A05377008A4034 /* Exception.cpp */; };
 		C19DD5B0229C08EB009A44C8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5AF229C08EB009A44C8 /* main.cpp */; };
 		C19DD5B7229C0903009A44C8 /* Autobuz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5B6229C0903009A44C8 /* Autobuz.cpp */; };
 		C19DD5E0229C09A9009A44C8 /* Tests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C19DD5D9229C09A9009A44C8 /* Tests.cpp */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		C1326331229EF8D80021007F /* Harta.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Harta.cpp; sourceTree = "<group>"; };
 		C1326332229EF8D80021007F /* Harta.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Harta.hpp; sourceTree = "<group>"; };
+		C132995D22A05377008A4034 /* Exception.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Exception.cpp; sourceTree = "<group>"; };
+		C132995E22A05377008A4034 /* Exception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exception.hpp; sourceTree = "<group>"; };
 		C19DD5AC229C08EB009A44C8 /* CTPCLUJ2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CTPCLUJ2; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19DD5AF229C08EB009A44C8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C19DD5B6229C0903009A44C8 /* Autobuz.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Autobuz.cpp; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				C19DD5DA229C09A9009A44C8 /* Tests.hpp */,
 				C1D69421229F077000AC26F0 /* UI.cpp */,
 				C1D69420229F077000AC26F0 /* UI.h */,
+				C132995D22A05377008A4034 /* Exception.cpp */,
+				C132995E22A05377008A4034 /* Exception.hpp */,
 			);
 			path = CTPCLUJ2;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				C1D69422229F077100AC26F0 /* UI.cpp in Sources */,
 				C19DD5E0229C09A9009A44C8 /* Tests.cpp in Sources */,
 				C1B88064229D80B9008D20F5 /* BazaDateAuto.cpp in Sources */,
+				C132995F22A05377008A4034 /* Exception.cpp in Sources */,
 				C1B8804E229C1606008D20F5 /* Matrice.cpp in Sources */,
 				C1B88090229D94F5008D20F5 /* Ctrl.cpp in Sources */,
 				C1326333229EF8D80021007F /* Harta.cpp in Sources */,
