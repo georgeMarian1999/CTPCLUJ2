@@ -185,8 +185,8 @@ void UI::run()
 
 {   this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
-    cout<<c.getAutobuze().toString();
-    cout<<c.getClienti().toString();
+    //cout<<c.getAutobuze().toString();
+    //cout<<c.getClienti().toString();
     int optiune=decide_client();
     while(optiune<3)
     {

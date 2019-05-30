@@ -10,7 +10,6 @@
 #include "Tests.hpp"
 #include "UI.h"
 int main(int argc, const char * argv[]) {
-    cout << "Hello, World!\n";
     Tests t;
     t.RunAllTests();
     UI U;
