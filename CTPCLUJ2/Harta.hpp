@@ -28,5 +28,9 @@ public:
     void setAll(vector<Nod>);
     bool operator==(const Harta&);
     string toString();
+    void create(BazaDateAutobuze);
+    void addNod(Nod);
+    int searchNodWithGivenInfo(string);
+    bool searchVecinforGivenNod(string info, string vecin);
 };
 #endif /* Harta_hpp */

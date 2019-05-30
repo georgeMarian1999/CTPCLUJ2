@@ -57,3 +57,45 @@ string Harta::toString(){
         s=s+Graf[i].toString()+"\n";
     return s;
 }
+void Harta::addNod(Nod n){
+	Graf.push_back(n);
+}
+int Harta::searchNodWithGivenInfo(string info){
+	/*Descr:cauta nodul care are ca informatie "info"
+	 * In:string info
+	 * Out:pozitia/-1 daca nu exista
+	 */
+	for(int i=0; i<Graf.size();i++)
+		if(Graf[i].getinfo()==info)
+			return i;
+	return -1;
+}
+void Harta::create(BazaDateAutobuze baza){
+	/*Descr:construieste un obiect de tip harta pe baza traseului fiecarui autobuz din baza de date de autobuze
+	 * In:baza de date de autobuze
+	 * Out:-
+	 */
+	for(int i=0; i<baza.getall().size();i++)
+		for(int j=1; j<baza.getall()[i].getOrar().getStatii().size();j++) { //parcurgere vector<Statie>
+			if(searchNodWithGivenInfo(baza.getall()[i].getOrar().getStatii()[j-1].getnume())==-1 ){
+				Nod newNod;
+				newNod.setinfo(baza.getall()[i].getOrar().getStatii()[j-1].getnume());
+				addNod(newNod);
+			}
+			if(!(searchVecinforGivenNod(baza.getall()[i].getOrar().getStatii()[j-1].getnume(), baza.getall()[i].getOrar().getStatii()[j].getnume())))
+				Graf[searchNodWithGivenInfo(baza.getall()[i].getOrar().getStatii()[j-1].getnume())].addVecin(baza.getall()[i].getOrar().getStatii()[j].getnume());
+		}
+}
+
+bool Harta::searchVecinforGivenNod(string info, string vecin){
+	/*Descr:verifica daca nodul cu informatia info are in vectorul de vecini string ul "vecin"
+	 * In:Informatia nodului, vecinul de cautat
+	 * Out:T/F
+	 */
+	int pos=searchNodWithGivenInfo(info);
+	if(pos>=0)
+		for( int i=0; i<Graf[pos].getvecini().size();i++)
+			if(Graf[pos].getvecini()[i]==vecin)
+				return true;
+	return false;
+}

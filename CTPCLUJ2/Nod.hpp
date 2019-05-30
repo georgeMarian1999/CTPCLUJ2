@@ -31,5 +31,6 @@ public:
     bool operator==(const Nod&);
     bool operator!=(const Nod&);
     string toString();
+    void addVecin(string);
 };
 #endif /* Nod_hpp */

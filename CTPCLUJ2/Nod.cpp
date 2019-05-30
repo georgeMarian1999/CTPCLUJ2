@@ -55,3 +55,6 @@ string Nod::toString(){
     s=s+"\n";
     return s;
 }
+void Nod::addVecin(string vecin){
+	this->Vecini.push_back(vecin);
+}
