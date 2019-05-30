@@ -6,14 +6,15 @@ UI::UI(){
 UI::~UI(){
     
 }
-bool UI::decide_client()
+int UI::decide_client()
 {
     std::cout<<"1.Autentificare"<<'\n';
     std::cout<<"2.Continuare fara autentificare"<<'\n';
+    std::cout<<"3.Iesire"<<'\n';
     int k;
     std::cin>>k;
     std::cout<<'\n';
-    return(k==1);
+    return k;
 
 }
 void UI::filtrare_nr()
@@ -49,18 +50,21 @@ void afisare_pret_bilete()
         std::cout<<"5RON/Bilet Zona 1( Opera, Sora, Regio) "<<'\n';
         std::cout<<"3/RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
 }
-void UI::client_nelogat()
-{
-    
+void UI::afisareoptiuninelogat(){
     std::cout<<"Puteti alege dintre urmatoarele: "<<'\n';
     std::cout<<"1.Filtrare autobuze dupa numar"<<'\n';
     std::cout<<"2.Afisare autobuze ce trec printr-o anumita statie"<<'\n';
     std::cout<<"3.Vizualizare preturi bilete"<<'\n';
-    
+    std::cout<<"4.Revenire"<<'\n';
+}
+void UI::client_nelogat()
+{
+    afisareoptiuninelogat();
     int optiune;
     std::cin>>optiune;
     std::cout<<'\n';
-    
+    while(optiune<4)
+    {
     if(optiune==1)
     {  
         filtrare_nr();
@@ -74,12 +78,15 @@ void UI::client_nelogat()
     {
         afisare_pret_bilete();
     }
+        afisareoptiuninelogat();
+        std::cin>>optiune;
+    }
 }
 void UI::situatie_cont(int pos)
 {
     std::cout<<"Bilete din contul dumneavoastra sunt: "<<'\n';
     int zona1=0,zona2=0;
-    RepoBilete zona2;
+    RepoBilete zona;
     for(int i=0;i<this->c.getClienti().getClient(pos)->getBilete().getSize();i+=1)
     {
         if(this->c.getClienti().getClient(pos)->getBilete().getAll()[i].getZona()==1)
@@ -108,6 +115,15 @@ void UI::calatorie()
     std::cout<<'\n';
     
 }
+void UI::afisareoptiunilogat(){
+    std::cout<<"Puteti alege dintre urmatoarele: "<<'\n';
+    std::cout<<"1.Filtrare autobuze dupa numar"<<'\n';
+    std::cout<<"2.Afisare autobuze ce trec printr-o anumita statie"<<'\n';
+    std::cout<<"3.Vizualizare preturi bilete"<<'\n';
+    std::cout<<"4.Situatie cont "<<'\n';
+    std::cout<<"5.Planificare calatorie"<<'\n';
+    std::cout<<"6.Revenire"<<'\n';
+}
 void UI::client_logat()
 {
     std::cout<<"Va rog introduceti datele pentru logare: "<<'\n';
@@ -122,7 +138,7 @@ void UI::client_logat()
     int pos;
     for(int i=0;i<this->c.getClienti().getSize();i+=1)
         {
-            ClientLogat* cc=new ClientLogat;
+            Client* cc=new ClientLogat;
             cc=this->c.getClienti().getClient(i);
             if(username==cc->getUserName() && parola==cc->getParola())
                 {
@@ -131,16 +147,12 @@ void UI::client_logat()
                 }
             
         }
-    std::cout<<"Puteti alege dintre urmatoarele: "<<'\n';
-    std::cout<<"1.Filtrare autobuze dupa numar"<<'\n';
-    std::cout<<"2.Afisare autobuze ce trec printr-o anumita statie"<<'\n';
-    std::cout<<"3.Vizualizare preturi bilete"<<'\n';
-    std::cout<<"4.Situatie cont "<<'\n';
-    std::cout<<"5.Planificare calatorie"<<'\n';
+    afisareoptiunilogat();
     int optiune;
     std::cin>>optiune;
     std::cout<<'\n';
-    
+    while(optiune<6)
+    {
     if(optiune==1)
     {  
         filtrare_nr();
@@ -162,6 +174,9 @@ void UI::client_logat()
     {
         calatorie();
     }
+        afisareoptiunilogat();
+        cin>>optiune;
+    }
     
     
 
@@ -172,13 +187,16 @@ void UI::run()
     this->c.loadAutobuze("BazaDateAutobuze.txt");
     cout<<c.getAutobuze().toString();
     cout<<c.getClienti().toString();
-    if(decide_client())
+    int optiune=decide_client();
+    while(optiune<3)
+    {
+    if(optiune==1)
     {
         client_logat();
-
     }
-    else {
+    if(optiune==2){
         client_nelogat();
-
+        }
+        optiune=decide_client();
     }
 }

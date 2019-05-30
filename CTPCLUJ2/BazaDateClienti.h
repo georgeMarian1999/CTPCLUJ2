@@ -33,7 +33,7 @@ public:
 	void LoadFromFile(string);
     bool operator==(const BazaDateClienti&);
     bool operator!=(const BazaDateClienti&);
-	ClientLogat* getClient(int);
+	Client* getClient(int);
 };
 
 

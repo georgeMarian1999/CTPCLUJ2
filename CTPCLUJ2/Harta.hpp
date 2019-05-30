@@ -11,6 +11,7 @@
 #include <iostream>
 using namespace std;
 #include <stdio.h>
+#include "BazaDateAuto.hpp"
 #include <string>
 #include <vector>
 #include "Nod.hpp"

@@ -76,7 +76,7 @@ template <class T> int Repo<T>::getSize() {
  * In:-
  * Out:nr de elem
  */
-	return this->vect.size();
+	return int(this->vect.size());
 }
 
 template <class T> ostream& operator<<(ostream& os, const Repo<T> &t){

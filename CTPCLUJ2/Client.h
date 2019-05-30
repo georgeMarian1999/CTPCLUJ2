@@ -9,7 +9,7 @@
 #define CLIENT_H_
 
 #include "Card.h"
-
+#include "RepoBilete.h"
 class Client{
 protected:
 	Card infoCard;
@@ -23,6 +23,9 @@ public:
 	Client& operator=(const Client &);
 	virtual bool operator==(const Client &);
     virtual bool operator!=(const Client&);
+    virtual RepoBilete getBilete();
+    virtual string getParola();
+    virtual string getUserName();
 	virtual string toString();
 
 };

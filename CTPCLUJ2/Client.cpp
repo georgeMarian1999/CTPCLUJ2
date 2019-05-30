@@ -49,6 +49,16 @@ bool Client::operator==(const Client &c){
 bool Client::operator!=(const Client &c){
     return  (!(this->infoCard==c.infoCard));
 }
+RepoBilete Client::getBilete(){
+    RepoBilete R;
+    return R;
+}
+string Client::getParola(){
+    return "parola";
+}
+string Client::getUserName(){
+    return "Username";
+}
 string Client::toString(){
 	string s;
 	s=this->infoCard.toString()+"\n";
