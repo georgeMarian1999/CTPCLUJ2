@@ -17,6 +17,7 @@ public:
     void filtrare_nr();
     void filtrare_statie();
     void situatie_cont(int);
+    void calatorie();
 };
 
 

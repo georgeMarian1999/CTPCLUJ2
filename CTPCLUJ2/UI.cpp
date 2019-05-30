@@ -96,6 +96,18 @@ void UI::situatie_cont(int pos)
     std::cout<<"Zona 2: "<<zona2<<'\n';
 
 }
+void UI::calatorie()
+{
+    std::cout<<"Introduceti statia de pornire: ";
+    string pornire;
+    std::cin>>pornire;
+    std::cout<<'\n';
+    std::cout<<"Introduceti statia de sosire: ";
+    string sosire;
+    std::cin>>sosire;
+    std::cout<<'\n';
+    
+}
 void UI::client_logat()
 {
     std::cout<<"Va rog introduceti datele pentru logare: "<<'\n';
@@ -124,7 +136,7 @@ void UI::client_logat()
     std::cout<<"2.Afisare autobuze ce trec printr-o anumita statie"<<'\n';
     std::cout<<"3.Vizualizare preturi bilete"<<'\n';
     std::cout<<"4.Situatie cont "<<'\n';
-    
+    std::cout<<"5.Planificare calatorie"<<'\n';
     int optiune;
     std::cin>>optiune;
     std::cout<<'\n';
@@ -145,6 +157,10 @@ void UI::client_logat()
     else if(optiune==4)
     {
         situatie_cont(pos);
+    }
+    else if(optiune==5)
+    {
+        calatorie();
     }
     
     
