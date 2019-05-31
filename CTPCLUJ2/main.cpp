@@ -10,8 +10,6 @@
 #include "Tests.hpp"
 #include "UI.h"
 int main(int argc, const char * argv[]) {
-    Tests t;
-    t.RunAllTests();
     UI U;
     U.run();
     return 0;

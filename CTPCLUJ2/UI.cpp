@@ -183,6 +183,7 @@ void UI::client_logat()
 void UI::run()
 
 {
+    t.RunAllTests();
     this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
     //cout<<c.getAutobuze().toString();
