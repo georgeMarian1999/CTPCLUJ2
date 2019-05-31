@@ -82,7 +82,6 @@ void BazaDateClienti::LoadFromFile(string filename)
         cout<<"error"<<endl;
     string nrclienti;
     getline(f,nrclienti,'\n');
-    cout<<nrclienti<<endl;
     for(int i=0;i<stoi(nrclienti);i++){
         Card cd;
         string nrcard,pin,username,parola,nrbilete,pret,zona;

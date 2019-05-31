@@ -47,7 +47,7 @@ void afisare_pret_bilete()
 {
         std::cout<<"Preturile biletelor sunt: "<<'\n';
         std::cout<<"5RON/Bilet Zona 1( Opera, Sora, Regio) "<<'\n';
-        std::cout<<"3/RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
+        std::cout<<"3RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
 }
 void UI::afisareoptiuninelogat(){
     std::cout<<"Puteti alege dintre urmatoarele: "<<'\n';
@@ -134,7 +134,7 @@ void UI::client_logat()
     std::cout<<"parola: ";
     std::cin>>parola;
     std::cout<<'\n';
-    int pos;
+    int pos=-1;
     for(int i=0;i<this->c.getClienti().getSize();i+=1)
         {
             Client* cc=new ClientLogat;

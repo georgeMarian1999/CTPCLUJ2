@@ -12,7 +12,7 @@ using namespace std;
 ostream& operator<<(ostream& os, const RepoBilete &r){
 
 	for(int i=0; i<r.vect.size(); i++)
-		cout<<r.vect[i];
+		os<<r.vect[i];
 	return os;
 }
 
