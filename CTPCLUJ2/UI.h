@@ -20,6 +20,8 @@ public:
     void calatorie();
     void afisareoptiuninelogat();
     void afisareoptiunilogat();
+    void afiseazanrautobuze();
+    void afiseazanumelestatiilor();
     void sign_up();
 };
 

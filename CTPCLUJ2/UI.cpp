@@ -73,11 +73,13 @@ void UI::client_nelogat()
     while(optiune<4)
     {
     if(optiune==1)
-    {  
+    {
+        afiseazanrautobuze();
         filtrare_nr();
     }
     else if(optiune==2)
     {
+        afiseazanumelestatiilor();
         filtrare_statie();
 
     }
@@ -134,6 +136,20 @@ void UI::afisareoptiunilogat(){
     std::cout<<"5.Planificare calatorie"<<'\n';
     std::cout<<"6.Revenire"<<'\n';
 }
+void UI::afiseazanrautobuze(){
+    //afiseaza toate nr autobuzelor
+    cout<<"Autobuzele disponibile sunt "<<endl;
+    for(int i=0;i<c.getvectAutoBuz().size();i++)
+        cout<<c.getvectAutoBuz()[i].getNumar()<<" ";
+    cout<<endl;
+}
+void UI::afiseazanumelestatiilor(){
+    //afiseaza nr tuturor statiilor
+    cout<<"Statiile disponibile sunt "<<endl;
+    for(int i=0;i<c.getTraseu().getGraf().size();i++)
+        cout<<c.getTraseu().getGraf()[i].getinfo()<<endl;
+    cout<<endl;
+}
 void UI::client_logat()
 {
     //afiseaza si apeleaza optiunile utilizatorului logat
@@ -165,11 +181,13 @@ void UI::client_logat()
     while(optiune<6)
     {
     if(optiune==1)
-    {  
+    {
+        afiseazanrautobuze();
         filtrare_nr();
     }
     else if(optiune==2)
     {
+        afiseazanumelestatiilor();
         filtrare_statie();
 
     }
@@ -227,6 +245,7 @@ void UI::run()
     t.RunAllTests();
     this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
+    c.create(c.getAutobuze());
     int optiune=decide_client();
     while(optiune<4)
     {

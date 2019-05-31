@@ -35,6 +35,7 @@ public:
     bool operator==(const BazaDateClienti&);
     bool operator!=(const BazaDateClienti&);
 	Client* getClient(int);
+
 };
 
 

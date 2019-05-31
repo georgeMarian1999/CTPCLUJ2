@@ -149,3 +149,37 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 
 
 }
+Ora BazaDateAutobuze::diferent(Ora A, Ora B){
+    //functie care face diferenta intre 2 ore
+    int difora=abs(A.getora()-B.getora());
+    int difmin=abs(A.getminute()-B.getminute());
+    Ora O(difora,difmin);
+    return O;
+}
+Ora BazaDateAutobuze::minima(vector<Ora> V,Ora O){
+    Ora OraMinima;
+    OraMinima.setora(24);
+    OraMinima.setminute(60);
+    int i=0;
+    while(i<V.size()&&(V[i]<O||V[i]==O))
+        i++;
+    
+    return V[i];
+}
+vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
+    Ora OraMinima;
+    OraMinima.setora(24);
+    OraMinima.setminute(60);
+    for(int i=0;i<V.size();i++){
+        if(minima(V[i].getOrar().getTimpiStatie(S), O)<OraMinima){
+            OraMinima=minima(V[i].getOrar().getTimpiStatie(S), O);
+        }
+    }
+    vector<int> X;
+    for(int i=0;i<V.size();i++){
+        if(minima(V[i].getOrar().getTimpiStatie(S), O)==OraMinima){
+            X.push_back(V[i].getNumar());
+        }
+    }
+    return X;
+}
