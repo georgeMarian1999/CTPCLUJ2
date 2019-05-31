@@ -77,7 +77,7 @@ int Autobuz::nr_Statii(string pornire, string sosire)
         else{
             if(sosire==this->orar.getStatii()[i].getnume())
             {
-                return nr;
+                return nr+1;
             }
             nr+=1;
         }
