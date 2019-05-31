@@ -71,6 +71,9 @@ Orar Autobuz::getOrar()
 }
 int Autobuz::nr_Statii(string pornire, string sosire)
 {
+    //D:returneaza numarul de statii dintre 2 statii
+    //I:statia de pornire si sosire(string)
+    //O:nr de statii
     bool found=false;
     int nr=1;
     for(unsigned int i=0;i<this->orar.getStatii().size();i+=1)
