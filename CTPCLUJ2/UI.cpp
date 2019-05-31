@@ -107,8 +107,8 @@ void UI::situatie_cont(int pos)
         }
 
     }
-    std::cout<<"Zona 1: "<<zona1<<'\n';
-    std::cout<<"Zona 2: "<<zona2<<'\n';
+    std::cout<<" Zona 1: "<<zona1<<'\n';
+    std::cout<<" Zona 2: "<<zona2<<'\n';
 
 }
 void UI::calatorie()
@@ -227,8 +227,6 @@ void UI::run()
     t.RunAllTests();
     this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
-    //cout<<c.getAutobuze().toString();
-    //cout<<c.getClienti().toString();
     int optiune=decide_client();
     while(optiune<4)
     {
