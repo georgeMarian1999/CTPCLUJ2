@@ -104,16 +104,33 @@ bool Harta::searchVecinforGivenNod(string info, string vecin){
 	return false;
 }
 
-void Harta::dijkstra(string start, vector<int>& dist){
+struct pereche
+{
+	string node;
+	int dist;
+	bool operator<(const pereche& x)const {
+		return dist>x.dist;
+	}
+};
+
+void Harta::dijkstra(string start, string stop, vector<int>& dist, vector<string>& drum){
 
 	const int infinit=1000000;
 	dist=vector<int>(Graf.size(), infinit);
 	priority_queue<pereche> Coada;
-	dist[searchNodWithGivenInfo(start)]=0;
-	Coada.push({start, 0});
-	int i;
+	string prev[100];
 
-	while(!Coada.empty()){
+	dist[searchNodWithGivenInfo(stop)]=0;
+	Coada.push({stop, 0});
+	int i;
+	bool found=false;
+	bool selectat[20];
+
+	for(int k=0; k<Graf.size();k++)
+		selectat[k]=false;
+	selectat[searchNodWithGivenInfo(start)]=true;
+
+	while(!Coada.empty() && !found){
 
 		string x=Coada.top().node;
 		int dx=Coada.top().dist;
@@ -125,17 +142,23 @@ void Harta::dijkstra(string start, vector<int>& dist){
 
 				string y=Graf[searchNodWithGivenInfo(x)].getvecini()[i];
 
-				if(dist[ searchNodWithGivenInfo(y) ] > dist[ searchNodWithGivenInfo(x)] + 1){
+				if(selectat[searchNodWithGivenInfo(y)]== false || dist[ searchNodWithGivenInfo(y) ] > dist[ searchNodWithGivenInfo(x)] + 1){
 					dist[ searchNodWithGivenInfo(y) ]=dist[ searchNodWithGivenInfo(x) ]+1;
+					selectat[searchNodWithGivenInfo(y)]=true;
 					Coada.push( {y, dist[searchNodWithGivenInfo(y)] } );
-
-
+					prev[searchNodWithGivenInfo(y)]=x;
+					if(x==start)
+						found=true;
 				}
+	}//end for
 
-
-	}
+} //end while
+	string node=start;
+	while(node!=stop){
+		drum.push_back(node);
+		node=prev[searchNodWithGivenInfo(node)];
+		}
+	drum.push_back(stop);
 
 
 }
-}
-
