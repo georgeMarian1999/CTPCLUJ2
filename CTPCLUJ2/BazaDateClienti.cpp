@@ -147,20 +147,21 @@ void BazaDateClienti::AddClient_File(string filename)
     //D:functie care da update unui fisier
     //I:numele fisierului un string
     //output:--
-    ifstream f;
+    ofstream f;
     f.open(filename);
     if(!f)
         cout<<"error"<<endl;
-    std::cout<<this->elements.size()<<'\n';
+    f<<this->elements.size()<<'\n';
     for(unsigned int i=0;i<this->elements.size();i+=1)
     {
-        std::cout<<this->elements[i]->getInfoCard().getNrCard()<<","<<this->elements[i]->getInfoCard().getPin()<<","<<this->elements[i]->getUserName()<<","<<this->elements[i]->getParola()<<",";
-        std::cout<<this->elements[i]->getBilete().getSize()<<",";
+        f<<this->elements[i]->getInfoCard().getNrCard()<<","<<this->elements[i]->getInfoCard().getPin()<<","<<this->elements[i]->getUserName()<<","<<this->elements[i]->getParola()<<",";
+        f<<this->elements[i]->getBilete().getSize()<<",";
         for(unsigned int j=0;j<this->elements[i]->getBilete().getSize();j+=1)
         {
-            std::cout<<this->elements[i]->getBilete().getAll()[j].getZona()<<","<<this->elements[i]->getBilete().getAll()[j].getZona()<<",end"<<'\n';
+            f<<this->elements[i]->getBilete().getAll()[j].getPret()<<","<<this->elements[i]->getBilete().getAll()[j].getZona()<<",";
 
         }
+        f<<"end"<<'\n';
     }
     f.close();
     

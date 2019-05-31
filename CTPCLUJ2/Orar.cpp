@@ -32,7 +32,9 @@ int Orar::getnrlin(){
     return Timpi.getnrlin();
 }
 vector<Ora> Orar::getTimpiStatie(Statie S){
-    //functie 
+    //functie care returneaza orele la care pleaca din statia S
+    //input:o Statie
+    //output:un vector de ore
     int found=-1;
     int i=0;
     while(i<Statii.size()&&found==-1)
@@ -65,6 +67,7 @@ void Orar::setnrcol(int m){
     Timpi.setnrcol(m);
 }
 Orar& Orar::operator=(const Orar& r)
+    //constructor de copiere
 {   if(this!=&r)
     {
         this->Statii=r.Statii;
@@ -74,18 +77,23 @@ Orar& Orar::operator=(const Orar& r)
 
 }
 bool Orar::operator==(const Orar &O){
+    //operator egal
     for(int i=0;i<Statii.size();i++)
         if(Statii[i]!=O.Statii[i])
             return false;
     return Timpi==O.Timpi;
 }
 bool Orar::operator!=(const Orar &O){
+    //operator diferit
     for(int i=0;i<Statii.size();i++)
         if(Statii[i]==O.Statii[i])
             return false;
     return Timpi==O.Timpi;
 }
 string Orar::toString(){
+    //functie care transforma un orar intr un string
+    //input:--
+    //output:un string
     string s;
     for(int i=0;i<Timpi.getnrcol();i++){
         s=s+"Din statia: "+Statii[i].getnume()+" pleaca la orele\n";

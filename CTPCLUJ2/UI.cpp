@@ -7,6 +7,8 @@ UI::~UI(){
     
 }
 int UI::decide_client()
+    //functie care decide daca utilizatorul doreste sa se autentifice,sa isi creeze cont sau sa continue fara
+    //logare
 {
     std::cout<<"1.Autentificare"<<'\n';
     std::cout<<"2.Continuare fara autentificare"<<'\n';
@@ -20,6 +22,7 @@ int UI::decide_client()
 }
 void UI::filtrare_nr()
 {
+    //filtreaza autobuzele dupa numar
     std::cout<<"Introduceti numarul autobuzului dorit: ";
         int nr;
         std::cin>>nr;
@@ -31,6 +34,7 @@ void UI::filtrare_nr()
 }
 void UI::filtrare_statie()
 {
+    //filtreaza autobuzele care trec printr o anumita statie
     std::cout<<"Introduceti statia dorita: ";
         string statie;
         std::cin>>statie;
@@ -46,11 +50,13 @@ void UI::filtrare_statie()
 }
 void afisare_pret_bilete()
 {
+        //afiseaza pretul biletelor
         std::cout<<"Preturile biletelor sunt: "<<'\n';
         std::cout<<"5RON/Bilet Zona 1( Opera, Sora, Regio) "<<'\n';
         std::cout<<"3RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
 }
 void UI::afisareoptiuninelogat(){
+    //afiseaza optiunile utilizatorului nelogat
     std::cout<<"Puteti alege dintre urmatoarele: "<<'\n';
     std::cout<<"1.Filtrare autobuze dupa numar"<<'\n';
     std::cout<<"2.Afisare autobuze ce trec printr-o anumita statie"<<'\n';
@@ -59,6 +65,7 @@ void UI::afisareoptiuninelogat(){
 }
 void UI::client_nelogat()
 {
+    //afiseaza si apeleaza optiunile utilizatorului nelogat
     afisareoptiuninelogat();
     int optiune;
     std::cin>>optiune;
@@ -84,6 +91,7 @@ void UI::client_nelogat()
 }
 void UI::situatie_cont(int pos)
 {
+    //afiseaza situatia contului unui client
     std::cout<<"Bilete din contul dumneavoastra sunt: "<<'\n';
     int zona1=0,zona2=0;
     RepoBilete zona;
@@ -105,6 +113,7 @@ void UI::situatie_cont(int pos)
 }
 void UI::calatorie()
 {
+    //functie care afiseaza drumul pe care trebuie un utilizator sa il urmeze pentru a face cat mai putin
     std::cout<<"Introduceti statia de pornire: ";
     string pornire;
     std::cin>>pornire;
@@ -116,6 +125,7 @@ void UI::calatorie()
     
 }
 void UI::afisareoptiunilogat(){
+    //afiseaza optiunile unui utilizator logat
     std::cout<<"Puteti alege dintre urmatoarele: "<<'\n';
     std::cout<<"1.Filtrare autobuze dupa numar"<<'\n';
     std::cout<<"2.Afisare autobuze ce trec printr-o anumita statie"<<'\n';
@@ -126,6 +136,7 @@ void UI::afisareoptiunilogat(){
 }
 void UI::client_logat()
 {
+    //afiseaza si apeleaza optiunile utilizatorului logat
     std::cout<<"Va rog introduceti datele pentru logare: "<<'\n';
     std::cout<<"username: ";
     string username;
@@ -183,6 +194,7 @@ void UI::client_logat()
 }
 void UI::sign_up()
 {
+    //functie care permite utilizatorului sa isi creeze un cont
     std::cout<<"Va rugam introduceti datele pentru noul cont: "<<'\n';
     std::cout<<"Username: ";
     string username;
@@ -204,13 +216,14 @@ void UI::sign_up()
     Card c(nrcard,pin);
     Client* newClient=new ClientLogat(c,username,parola,r);
     this->c.addClient(newClient);
-    this->c.AddClient_file(newClient);
+    this->c.AddClient_file("DataBase1.csv");
     std::cout<<"Contul dumneavoastra a fost creat cu succes!"<<'\n';
     client_logat();
 }
 void UI::run()
 
 {
+    //functia principala
     t.RunAllTests();
     this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
@@ -223,7 +236,8 @@ void UI::run()
     {
         client_logat();
     }
-    else if(optiune==2){
+    else if(optiune==2)
+    {
         client_nelogat();
         }
        

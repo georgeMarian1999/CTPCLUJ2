@@ -8,6 +8,7 @@
 
 #include "Exception.hpp"
 Exception::Exception(string m){
+    //constructor cu parametrii
     message=m;
 }
 string Exception::getmessage(){

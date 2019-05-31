@@ -8,18 +8,22 @@
 
 #include "Ora.hpp"
 Ora::Ora(){
+    //constructor
     ora=0;
     minute=0;
 }
 Ora::Ora(int o,int m){
+    //constructor cu parametrii
     ora=o;
     minute=m;
 }
 Ora::Ora(const Ora& A){
+    //constructor de atribuire
     ora=A.ora;
     minute=A.minute;
 }
  Ora& Ora::operator=(const Ora & A){
+     //constructor de copiere
     if(this!=&A){
         ora=A.ora;
         minute=A.minute;
@@ -27,7 +31,7 @@ Ora::Ora(const Ora& A){
     return *this;
 }
 Ora::~Ora(){
-    
+    //destructor
 }
 int Ora::getora(){
     return ora;
@@ -42,14 +46,17 @@ void Ora::setminute(int m){
     minute=m;
 }
 bool Ora::operator==(const Ora &A){
+    //operator egal
     return(ora==A.ora&&minute==A.minute);
 }
 bool Ora::operator!=(const Ora &A){
+    //operator diferit
     if(ora!=A.ora||minute!=A.minute)
         return true;
     else return false;
 }
 bool Ora::operator>(const Ora &A){
+    //operator mai mare
     if(ora>A.ora)
         return true;
     else if(ora<A.ora)
@@ -62,6 +69,7 @@ bool Ora::operator>(const Ora &A){
     return false;
 }
 bool Ora::operator<(const Ora &A){
+    //operator mai mic
     if(ora<A.ora)
         return true;
     else if(ora>A.ora)
@@ -74,6 +82,9 @@ bool Ora::operator<(const Ora &A){
     return false;
 }
 string Ora::toString(){
+    //functie care transforma o ora intr un string
+    //input:--
+    //output:un string
     string s;
     s=s+to_string(ora)+":"+to_string(minute);
     return s;

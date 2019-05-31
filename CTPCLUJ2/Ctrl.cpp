@@ -110,8 +110,9 @@ void Ctrl::loadAutobuze(const char* filename){
     //output:--
     Autobuze.LoadFromFile(filename);
 }
-void Ctrl::AddClient_file(Client* c)
+void Ctrl::AddClient_file(string s)
+    //functie care da update la baza de date a clientilor
 {
-    this->Clienti.AddClient_File("DataBase1.csv",c);
+    this->Clienti.AddClient_File(s);
 }
 
