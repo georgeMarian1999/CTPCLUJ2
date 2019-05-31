@@ -69,5 +69,30 @@ Orar Autobuz::getOrar()
 {
 	return this->orar;
 }
+int Autobuz::nr_Statii(string pornire, string sosire)
+{
+    bool found=false;
+    int nr=1;
+    for(unsigned int i=0;i<this->orar.getStatii().size();i+=1)
+    {
+        if(!found)
+        {
+            if(pornire==this->orar.getStatii()[i].getnume())
+            {
+                found = true;
+
+            }
+
+        }
+        else{
+            if(sosire==this->orar.getStatii()[i].getnume())
+            {
+                return nr;
+            }
+            nr+=1;
+        }
+    }
+    return nr;
+}
 
 
