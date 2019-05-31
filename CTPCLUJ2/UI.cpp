@@ -25,7 +25,6 @@ void UI::filtrare_nr()
         std::cout<<'\n';
         vector<Autobuz> aux;
         aux=this->c.filterByNr(nr);
-        std::cout<<"Autobuzul "<<nr<<" are urmatorul orar: "<<'\n';
         std::cout<<aux[0].toString()<<'\n';
 
 }
