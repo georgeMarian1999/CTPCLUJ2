@@ -94,9 +94,11 @@ vector<Autobuz> Ctrl::filterByStatie(string name){
 }
 
 void Ctrl::create(BazaDateAutobuze B){
+    //functie care apeleaza crearea un harte de autobuze
     Traseu.create(B);
 }
 void Ctrl::addNod(Nod N){
+    //functie care apeleaza o functie a hartii care adauga un nod
     Traseu.addNod(N);
 }
 void Ctrl::dijkstra(string start, string stop, vector<int> &dist, vector<string> &drum){

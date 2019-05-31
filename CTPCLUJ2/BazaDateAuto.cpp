@@ -8,21 +8,25 @@
 #include "BazaDateAuto.hpp"
 #include <fstream>
 BazaDateAutobuze::BazaDateAutobuze(){
+    //constructor
 }
 BazaDateAutobuze::BazaDateAutobuze(vector<Autobuz> X){
+    //constructor cu parametrii
     V=X;
 }
 BazaDateAutobuze::BazaDateAutobuze(const BazaDateAutobuze& B){
+    //constructor de atribuire
     V=B.V;
 }
 BazaDateAutobuze& BazaDateAutobuze:: operator=(const BazaDateAutobuze &B){
+    //constructor de copiere
     if(this!=&B){
         V=B.V;
     }
     return *this;
 }
 BazaDateAutobuze::~BazaDateAutobuze(){
-    
+    //destructor
 }
 vector<Autobuz> BazaDateAutobuze::getall(){
     return V;
@@ -31,9 +35,11 @@ void BazaDateAutobuze::setall(vector<Autobuz> X){
     V=X;
 }
 void BazaDateAutobuze::addElement(Autobuz A){
+    //adauga un autobuz in baza de date
     V.push_back(A);
 }
 bool BazaDateAutobuze::operator==(const BazaDateAutobuze &B){
+    //operator egal
     if(V.size()!=B.V.size())
         return false;
     for(int i=0;i<V.size();i++)
@@ -42,6 +48,7 @@ bool BazaDateAutobuze::operator==(const BazaDateAutobuze &B){
     return true;
 }
 bool BazaDateAutobuze::operator!=(const BazaDateAutobuze &B){
+    //operator diferit
     if(V.size()!=B.V.size())
         return true;
     for(int i=0;i<V.size();i++)
@@ -50,6 +57,9 @@ bool BazaDateAutobuze::operator!=(const BazaDateAutobuze &B){
     return false;
 }
 string BazaDateAutobuze::toString(){
+    //functie care transforma baza de date intr un string
+    //input:--
+    //output:string
     string s;
     for(int i=0;i<V.size();i++){
         s=s+V[i].toString();
@@ -58,7 +68,11 @@ string BazaDateAutobuze::toString(){
     return s;
 }
 void BazaDateAutobuze::LoadFromFile(const char* filename)
+
 {
+    //functie care incarca date din fisier
+    //input:numele fisierului
+    //output:--
     ifstream f(filename);
     string nrautobuz,nrStatii,nume,zona,ora,min,linie;
     string ultimaora,ultimmin;

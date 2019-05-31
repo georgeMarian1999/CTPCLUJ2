@@ -33,6 +33,9 @@ vector<Nod> Harta::getGraf(){
     return Graf;
 }
 vector<string> Harta::getvecini(string nume){
+    //functie care returneaza vecinii unui nod cu un anumit nume
+    //input:un string care este informatia nodului
+    //output:un vector de vecinit
     vector<string> vecini;
     int gasit=-1;
     int i=0;
@@ -47,6 +50,7 @@ void Harta::setAll(vector<Nod> N){
     Graf=N;
 }
 bool Harta::operator==(const Harta&H){
+    //operator egal
     if(Graf.size()!=H.Graf.size())
         return false;
     for(int i=0;i<Graf.size();i++)

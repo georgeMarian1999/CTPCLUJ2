@@ -18,22 +18,25 @@ using namespace std;
 #include "ClientLogat.hpp"
 
 BazaDateClienti::BazaDateClienti() {
-
+    //constructor
 	this->elements.reserve(10);
 }
 
 
 BazaDateClienti::BazaDateClienti(const BazaDateClienti &r) {
+    //constructor de atribuire
 	this->elements = r.elements;
 }
 
 
 BazaDateClienti::~BazaDateClienti() {
+    //destructor
 	elements.clear();
 }
 
 
 BazaDateClienti& BazaDateClienti::operator=(const BazaDateClienti &r) {
+    //constructor de copiere
 	if (this != &r) {
         elements=r.elements;
 	}
@@ -54,7 +57,9 @@ vector<Client*> BazaDateClienti::getAll() {
 
 
 void BazaDateClienti::addClient(Client* el) {
-
+    //adauga un client in baza de date
+    //input:o adresa spre un client
+    //output:--
 	elements.push_back(el);
 }
 
@@ -69,6 +74,9 @@ void BazaDateClienti::update(Client* s, int pos) {
 	this->elements[pos] = s;
 }
 string BazaDateClienti::toString(){
+    //functie care transforma o baza de date
+    //input:--
+    //output:un string
     string s;
     for(int i=0;i<elements.size();i++)
         s=s+elements[i]->toString();
@@ -76,6 +84,7 @@ string BazaDateClienti::toString(){
 }
 
 bool BazaDateClienti::operator==(const BazaDateClienti &R){
+    //operator egal
     if(elements.size()!=R.elements.size())
         return false;
     for(int i=0;i<elements.size();i++)
@@ -84,6 +93,7 @@ bool BazaDateClienti::operator==(const BazaDateClienti &R){
     return true;
 }
 bool BazaDateClienti::operator!=(const BazaDateClienti &R){
+    //operator diferit
     if(elements.size()!=R.elements.size())
         return true;
     for(int i=0;i<elements.size();i++)
@@ -98,6 +108,9 @@ Client* BazaDateClienti::getClient(int pos)
 }
 void BazaDateClienti::LoadFromFile(string filename)
 {
+    //functie care citeste o baza de date de clienti din fisier
+    //input:string numele fisierului
+    //output:--
     ifstream f;
     f.open(filename);
     if(!f)
@@ -131,8 +144,9 @@ void BazaDateClienti::LoadFromFile(string filename)
 	}
 void BazaDateClienti::AddClient_File(string filename)
 {
-    //D:
-    //I:
+    //D:functie care da update unui fisier
+    //I:numele fisierului un string
+    //output:--
     ifstream f;
     f.open(filename);
     if(!f)
