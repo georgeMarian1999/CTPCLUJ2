@@ -8,13 +8,15 @@
 
 #include "Orar.hpp"
 Orar::Orar(){
-    
+    //constructor
 }
 Orar::Orar(vector<Statie> V,Matrice A){
+    //constructor cu parametrii
     Statii=V;
     Timpi=A;
 }
 Orar::~Orar(){
+    //destructor
     Statii.clear();
 }
 vector<Statie> Orar::getStatii(){
@@ -30,6 +32,7 @@ int Orar::getnrlin(){
     return Timpi.getnrlin();
 }
 vector<Ora> Orar::getTimpiStatie(Statie S){
+    //functie 
     int found=-1;
     int i=0;
     while(i<Statii.size()&&found==-1)

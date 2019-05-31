@@ -129,13 +129,12 @@ void BazaDateClienti::LoadFromFile(string filename)
     }
 		f.close();
 	}
-void BazaDateClienti::AddClient_File(string filename, Client* newClient)
+void BazaDateClienti::AddClient_File(string filename)
 {
     //D:
     //I:
     ifstream f;
     f.open(filename);
-    this->addClient(newClient);
     if(!f)
         cout<<"error"<<endl;
     std::cout<<this->elements.size()<<'\n';

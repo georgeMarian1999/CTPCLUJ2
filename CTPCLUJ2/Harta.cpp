@@ -55,6 +55,9 @@ bool Harta::operator==(const Harta&H){
     return true;
 }
 string Harta::toString(){
+    //functie care transforma harta intr un string
+    //input:--
+    //output:un string
     string s;
     s="Harta de statii este\n";
     for(int i=0;i<Graf.size();i++)
@@ -62,6 +65,9 @@ string Harta::toString(){
     return s;
 }
 void Harta::addNod(Nod n){
+    //functie care adauga un nod in harta
+    //input:un nod
+    //output:--
 	Graf.push_back(n);
 }
 int Harta::searchNodWithGivenInfo(string info){
@@ -125,7 +131,7 @@ void Harta::dijkstra(string start, string stop, vector<int>& dist, vector<string
 	int i;
 	bool found=false;
 	bool selectat[20];
-
+    
 	for(int k=0; k<Graf.size();k++)
 		selectat[k]=false;
 	selectat[searchNodWithGivenInfo(start)]=true;
