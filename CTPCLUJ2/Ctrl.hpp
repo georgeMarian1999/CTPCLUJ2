@@ -43,6 +43,9 @@ public:
     void dijkstra(string start,string stop, vector<int>& dist, vector<string>& drum);
     void loadAutobuze(const char*);
     void AddClient_file(string);
+    vector<Autobuz> traseuDirect(string start, string stop);
+    vector<Autobuz> filterByStatii(string, string);
+    void traseuIndirect(string start, string stop, vector<vector<Autobuz>>& rezFinal, vector<Statie>& coborare);
 
 };
 #endif /* Ctrl_hpp */

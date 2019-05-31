@@ -115,4 +115,69 @@ void Ctrl::AddClient_file(string s)
 {
     this->Clienti.AddClient_File(s);
 }
+vector<Autobuz> Ctrl::traseuDirect(string start, string stop){
+	/*Descr:returneaza autobuzele care
+	 * In:
+	 * Out:
+	 */
+	vector<int> distante;
+	vector<string> drum;
+	dijkstra(start, stop, distante, drum);
+	int nrStatii=drum.size();
+	vector<Autobuz> aux;
+	for(int i=0; i< Autobuze.filterByStatii(start, stop).size();i++)
+		if(Autobuze.filterByStatii(start, stop)[i].nr_Statii(start, stop)==nrStatii)
+			aux.push_back(Autobuze.filterByStatii(start, stop)[i]);
+
+	return aux;
+
+}
+vector<Autobuz> Ctrl::filterByStatii(string start, string stop){
+	/*Descr:filtreaza autobuzele care trec prin statia "start" si "stop"
+			* In:start, stop
+			* Out:vector de autobuze cu prop ceruta
+			 */
+	return Autobuze.filterByStatii(start, stop);
+}
+
+
+void Ctrl::traseuIndirect(string start, string stop, vector<vector<Autobuz>>& rezFinal, vector<Statie>& coborare){
+	/*Descr:
+	 * In:
+	 * Out:
+	 */
+	vector<Autobuz> rezPartial;
+
+	vector<int> distante;
+	vector<string> drum;
+	dijkstra(start, stop, distante, drum);
+
+	vector<Autobuz> aux1;
+	for(int i=0; i<Autobuze.filterByStatie(start).size(); i++)   //adauga in aux1 autobuzele care trec prin statia start
+		aux1.push_back(Autobuze.filterByStatie(start)[i]);
+
+	for(int i=0; i<aux1.size();i+=1)
+	{	rezPartial.push_back(aux1[i]);
+		for(int j=0;j<aux1[i].getOrar().getStatii().size();j+=1)
+		{
+			Statie intermediara=aux1[i].getOrar().getStatii()[j];
+			bool found=false;
+			for(int l=0; l<drum.size(); l++)
+				if(drum[l]==intermediara.getnume())
+					found=true;
+
+			if(found){
+			for(int k=0; k<Autobuze.filterByStatii(intermediara.getnume(), stop).size(); k++){
+				rezPartial.push_back(Autobuze.filterByStatii(intermediara.getnume(), stop)[k]);
+				rezFinal.push_back(rezPartial);
+				coborare.push_back(intermediara);
+				rezPartial.pop_back();
+			}
+			}
+
+		} //end for j
+		rezPartial.clear();
+
+	}
+}
 
