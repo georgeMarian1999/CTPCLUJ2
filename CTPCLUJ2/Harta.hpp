@@ -33,5 +33,6 @@ public:
     void addNod(Nod);
     int searchNodWithGivenInfo(string);
     bool searchVecinforGivenNod(string info, string vecin);
+    void dijkstra(string start, vector<int>& dist);
 };
 #endif /* Harta_hpp */

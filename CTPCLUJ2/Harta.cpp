@@ -99,3 +99,38 @@ bool Harta::searchVecinforGivenNod(string info, string vecin){
 				return true;
 	return false;
 }
+
+void Harta::dijkstra(string start, vector<int>& dist){
+
+	const int infinit=1000000;
+	dist=vector<int>(Graf.size(), infinit);
+	priority_queue<pereche> Coada;
+	dist[searchNodWithGivenInfo(start)]=0;
+	Coada.push({start, 0});
+	int i;
+
+	while(!Coada.empty()){
+
+		string x=Coada.top().node;
+		int dx=Coada.top().dist;
+		i=0;
+		Coada.pop();
+		if(dx<=dist[searchNodWithGivenInfo(x)])
+
+			for(int i=0; i<Graf[searchNodWithGivenInfo(x)].getvecini().size();i++){
+
+				string y=Graf[searchNodWithGivenInfo(x)].getvecini()[i];
+
+				if(dist[ searchNodWithGivenInfo(y) ] > dist[ searchNodWithGivenInfo(x)] + 1){
+					dist[ searchNodWithGivenInfo(y) ]=dist[ searchNodWithGivenInfo(x) ]+1;
+					Coada.push( {y, dist[searchNodWithGivenInfo(y)] } );
+
+
+				}
+
+
+	}
+
+
+}
+}
