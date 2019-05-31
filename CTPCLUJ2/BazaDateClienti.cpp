@@ -74,6 +74,28 @@ string BazaDateClienti::toString(){
         s=s+elements[i]->toString();
     return s;
 }
+
+bool BazaDateClienti::operator==(const BazaDateClienti &R){
+    if(elements.size()!=R.elements.size())
+        return false;
+    for(int i=0;i<elements.size();i++)
+        if(elements[i]!=R.elements[i])
+            return false;
+    return true;
+}
+bool BazaDateClienti::operator!=(const BazaDateClienti &R){
+    if(elements.size()!=R.elements.size())
+        return true;
+    for(int i=0;i<elements.size();i++)
+        if(elements[i]!=R.elements[i])
+            return true;
+    return false;
+}
+Client* BazaDateClienti::getClient(int pos)
+{
+    return this->elements[pos];
+
+}
 void BazaDateClienti::LoadFromFile(string filename)
 {
     ifstream f;
@@ -107,25 +129,29 @@ void BazaDateClienti::LoadFromFile(string filename)
     }
 		f.close();
 	}
-bool BazaDateClienti::operator==(const BazaDateClienti &R){
-    if(elements.size()!=R.elements.size())
-        return false;
-    for(int i=0;i<elements.size();i++)
-        if(elements[i]!=R.elements[i])
-            return false;
-    return true;
-}
-bool BazaDateClienti::operator!=(const BazaDateClienti &R){
-    if(elements.size()!=R.elements.size())
-        return true;
-    for(int i=0;i<elements.size();i++)
-        if(elements[i]!=R.elements[i])
-            return true;
-    return false;
-}
-Client* BazaDateClienti::getClient(int pos)
+void BazaDateClienti::AddClient_File(string filename, Client* newClient)
 {
-    return this->elements[pos];
+    //D:
+    //I:
+    ifstream f;
+    f.open(filename);
+    this->addClient(newClient);
+    if(!f)
+        cout<<"error"<<endl;
+    std::cout<<this->elements.size()<<'\n';
+    for(unsigned int i=0;i<this->elements.size();i+=1)
+    {
+        std::cout<<this->elements[i]->getInfoCard().getNrCard()<<","<<this->elements[i]->getInfoCard().getPin()<<","<<this->elements[i]->getUserName()<<","<<this->elements[i]->getParola()<<",";
+        std::cout<<this->elements[i]->getBilete().getSize()<<",";
+        for(unsigned int j=0;j<this->elements[i]->getBilete().getSize();j+=1)
+        {
+            std::cout<<this->elements[i]->getBilete().getAll()[j].getZona()<<","<<this->elements[i]->getBilete().getAll()[j].getZona()<<",end"<<'\n';
+
+        }
+    }
+    f.close();
+    
+
 
 }
 
