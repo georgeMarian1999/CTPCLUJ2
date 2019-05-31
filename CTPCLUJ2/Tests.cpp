@@ -233,6 +233,10 @@ bool Tests::test_Autobuz()
         assert(a.getOrar().getTimpiStatie(S)[i]==Aux[i]);
 	a.setNumar(34);
 	assert(a.getNumar() == 34);
+    BazaDateAutobuze BazaDate;
+    BazaDate.LoadFromFile("BazaDateAutobuze.txt");
+    cout<<BazaDate.getall()[0].nr_Statii("Memo", "Regio")<<endl;
+    //assert(BazaDate.getall()[0].nr_Statii("Memo", "Arte")==4);
 	return true;
 }
 bool Tests::test_Clientlogat(){
