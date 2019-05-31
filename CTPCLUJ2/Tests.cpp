@@ -387,9 +387,11 @@ bool Tests::test_Ctrl(){
     Autobuz autob(25, orer);
     BazaDateAutobuze baza2;
     baza2.addElement(autob);
-    Ctrl Controler(baza,baza2);
+    Harta Traseu;
+    Ctrl Controler(baza,baza2,Traseu);
     assert(Controler.getClienti()==baza);
     assert(Controler.getAutobuze()==baza2);
+    assert(Controler.getTraseu()==Traseu);
     BazaDateClienti BazaGoala;
     BazaDateAutobuze bazagoala;
     Controler.setbazaclienti(BazaGoala);

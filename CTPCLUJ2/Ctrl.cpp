@@ -10,21 +10,24 @@
 Ctrl::Ctrl(){
     //contructor
 }
-Ctrl::Ctrl(BazaDateClienti BC,BazaDateAutobuze BA){
+Ctrl::Ctrl(BazaDateClienti BC,BazaDateAutobuze BA,Harta H){
     //constructor cu parametrii
     Clienti=BC;
     Autobuze=BA;
+    Traseu=H;
 }
 Ctrl::Ctrl(const Ctrl&C){
     //constructor de copiere
     Clienti=C.Clienti;
     Autobuze=C.Autobuze;
+    Traseu=C.Traseu;
 }
 Ctrl& Ctrl::operator=(const Ctrl &C){
     //construtor de atribuire
     if(this!=&C){
         Clienti=C.Clienti;
         Autobuze=C.Autobuze;
+        Traseu=C.Traseu;
     }
     return *this;
 }
@@ -37,6 +40,9 @@ BazaDateClienti Ctrl::getClienti(){
 BazaDateAutobuze Ctrl::getAutobuze(){
     return Autobuze;
 }
+Harta Ctrl::getTraseu(){
+    return Traseu;
+}
 vector<Autobuz> Ctrl::getvectAutoBuz(){
     return Autobuze.getall();
 }
@@ -48,6 +54,9 @@ void Ctrl::setbazaclienti(BazaDateClienti b){
 }
 void Ctrl::setbazaauto(BazaDateAutobuze b){
     Autobuze=b;
+}
+void Ctrl::setTraseu(Harta H){
+    Traseu=H;
 }
 void Ctrl::addClient(Client *C){
     //functie care adauga un client in baza de date de clienti
@@ -84,7 +93,15 @@ vector<Autobuz> Ctrl::filterByStatie(string name){
 	return this->Autobuze.filterByStatie(name);
 }
 
-
+void Ctrl::create(BazaDateAutobuze B){
+    Traseu.create(B);
+}
+void Ctrl::addNod(Nod N){
+    Traseu.addNod(N);
+}
+void Ctrl::dijkstra(string start, string stop, vector<int> &dist, vector<string> &drum){
+    Traseu.dijkstra(start, stop, dist, drum);
+}
 void Ctrl::loadAutobuze(const char* filename){
     //functie care citeste baza de date de autobuze din fisier
     //input:numele fisierului

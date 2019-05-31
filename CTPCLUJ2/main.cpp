@@ -12,5 +12,8 @@
 int main(int argc, const char * argv[]) {
     UI U;
     U.run();
+    BazaDateClienti B;
+    B.LoadFromFile("DataBase1.csv");
+    B.AddClient_File("testout.csv");
     return 0;
 }

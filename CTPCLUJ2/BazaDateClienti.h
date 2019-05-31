@@ -31,7 +31,7 @@ public:
 	void update(Client*, int);
     string toString();
 	void LoadFromFile(string);
-	void AddClient_File(string, Client*);
+	void AddClient_File(string);
     bool operator==(const BazaDateClienti&);
     bool operator!=(const BazaDateClienti&);
 	Client* getClient(int);
