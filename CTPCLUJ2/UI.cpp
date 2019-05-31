@@ -182,7 +182,8 @@ void UI::client_logat()
 }
 void UI::run()
 
-{   this->c.loadClienti("DataBase1.csv");
+{
+    this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
     //cout<<c.getAutobuze().toString();
     //cout<<c.getClienti().toString();
