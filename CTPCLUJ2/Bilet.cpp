@@ -9,15 +9,17 @@
 using namespace std;
 
 Bilet::Bilet(){
+    //constructor
 	this->pret=0;
 	this->zona=0;
 }
 
 Bilet::~Bilet(){
-
+    //destructor
 }
 
 Bilet::Bilet(int p, int z){
+    //constructor cu parametrii
 	this->pret=p;
 	this->zona=z;
 }
@@ -39,7 +41,7 @@ void Bilet::setZona(int z){
 }
 
 bool Bilet::operator==(const Bilet& b){
-
+    //operator egal
 	return (this->pret==b.pret && this->zona==b.zona);
 
 }
@@ -50,6 +52,7 @@ ostream& operator<<(ostream &os, const Bilet &b){
 	return os;
 }
 string Bilet::toString(){
+    //Descriere:functie care returneaza un string care va fi forma cum este afisat biletul pe ecran
 	string s;
 		s=s+"Pret: "+to_string(this->pret)+" Zona: "+to_string(this->zona);
 		return s;
