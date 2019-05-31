@@ -10,10 +10,16 @@
 #include "Tests.hpp"
 #include "UI.h"
 int main(int argc, const char * argv[]) {
-    UI U;
-    U.run();
+    //UI U;
+    //U.run();
     BazaDateClienti B;
     B.LoadFromFile("DataBase1.csv");
     B.AddClient_File("testout.csv");
+    BazaDateAutobuze A;
+    A.LoadFromFile("BazaDateAutobuze.txt");
+    Statie S("Memo",1);
+    Ora H(10,0);
+    for(int i=0;i<A.filterByTime(S, H).size();i++)
+        cout<<A.filterByTime(S, H)[i]<<" ";
     return 0;
 }
