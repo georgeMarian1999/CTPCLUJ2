@@ -42,6 +42,7 @@ public:
     void addNod(Nod);
     void dijkstra(string start,string stop, vector<int>& dist, vector<string>& drum);
     void loadAutobuze(const char*);
+    void AddClient_file(Client*);
 
 };
 #endif /* Ctrl_hpp */

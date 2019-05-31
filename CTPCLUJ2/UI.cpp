@@ -10,7 +10,8 @@ int UI::decide_client()
 {
     std::cout<<"1.Autentificare"<<'\n';
     std::cout<<"2.Continuare fara autentificare"<<'\n';
-    std::cout<<"3.Iesire"<<'\n';
+    std::cout<<"3.Creare cont"<<'\n';
+    std::cout<<"4.Iesire"<<'\n';
     int k;
     std::cin>>k;
     std::cout<<'\n';
@@ -180,6 +181,33 @@ void UI::client_logat()
     
 
 }
+void UI::sign_up()
+{
+    std::cout<<"Va rugam introduceti datele pentru noul cont: "<<'\n';
+    std::cout<<"Username: ";
+    string username;
+    std::cin>>username;
+    std::cout<<'\n';
+    std::cout<<"Parola: ";
+    string parola;
+    std::cin>>parola;
+    std::cout<<'\n';
+    std::cout<<"Introduceti datele cardului: "<<'\n';
+    std::cout<<"Numar card: ";
+    int nrcard,pin;
+    std::cin>>nrcard;
+    std::cout<<'\n';
+    std::cout<<"Pin: ";
+    std::cin>>pin;
+    std::cout<<'\n';
+    RepoBilete r;
+    Card c(nrcard,pin);
+    Client* newClient=new ClientLogat(c,username,parola,r);
+    this->c.addClient(newClient);
+    this->c.AddClient_file(newClient);
+    std::cout<<"Contul dumneavoastra a fost creat cu succes!"<<'\n';
+    client_logat();
+}
 void UI::run()
 
 {
@@ -189,15 +217,21 @@ void UI::run()
     //cout<<c.getAutobuze().toString();
     //cout<<c.getClienti().toString();
     int optiune=decide_client();
-    while(optiune<3)
+    while(optiune<4)
     {
     if(optiune==1)
     {
         client_logat();
     }
-    if(optiune==2){
+    else if(optiune==2){
         client_nelogat();
         }
-        optiune=decide_client();
+       
+    else if(optiune==3)
+    {
+        sign_up();
+    }
+    optiune=decide_client();
     }
 }
+

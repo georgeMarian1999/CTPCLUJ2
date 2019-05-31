@@ -110,4 +110,8 @@ void Ctrl::loadAutobuze(const char* filename){
     //output:--
     Autobuze.LoadFromFile(filename);
 }
+void Ctrl::AddClient_file(Client* c)
+{
+    this->Clienti.AddClient_File("DataBase1.csv",c);
+}
 
