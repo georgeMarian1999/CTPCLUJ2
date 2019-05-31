@@ -20,6 +20,7 @@ public:
     string toString();
 	void setNumar(const int);
 	void setOrar(Orar);
+	int nr_Statii(string,string);
 };
 
 //cacat
