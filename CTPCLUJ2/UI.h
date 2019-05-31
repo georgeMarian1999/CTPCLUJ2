@@ -20,6 +20,7 @@ public:
     void calatorie();
     void afisareoptiuninelogat();
     void afisareoptiunilogat();
+    void sign_up();
 };
 
 
