@@ -25,7 +25,6 @@ void UI::filtrare_nr()
         std::cout<<'\n';
         vector<Autobuz> aux;
         aux=this->c.filterByNr(nr);
-        std::cout<<"Autobuzul "<<nr<<" are urmatorul orar: "<<'\n';
         std::cout<<aux[0].toString()<<'\n';
 
 }
@@ -183,7 +182,8 @@ void UI::client_logat()
 }
 void UI::run()
 
-{   this->c.loadClienti("DataBase1.csv");
+{
+    this->c.loadClienti("DataBase1.csv");
     this->c.loadAutobuze("BazaDateAutobuze.txt");
     //cout<<c.getAutobuze().toString();
     //cout<<c.getClienti().toString();
