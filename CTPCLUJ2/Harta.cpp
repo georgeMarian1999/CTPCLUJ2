@@ -100,7 +100,7 @@ bool Harta::searchVecinforGivenNod(string info, string vecin){
 	return false;
 }
 
-void Harta::dijkstra(string start, vector<int>& dist){
+/*void Harta::dijkstra(string start, vector<int>& dist){
 
 	const int infinit=1000000;
 	dist=vector<int>(Graf.size(), infinit);
@@ -134,3 +134,4 @@ void Harta::dijkstra(string start, vector<int>& dist){
 
 }
 }
+*/
