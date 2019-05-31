@@ -12,7 +12,7 @@ Client::Client(){
 }
 
 Client::~Client(){
-
+    //destructor
 }
 
 Client::Client(Card c){
@@ -36,6 +36,7 @@ void Client::setCard(Card c){
 }
 
 Client& Client::operator=(const Client &c){
+    //constructor de atribuire
 	if(this!=&c){
 		this->infoCard=c.infoCard;
 	}
@@ -43,10 +44,11 @@ Client& Client::operator=(const Client &c){
 }
 
 bool Client::operator==(const Client &c){
-
+    //operator egal
 	return(this->infoCard==c.infoCard);
 }
 bool Client::operator!=(const Client &c){
+    //operator diferit
     return  (!(this->infoCard==c.infoCard));
 }
 RepoBilete Client::getBilete(){
@@ -60,6 +62,9 @@ string Client::getUserName(){
     return "Username";
 }
 string Client::toString(){
+    //Descriere:functie care va returna un string care va avea forma cum va arata clientul
+    //Input:
+    //Output:un string
 	string s;
 	s=this->infoCard.toString()+"\n";
 	return s;

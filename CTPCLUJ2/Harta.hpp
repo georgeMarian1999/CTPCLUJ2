@@ -12,6 +12,7 @@
 using namespace std;
 #include <stdio.h>
 #include "BazaDateAuto.hpp"
+#include <queue>
 #include <string>
 #include <vector>
 #include "Nod.hpp"

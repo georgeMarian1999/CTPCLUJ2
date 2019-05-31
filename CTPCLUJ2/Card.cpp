@@ -29,14 +29,15 @@ Card::Card(const Card& c){
 }
 
 bool Card::operator==(const Card& c){
-
+    //operator egal
 	return (this->nrCard==c.nrCard && this->pin==c.pin);
 }
 bool Card::operator!=(const Card& c){
-    
+    //operator diferit
     return (!(this->nrCard==c.nrCard && this->pin==c.pin));
 }
 Card& Card::operator=(const Card& c){
+    //constructor de atribuire
 	if(this!=&c){
 		this->nrCard=c.nrCard;
 		this->pin=c.pin;
@@ -71,6 +72,9 @@ ostream& operator<<(ostream &os, const Card &c){
 }
 
 string Card::toString(){
+    //Descriere:functie care retureaza un string care va fi forma cum va arata cardul pe ecran
+    //Input:--
+    //Output:un string
 	string s;
 	s=s+to_string(this->nrCard)+" "+to_string(this->pin);
 	return s;

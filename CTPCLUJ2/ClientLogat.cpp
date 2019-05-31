@@ -56,6 +56,7 @@ void ClientLogat::setBilete(RepoBilete r){
 }
 
 ClientLogat& ClientLogat::operator=(const ClientLogat& c){
+    //constructor de atribuire
 	if (this != &c){
 				Client::operator=(c);
 				this->username=c.username;
@@ -67,19 +68,21 @@ ClientLogat& ClientLogat::operator=(const ClientLogat& c){
 
 
 bool ClientLogat::operator==(const ClientLogat& c){
-
+    //operator egal
 	return(this->username==c.username && this->parola==c.parola &&  this->bilete==c.bilete && this->infoCard==c.infoCard);
 }
 bool ClientLogat::operator!=(const ClientLogat &c){
+    //operator diferit
     return(!(this->username==c.username && this->parola==c.parola &&  this->bilete==c.bilete && this->infoCard==c.infoCard));
 }
 ClientLogat::ClientLogat(const ClientLogat& c):Client(c){
-
+    //constructor de copiere
 	this->username=c.username;
 	this->parola=c.parola;
 	this->bilete=c.bilete;
 }
 string ClientLogat::toString(){
+    //transforma clientul logat intr un string
 	string str;
 	str=str+this->infoCard.toString()+" "+this->username+" "+this->parola+"\n";
 	str=str+"Lista de bilete detinute este:"+"\n";

@@ -53,6 +53,8 @@ ostream& operator<<(ostream &os, const Bilet &b){
 }
 string Bilet::toString(){
     //Descriere:functie care returneaza un string care va fi forma cum este afisat biletul pe ecran
+    //Input:
+    //Output:un string
 	string s;
 		s=s+"Pret: "+to_string(this->pret)+" Zona: "+to_string(this->zona);
 		return s;

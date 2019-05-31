@@ -235,8 +235,7 @@ bool Tests::test_Autobuz()
 	assert(a.getNumar() == 34);
     BazaDateAutobuze BazaDate;
     BazaDate.LoadFromFile("BazaDateAutobuze.txt");
-    cout<<BazaDate.getall()[0].nr_Statii("Memo", "Regio")<<endl;
-    //assert(BazaDate.getall()[0].nr_Statii("Memo", "Arte")==4);
+    assert(BazaDate.getall()[0].nr_Statii("Memo", "Arte")==4);
 	return true;
 }
 bool Tests::test_Clientlogat(){

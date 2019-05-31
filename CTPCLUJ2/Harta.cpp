@@ -8,21 +8,25 @@
 
 #include "Harta.hpp"
 Harta::Harta(){
-    
+    //constructor
 }
 Harta::Harta(vector<Nod> X){
+    //constructor cu paramterii
     Graf=X;
 }
 Harta::Harta(const Harta& H){
+    //constructor de atribuire
     Graf=H.Graf;
 }
 Harta& Harta::operator=(const Harta &H){
+    //operator de copiere
     if(this!=&H){
         Graf=H.Graf;
     }
     return *this;
 }
 Harta::~Harta(){
+    //destructor
     Graf.clear();
 }
 vector<Nod> Harta::getGraf(){
@@ -100,7 +104,7 @@ bool Harta::searchVecinforGivenNod(string info, string vecin){
 	return false;
 }
 
-/*void Harta::dijkstra(string start, vector<int>& dist){
+void Harta::dijkstra(string start, vector<int>& dist){
 
 	const int infinit=1000000;
 	dist=vector<int>(Graf.size(), infinit);
@@ -134,4 +138,4 @@ bool Harta::searchVecinforGivenNod(string info, string vecin){
 
 }
 }
-*/
+

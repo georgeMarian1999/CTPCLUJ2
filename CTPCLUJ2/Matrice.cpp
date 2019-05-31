@@ -8,24 +8,25 @@
 
 #include "Matrice.hpp"
 Matrice::Matrice(){
+    //constructor
     nrlinii=0;
     nrcol=0;
 }
 Matrice::Matrice(vector<vector<Ora>> X){
+    //constructor cu parametrii
     nrlinii=int(X.size());
     for(int i=0;i<nrlinii;i++)
         nrcol=int(X[i].size());
     V=X;
 }
 Matrice::Matrice(const Matrice&M){
+    //constructor de atribuire
     nrlinii=M.nrlinii;
     nrcol=M.nrcol;
-    /*for(int i=0;i<nrlinii;i++)
-        for(int j=0;j<nrcol;j++)
-            V[i][j]=M.V[i][j];*/
     V=M.V;
 }
 Matrice& Matrice::operator=(const Matrice &M){
+    //constructor de copiere
     if(this!=&M){
         nrlinii=M.nrlinii;
         nrcol=M.nrcol;
@@ -35,7 +36,7 @@ Matrice& Matrice::operator=(const Matrice &M){
     return *this;
 }
 Matrice::~Matrice(){
-    
+    //destructor
 }
 Ora& Matrice::getElem(int lin, int col){
     return V[lin][col];
@@ -62,6 +63,7 @@ void Matrice::setElem(int n, int m, Ora O){
     V[n][m]=O;
 }
 bool Matrice::operator==(const Matrice &M){
+    //operator ==
     int ok=0;
     if(nrlinii!=M.nrlinii)
         return false;
@@ -76,6 +78,7 @@ bool Matrice::operator==(const Matrice &M){
     return false;
 }
 bool Matrice::operator!=(const Matrice &M){
+    //operator diferit
     int ok=0;
     for(int i=0;i<nrlinii;i++)
         for(int j=0;j<nrcol;j++)
@@ -86,6 +89,9 @@ bool Matrice::operator!=(const Matrice &M){
     return true;
 }
 string Matrice::toString(){
+    //functie care transforma o matrice intr un string
+    //input:--
+    //output:string s
     string s;
     for(int i=0;i<nrlinii;i++){
         for(int j=0;j<nrcol;j++)
