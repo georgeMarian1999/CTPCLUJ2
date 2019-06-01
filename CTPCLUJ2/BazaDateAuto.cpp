@@ -149,11 +149,11 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 
 
 }
-vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
+vector<Autobuz> BazaDateAutobuze::filterByTime(Statie S, Ora O){
     //functie care returneaza lista autobuzelor care pleaca cel mai repede din statia S dupa ora O
     //input: Statie S,Ora O
     //output:vector de numere de autobuze
-    vector<int> x;
+    vector<Autobuz> x;
     x.clear();
     vector<Ora> L;
     L.clear();
@@ -161,7 +161,7 @@ vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
         int j=0;
         if(V[i].isStatie(S)==true)
         {
-            x.push_back(V[i].getNumar());
+            x.push_back(V[i]);
             while(j<V[i].getOrar().getTimpiStatie(S).size()&&V[i].getOrar().getTimpiStatie(S)[j]<O)
                 j++;
             L.push_back(V[i].getOrar().getTimpiStatie(S)[j]);
@@ -176,7 +176,7 @@ vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
                 OraAux=L[k];
                 L[k]=L[i];
                 L[i]=OraAux;
-                int aux;
+                Autobuz aux;
                 aux=x[k];
                 x[k]=x[i];
                 x[i]=aux;
