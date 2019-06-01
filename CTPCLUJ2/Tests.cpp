@@ -471,6 +471,16 @@ bool Tests::test_Filtre(){
 	aux2.push_back(baza.getall()[3]);
     assert(baza.filterByStatie("Memo")[0]==baza.getall()[0]);
     assert(baza.filterByStatie("Memo")[1]==baza.getall()[3]);
+    Statie S("Memo",1);
+    Ora O(10,0);
+    assert(baza.filterByTime(S, O)[0]==baza.getall()[0]);
+    assert(baza.filterByTime(S, O)[1]==baza.getall()[3]);
+    S.setnume("Observator");
+    S.setzona(2);
+    O.setora(11);
+    assert(baza.filterByTime(S, O)[0]==baza.getall()[2]);
+    assert(baza.filterByTime(S, O)[1]==baza.getall()[1]);
+    assert(baza.filterByTime(S, O)[2]==baza.getall()[3]);
 	return true;
 }
 bool Tests::test_Exception(){
