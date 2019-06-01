@@ -35,8 +35,6 @@ int UI::decide_client()
     std::cout<<"4.Iesire"<<'\n';
     int k;
     std::cin>>k;
-    if(k>4||k<1)
-        throw Exception("Comanda invalida");
     std::cout<<'\n';
     return k;
 
@@ -324,7 +322,7 @@ void UI::client_logat()
     std::cout<<'\n';
     while(optiune<6)
     {
-        try{
+        
     if(optiune==1)
     {
         afiseazanrautobuze();
@@ -349,14 +347,8 @@ void UI::client_logat()
         calatorie();
     }
             afisareoptiunilogat();
-            cin>>optiune;}
-        catch (Exception &exc){
-            cout<<exc.getmessage();
-        }
+            cin>>optiune;
     }
-    
-    
-
 }
 void UI::sign_up()
 {
@@ -376,20 +368,21 @@ void UI::sign_up()
     std::cin>>nrcard;
     std::cout<<'\n';
     RepoBilete r;
-    Card c;
+    Card car;
+    car.setNrCard(nrcard);
     bool ok=true;
     while(ok)
         try{
             std::cout<<"Pin: ";
             std::cin>>pin;
             std::cout<<'\n';
-            Card c(nrcard,pin);
+            car.setPin(pin);
             ok=false;
         }
     catch (Exception &exc){
         cout<<exc.getmessage()<<endl;
     }
-    Client* newClient=new ClientLogat(c,username,parola,r);
+    Client* newClient=new ClientLogat(car,username,parola,r);
     this->c.addClient(newClient);
     this->c.AddClient_file("DataBase1.csv");
     std::cout<<"Contul dumneavoastra a fost creat cu succes!"<<'\n';
@@ -404,8 +397,9 @@ void UI::run()
     this->c.loadAutobuze("BazaDateAutobuze.txt");
     c.create(c.getAutobuze());
     int optiune=decide_client();
-    while(optiune<4)
+    while(optiune!=4)
     {
+        try{
     if(optiune==1)
     {
         client_logat();
@@ -419,7 +413,12 @@ void UI::run()
     {
         sign_up();
     }
-    optiune=decide_client();
+            optiune=decide_client();
+            
+        }
+        catch (Exception &exc){
+            cout<<exc.getmessage();
+        }
     }
 }
 
