@@ -50,8 +50,7 @@ int BazaDateClienti::getSize() {
 
 
 vector<Client*> BazaDateClienti::getAll() {
-	//if(pos<0 || pos>=elements.size())
-//		throw Exception("pozitia trebuie sa fie intre 0 si dimensiunea vectorului...");
+
 	return this->elements;
 }
 
