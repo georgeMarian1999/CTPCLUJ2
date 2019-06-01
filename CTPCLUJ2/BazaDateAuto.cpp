@@ -163,7 +163,6 @@ Ora BazaDateAutobuze::minima(vector<Ora> V,Ora O){
     int i=0;
     while(i<V.size()&&(V[i]<O||V[i]==O))
         i++;
-    
     return V[i];
 }
 vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
@@ -182,4 +181,36 @@ vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
         }
     }
     return X;
+}
+vector<int> BazaDateAutobuze::filterByTime2(Statie S, Ora O){
+    vector<int> x;
+    x.clear();
+    vector<Ora> L;
+    L.clear();
+    for(int i=0;i<V.size();i++){
+        int j=0;
+        x.push_back(V[i].getNumar()); while((j<V[i].getOrar().getTimpiStatie(S).size()&&(V[i].getOrar().getTimpiStatie(S)[j]<O))||V[i].getOrar().getTimpiStatie(S)[j]==O)
+            j++;
+        L.push_back(V[i].getOrar().getTimpiStatie(S)[j]);
+    }
+    for(int g=0;g<x.size();g++)
+        cout<<x[g]<<" ";
+    cout<<endl;
+    for(int y=0;y<L.size();y++)
+        cout<<L[y].toString()<<" ";
+    cout<<endl;
+    for(int k=0;k<L.size()-1;k++)
+        for(int i=k+1;i<L.size();i++)
+            if(L[k]>L[i])
+            {
+                Ora OraAux;
+                OraAux=L[k];
+                L[k]=L[i];
+                L[i]=OraAux;
+                int aux;
+                aux=x[k];
+                x[k]=x[i];
+                x[i]=aux;
+            }
+    return x;
 }
