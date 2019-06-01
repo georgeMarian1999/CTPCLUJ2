@@ -130,8 +130,8 @@ void UI::calatorie()
     string sosire;
     std::cin>>sosire;
     std::cout<<'\n';
-    vector<Autobuz> traseu;
-    traseu=this->c.traseuDirect(pornire,sosire);
+    BazaDateAutobuze traseu(this->c.traseuDirect(pornire,sosire));
+    
     std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
     std::cout<<"Ora: ";
     string ora;
@@ -172,15 +172,17 @@ void UI::calatorie()
         O.setora(o);
         O.setminute(m);
     }
-     
-    if(traseu.size()!=0)
+    Statie s;
+    s.setnume(pornire);
+    traseu=traseu.filterByTime(s,O);
+    if(traseu.getall().size()!=0)
     {
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua: "<<'\n';
-        for(unsigned int i=0;i<traseu.size();i++)
+        for(unsigned int i=0;i<traseu.getall().size();i++)
         {
          
         
-        std::cout<<i<<". "<<traseu[i].getNumar()<<'\n';
+        std::cout<<i<<". "<<traseu.getall()[i].getNumar()<<'\n';
         //plata_client(nrAuto);
         }
         std::cout<<"Va rugam sa introduceti traseul dorit: ";
