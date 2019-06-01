@@ -93,3 +93,10 @@ string Ora::toString(){
     s=s+to_string(ora)+":"+to_string(minute);
     return s;
 }
+istream& operator>>(istream& is,Ora& O){
+    cout<<"Da ti ora:"<<endl;
+    is>>O.ora;
+    cout<<":";
+    is>>O.minute;
+    return is;
+}
