@@ -160,7 +160,9 @@ void UI::calatorie()
             i=rezfinal.size();
 
         }
-        
+        std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autbuzele: "<<'\n';
+        std::cout<<"1. "<<aux[0].getNumar()<<" si sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n';
+        std::cout<<"2. "<<aux[2].getNumar()<<" si sa schimbati in statia "<<coborare[1].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n';
 
 
        
