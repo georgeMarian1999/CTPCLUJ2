@@ -115,38 +115,37 @@ void Ctrl::AddClient_file(string s)
 {
     this->Clienti.AddClient_File(s);
 }
-//vector<Autobuz> Ctrl::traseuDirect(string start, string stop){
+vector<Autobuz> Ctrl::traseuDirect(string start, string stop){
 	/*Descr:returneaza autobuzele care
 	 * In:
 	 * Out:
 	 */
-//	vector<int> distante;
-	//vector<string> drum;
-	//dijkstra(start, stop, distante, drum);
-	//int nrStatii=drum.size();
-	//vector<Autobuz> aux;
-	//for(int i=0; i< Autobuze.filterByStatii(start, stop).size();i++)
-		//if(Autobuze.filterByStatii(start, stop)[i].nr_Statii(start, stop)==nrStatii)
-			//aux.push_back(Autobuze.filterByStatii(start, stop)[i]);
+	vector<int> distante;
+	vector<string> drum;
+	dijkstra(start, stop, distante, drum);
+	int nrStatii=drum.size();
+	vector<Autobuz> aux;
+	for(int i=0; i< Autobuze.filterByStatii(start, stop).size();i++)
+		if(Autobuze.filterByStatii(start, stop)[i].nr_Statii(start, stop)==nrStatii)
+			aux.push_back(Autobuze.filterByStatii(start, stop)[i]);
+	return aux;
 
-	//return aux;
-
-//}
-//vector<Autobuz> Ctrl::filterByStatii(string start, string stop){
+}
+vector<Autobuz> Ctrl::filterByStatii(string start, string stop){
 	/*Descr:filtreaza autobuzele care trec prin statia "start" si "stop"
 			* In:start, stop
 			* Out:vector de autobuze cu prop ceruta
 			 */
-	//return Autobuze.filterByStatii(start, stop);
-//}
+	return Autobuze.filterByStatii(start, stop);
+}
 
 
-/*void Ctrl::traseuIndirect(string start, string stop, vector<vector<Autobuz>>& rezFinal, vector<Statie>& coborare){
+void Ctrl::traseuIndirect(string start, string stop, vector<vector<Autobuz>>& rezFinal, vector<Statie>& coborare){
 	/*Descr:
 	 * In:
 	 * Out:
 	 */
-	/*vector<Autobuz> rezPartial;
+	vector<Autobuz> rezPartial;
 
 	vector<int> distante;
 	vector<string> drum;
@@ -177,7 +176,6 @@ void Ctrl::AddClient_file(string s)
 
 		} //end for j
 		rezPartial.clear();
-
 	}
-}*/
+}
 
