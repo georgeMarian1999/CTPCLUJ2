@@ -12,7 +12,5 @@
 int main(int argc, const char * argv[]) {
     UI U;
     U.run();
-    Ora O;
-    cin>>O;
     return 0;
 }

@@ -40,5 +40,6 @@ public:
     string toString();
     bool isStatie(Statie);
     bool isStatie(string);
+    int zona(string);
 };
 #endif /* Orar_hpp */

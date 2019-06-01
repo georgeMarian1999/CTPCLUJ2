@@ -222,3 +222,9 @@ bool BazaDateAutobuze::esteStatie(string nume){
             return true;
     return false;
 }
+int BazaDateAutobuze::zona(string nume){
+    for(int i=0;i<V.size();i++)
+        if(V[i].zona(nume)!=-1)
+            return V[i].zona(nume);
+    return -1;
+}
