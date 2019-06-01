@@ -30,9 +30,6 @@ public:
     void LoadFromFile(const char*);
     vector<Autobuz> filterByNr(int);
     vector<Autobuz> filterByStatie(string);
-    Ora diferent(Ora,Ora);
-    Ora minima(vector<Ora>,Ora);
     vector<int> filterByTime(Statie,Ora);
-    vector<int> filterByTime2(Statie,Ora);
 };
 #endif /* BazaDateAuto_hpp */

@@ -37,7 +37,14 @@ vector<Ora> Orar::getTimpiStatie(Statie S){
     //output:un vector de ore
     int found=-1;
     int i=0;
-    while(i<Statii.size()&&found==-1)
+    if(Statii.size()%2==0)
+        while(i<Statii.size()&&found==-1)
+        {
+            if(Statii[i]==S)
+                found=i;
+            i++;
+        }
+    else while(i<Statii.size()&&found==-1)
     {
         if(Statii[i]==S)
             found=i;
@@ -102,4 +109,10 @@ string Orar::toString(){
         s=s+"\n";
     }
     return s;
+}
+bool Orar::isStatie(Statie S){
+    for(int i=0;i<Statii.size();i++)
+        if(S==Statii[i])
+            return true;
+    return false;
 }

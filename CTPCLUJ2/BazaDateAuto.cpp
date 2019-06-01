@@ -149,56 +149,25 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 
 
 }
-Ora BazaDateAutobuze::diferent(Ora A, Ora B){
-    //functie care face diferenta intre 2 ore
-    int difora=abs(A.getora()-B.getora());
-    int difmin=abs(A.getminute()-B.getminute());
-    Ora O(difora,difmin);
-    return O;
-}
-Ora BazaDateAutobuze::minima(vector<Ora> V,Ora O){
-    Ora OraMinima;
-    OraMinima.setora(24);
-    OraMinima.setminute(60);
-    int i=0;
-    while(i<V.size()&&(V[i]<O||V[i]==O))
-        i++;
-    return V[i];
-}
 vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
-    Ora OraMinima;
-    OraMinima.setora(24);
-    OraMinima.setminute(60);
-    for(int i=0;i<V.size();i++){
-        if(minima(V[i].getOrar().getTimpiStatie(S), O)<OraMinima){
-            OraMinima=minima(V[i].getOrar().getTimpiStatie(S), O);
-        }
-    }
-    vector<int> X;
-    for(int i=0;i<V.size();i++){
-        if(minima(V[i].getOrar().getTimpiStatie(S), O)==OraMinima){
-            X.push_back(V[i].getNumar());
-        }
-    }
-    return X;
-}
-vector<int> BazaDateAutobuze::filterByTime2(Statie S, Ora O){
+    //functie care returneaza lista autobuzelor care pleaca cel mai repede din statia S dupa ora O
+    //input: Statie S,Ora O
+    //output:vector de numere de autobuze
     vector<int> x;
     x.clear();
     vector<Ora> L;
     L.clear();
     for(int i=0;i<V.size();i++){
         int j=0;
-        x.push_back(V[i].getNumar()); while((j<V[i].getOrar().getTimpiStatie(S).size()&&(V[i].getOrar().getTimpiStatie(S)[j]<O))||V[i].getOrar().getTimpiStatie(S)[j]==O)
-            j++;
-        L.push_back(V[i].getOrar().getTimpiStatie(S)[j]);
+        if(V[i].isStatie(S)==true)
+        {
+            x.push_back(V[i].getNumar());
+            while(j<V[i].getOrar().getTimpiStatie(S).size()&&V[i].getOrar().getTimpiStatie(S)[j]<O)
+                j++;
+            L.push_back(V[i].getOrar().getTimpiStatie(S)[j]);
+            
+        }
     }
-    for(int g=0;g<x.size();g++)
-        cout<<x[g]<<" ";
-    cout<<endl;
-    for(int y=0;y<L.size();y++)
-        cout<<L[y].toString()<<" ";
-    cout<<endl;
     for(int k=0;k<L.size()-1;k++)
         for(int i=k+1;i<L.size();i++)
             if(L[k]>L[i])

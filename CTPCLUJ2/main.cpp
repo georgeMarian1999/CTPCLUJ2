@@ -17,11 +17,9 @@ int main(int argc, const char * argv[]) {
     B.AddClient_File("testout.csv");
     BazaDateAutobuze A;
     A.LoadFromFile("BazaDateAutobuze.txt");
-    Statie S("Memo",1);
-    Ora H(10,0);
-   // for(int i=0;i<A.filterByTime2(S, H).size();i++)
-     //   cout<<A.filterByTime2(S, H)[i]<<" ";
-    for(int i=0;i<A.getall()[0].getOrar().getTimpiStatie(S).size();i++)
-    cout<<A.getall()[0].getOrar().getTimpiStatie(S)[i].toString()<<" ";
+    Statie S("Observator",2);
+    Ora H(11,0);
+    for(int i=0;i<A.filterByTime(S, H).size();i++)
+        cout<<A.filterByTime(S, H)[i]<<" ";
     return 0;
 }
