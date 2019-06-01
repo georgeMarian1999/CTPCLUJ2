@@ -132,18 +132,61 @@ void UI::calatorie()
     std::cout<<'\n';
     vector<Autobuz> traseu;
     traseu=this->c.traseuDirect(pornire,sosire);
+    std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
+    std::cout<<"Ora: ";
+    string ora;
+    std::cin>>ora;
+    std::cout<<'\n';
+    Ora O;
+    if(ora=="")
+    {
+        std::cout<<"Doriti sa plecati acum sau mai tarziu?"<<'\n';
+        string p;
+        std::cin>>p;
+        if(p[0]=='a' || p[0]=='A')
+        {
+            //GEORGE O SA INCARCE ORA DE LA SYSTEM PT CA EU NU MA PRICEP
+            //MULTUMESC
+
+        }
+        else{
+             std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
+            std::cout<<"Ora: ";
+            string aux;
+            std::cin>>aux;
+            std::cout<<'\n';
+            int o=int(aux[0])*10+int(aux[1]);
+            int m=int(aux[3])*10+int(aux[4]);
+            O.setora(o);
+            O.setminute(m);
+            
+
+
+        }
+        
+    }
+    else{
+        //ora o sa fie 12:31
+        int o=int(ora[0])*10+int(ora[1]);
+        int m=int(ora[3])*10+int(ora[4]);
+        O.setora(o);
+        O.setminute(m);
+    }
+     
     if(traseu.size()!=0)
     {
-        std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autobuzul ";
-        //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
-        std::cout<<traseu[0].getNumar();
-       
-        std::cout<<" ce pleaca in ... minute"<<'\n';
-        std::cout<<"Introduceti numarul autobuzului dorit: ";
-        int nrAuto;
-        std::cin>>nrAuto;
-        std::cout<<'\n';
+        std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua: "<<'\n';
+        for(unsigned int i=0;i<traseu.size();i++)
+        {
+         
+        
+        std::cout<<i<<". "<<traseu[i].getNumar()<<'\n';
         //plata_client(nrAuto);
+        }
+        std::cout<<"Va rugam sa introduceti traseul dorit: ";
+        int nrTraseu;
+        std::cin>>nrTraseu;
+        std::cout<<'\n';
     }
     else{
         vector<vector<Autobuz>> rezfinal;
