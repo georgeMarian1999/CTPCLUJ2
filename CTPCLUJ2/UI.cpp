@@ -1,5 +1,6 @@
 #include "UI.h"
 #include <string>
+#include <Windows.h>
 UI::UI(){
     
 }
@@ -50,10 +51,12 @@ void UI::filtrare_statie()
 }
 void afisare_pret_bilete()
 {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
         //afiseaza pretul biletelor
         std::cout<<"Preturile biletelor sunt: "<<'\n';
         std::cout<<"5RON/Bilet Zona 1(Opera, Sora, Regio) "<<'\n';
         std::cout<<"3RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
 }
 void UI::afisareoptiuninelogat(){
     //afiseaza optiunile utilizatorului nelogat
@@ -94,6 +97,7 @@ void UI::client_nelogat()
 void UI::situatie_cont(int pos)
 {
     //afiseaza situatia contului unui client
+    
     std::cout<<"Bilete din contul dumneavoastra sunt: "<<'\n';
     int zona1=0,zona2=0;
     RepoBilete zona;
@@ -109,8 +113,10 @@ void UI::situatie_cont(int pos)
         }
 
     }
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     std::cout<<" Zona 1: "<<zona1<<'\n';
     std::cout<<" Zona 2: "<<zona2<<'\n';
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
 
 }
 void UI::calatorie()
@@ -128,14 +134,37 @@ void UI::calatorie()
     traseu=this->c.traseuDirect(pornire,sosire);
     if(traseu.size()!=0)
     {
-        std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autobuzul "<<traseu[0].getNumar()<<" ce pleaca in ... minute"<<'\n';
-
+        std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autobuzul ";
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+        std::cout<<traseu[0].getNumar();
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        std::cout<<" ce pleaca in ... minute"<<'\n';
     }
     else{
         vector<vector<Autobuz>> rezfinal;
         vector<Statie> coborare;
         this->c.traseuIndirect(pornire,sosire,rezfinal,coborare);
+        vector<Autobuz> aux;
+        aux.push_back(rezfinal[0][0]);
+        aux.push_back(rezfinal[0][1]);
+        int k1=0,k2=1, pos;
+        for(unsigned int i=0;i<rezfinal.size();i+=1)
+        {
+            while(aux[0]==rezfinal[i][0] && aux[1]==rezfinal[i][1])
+            {
+                i+=1;
+            }
+            aux.push_back(rezfinal[i][0]);
+            aux.push_back(rezfinal[i][1]);
+            pos=i;
+            i=rezfinal.size();
+
+        }
         
+
+
+       
+
     }
     
 }
@@ -152,15 +181,21 @@ void UI::afisareoptiunilogat(){
 void UI::afiseazanrautobuze(){
     //afiseaza toate nr autobuzelor
     cout<<"Autobuzele disponibile sunt "<<endl;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     for(int i=0;i<c.getvectAutoBuz().size();i++)
+    {
         cout<<c.getvectAutoBuz()[i].getNumar()<<" ";
+    }
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
     cout<<endl;
 }
 void UI::afiseazanumelestatiilor(){
     //afiseaza nr tuturor statiilor
     cout<<"Statiile disponibile sunt "<<endl;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     for(int i=0;i<c.getTraseu().getGraf().size();i++)
         cout<<c.getTraseu().getGraf()[i].getinfo()<<endl;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
     cout<<endl;
 }
 void UI::client_logat()
