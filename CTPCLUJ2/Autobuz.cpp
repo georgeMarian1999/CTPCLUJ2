@@ -96,5 +96,7 @@ int Autobuz::nr_Statii(string pornire, string sosire)
     }
     return nr;
 }
-
+bool Autobuz::isStatie(Statie S){
+    return orar.isStatie(S);
+}
 

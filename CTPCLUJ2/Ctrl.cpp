@@ -128,7 +128,6 @@ vector<Autobuz> Ctrl::traseuDirect(string start, string stop){
 	for(int i=0; i< Autobuze.filterByStatii(start, stop).size();i++)
 		if(Autobuze.filterByStatii(start, stop)[i].nr_Statii(start, stop)==nrStatii)
 			aux.push_back(Autobuze.filterByStatii(start, stop)[i]);
-
 	return aux;
 
 }
@@ -177,7 +176,6 @@ void Ctrl::traseuIndirect(string start, string stop, vector<vector<Autobuz>>& re
 
 		} //end for j
 		rezPartial.clear();
-
 	}
 }
 
