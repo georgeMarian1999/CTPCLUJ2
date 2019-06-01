@@ -75,7 +75,7 @@ void afisare_pret_bilete()
         std::cout<<"Preturile biletelor sunt: "<<'\n';
         std::cout<<"5RON/Bilet Zona 1(Opera, Sora, Regio) "<<'\n';
         std::cout<<"3RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+        
 }
 void UI::afisareoptiuninelogat(){
     //afiseaza optiunile utilizatorului nelogat
@@ -135,7 +135,7 @@ void UI::situatie_cont(int pos)
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     std::cout<<" Zona 1: "<<zona1<<'\n';
     std::cout<<" Zona 2: "<<zona2<<'\n';
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+    
 
 }
 void UI::calatorie()
@@ -156,8 +156,13 @@ void UI::calatorie()
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autobuzul ";
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
         std::cout<<traseu[0].getNumar();
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+       
         std::cout<<" ce pleaca in ... minute"<<'\n';
+        std::cout<<"Introduceti numarul autobuzului dorit: ";
+        int nrAuto;
+        std::cin>>nrAuto;
+        std::cout<<'\n';
+        plata_client(nrAuto);
     }
     else{
         vector<vector<Autobuz>> rezfinal;
