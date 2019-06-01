@@ -43,6 +43,7 @@ public:
     bool test_Nod();
     bool test_Harta();
     bool test_Exception();
+    bool test_FilterByTime();
     void RunAllTests();
 };
 #endif /* Tests_hpp */
