@@ -38,5 +38,6 @@ public:
     Orar& operator=(const Orar&);
     void loadfromfile(string);
     string toString();
+    bool isStatie(Statie);
 };
 #endif /* Orar_hpp */

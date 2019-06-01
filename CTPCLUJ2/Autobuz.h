@@ -21,9 +21,8 @@ public:
 	void setNumar(const int);
 	void setOrar(Orar);
 	int nr_Statii(string,string);
+    bool isStatie(Statie);
 };
-
-//cacat
 
 
 

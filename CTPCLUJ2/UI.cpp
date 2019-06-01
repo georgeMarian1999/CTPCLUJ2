@@ -52,7 +52,7 @@ void afisare_pret_bilete()
 {
         //afiseaza pretul biletelor
         std::cout<<"Preturile biletelor sunt: "<<'\n';
-        std::cout<<"5RON/Bilet Zona 1( Opera, Sora, Regio) "<<'\n';
+        std::cout<<"5RON/Bilet Zona 1(Opera, Sora, Regio) "<<'\n';
         std::cout<<"3RON/Bilet Zona 2(Cipariu, Avram, Arte, Observator)"<<'\n';
 }
 void UI::afisareoptiuninelogat(){
