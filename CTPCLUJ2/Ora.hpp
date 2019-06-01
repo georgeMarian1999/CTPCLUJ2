@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string>
+#include "Exception.hpp"
 #include <iostream>
 using namespace std;
 class Ora{

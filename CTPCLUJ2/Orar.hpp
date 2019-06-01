@@ -39,5 +39,6 @@ public:
     void loadfromfile(string);
     string toString();
     bool isStatie(Statie);
+    bool isStatie(string);
 };
 #endif /* Orar_hpp */

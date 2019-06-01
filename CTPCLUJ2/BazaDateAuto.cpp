@@ -127,6 +127,8 @@ vector<Autobuz> BazaDateAutobuze::filterByNr(int nr){
 	 * In:nr
 	 * Out:vector de autobuze cu prop ceruta
 	 */
+    if(esteAutobuz(nr)==false)
+        throw Exception("Numarul autobuzului nu este in baza de date.Va rog incercati din nou\n");
 	vector<Autobuz> aux;
 	for(int i=0;i<V.size();i++)
 		if(V[i].getNumar()==nr)
@@ -138,6 +140,8 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 		 * In:name
 		 * Out:vector de autobuze cu prop ceruta
 		 */
+    if(esteStatie(name)==false)
+        throw Exception("Statia data nu exista in baza de date.Va rog sa incercati din nou");
 	vector<Autobuz> aux;
 	for(int i=0;i<V.size();i++)
 		for(int j=0; j<V[i].getOrar().getStatii().size();j++)
@@ -205,4 +209,16 @@ vector<Autobuz> BazaDateAutobuze::filterByStatii(string start, string stop){
 		}
 	}
 		return aux;
+}
+bool BazaDateAutobuze::esteAutobuz(int nr){
+    for(int i=0;i<V.size();i++)
+        if(V[i].getNumar()==nr)
+            return true;
+    return false;
+}
+bool BazaDateAutobuze::esteStatie(string nume){
+    for(int i=0;i<V.size();i++)
+        if(V[i].isStatie(nume)==true)
+            return true;
+    return false;
 }

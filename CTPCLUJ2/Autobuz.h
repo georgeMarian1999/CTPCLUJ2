@@ -22,6 +22,7 @@ public:
 	void setOrar(Orar);
 	int nr_Statii(string,string);
     bool isStatie(Statie);
+    bool isStatie(string);
 };
 
 

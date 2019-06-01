@@ -14,6 +14,10 @@ Ora::Ora(){
 }
 Ora::Ora(int o,int m){
     //constructor cu parametrii
+    if(o>24)
+        throw Exception("Ora invalida!");
+    if(m>60)
+        throw Exception("Minute invalide");
     ora=o;
     minute=m;
 }

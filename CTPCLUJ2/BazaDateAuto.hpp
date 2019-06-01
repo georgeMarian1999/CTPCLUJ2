@@ -32,5 +32,7 @@ public:
     vector<Autobuz> filterByStatie(string);
     vector<Autobuz> filterByTime(Statie,Ora);
     vector<Autobuz> filterByStatii(string, string);
+    bool esteAutobuz(int);
+    bool esteStatie(string);
 };
 #endif /* BazaDateAuto_hpp */

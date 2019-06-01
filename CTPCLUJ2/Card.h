@@ -8,6 +8,7 @@
 #ifndef CARD_H_
 #define CARD_H_
 #include<iostream>
+#include "Exception.hpp"
 using namespace std;
 class Card{
 private:

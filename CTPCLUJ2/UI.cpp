@@ -17,6 +17,8 @@ int UI::decide_client()
     std::cout<<"4.Iesire"<<'\n';
     int k;
     std::cin>>k;
+    if(k>4||k<1)
+        throw Exception("Comanda invalida");
     std::cout<<'\n';
     return k;
 

@@ -116,3 +116,9 @@ bool Orar::isStatie(Statie S){
             return true;
     return false;
 }
+bool Orar::isStatie(string nume){
+    for(int i=0;i<Statii.size();i++)
+        if(Statii[i].getnume()==nume)
+            return true;
+    return false;
+}
