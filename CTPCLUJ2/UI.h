@@ -24,6 +24,8 @@ public:
     void afiseazanumelestatiilor();
     void sign_up();
     void plata_client();
+    string citestestatiepornire();
+    string citestestatiesosire();
 };
 
 

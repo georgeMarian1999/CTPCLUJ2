@@ -19,8 +19,10 @@ Card::~Card(){
 Card::Card(int nr, int p){
 	//constructor with par
 	nrCard=nr;
-    if(p/1000!=0||p/100==0)
-        throw Exception("Pin incorect va rog sa incercati din nou...");
+    if(p>9999)
+        throw Exception("Pin ul este prea lung.Incercati din nou");
+    if(p<1000)
+        throw Exception("Pin ul este prea scurt.Incercati din nou");
 	pin=p;
 }
 

@@ -7,6 +7,24 @@ UI::UI(){
 UI::~UI(){
     
 }
+string UI::citestestatiepornire(){
+    std::cout<<"Introduceti statia de pornire: ";
+    string pornire;
+    std::cin>>pornire;
+    std::cout<<'\n';
+    if(c.getAutobuze().esteStatie(pornire)==false)
+        throw Exception("Statia nu se afla in baza de date.Va rugam incercati din nou\n");
+    return pornire;
+}
+string UI::citestestatiesosire(){
+    std::cout<<"Introduceti statia de sosire: ";
+    string sosire;
+    std::cin>>sosire;
+    std::cout<<'\n';
+    if(c.getAutobuze().esteStatie(sosire)==false)
+        throw Exception("Statia nu se afla in baza de date.Va rugam incercati din nou\n");
+    return sosire;
+}
 int UI::decide_client()
     //functie care decide daca utilizatorul doreste sa se autentifice,sa isi creeze cont sau sa continue fara
     //logare
@@ -26,28 +44,41 @@ int UI::decide_client()
 void UI::filtrare_nr()
 {
     //filtreaza autobuzele dupa numar
-    std::cout<<"Introduceti numarul autobuzului dorit: ";
-        int nr;
-        std::cin>>nr;
-        std::cout<<'\n';
-        vector<Autobuz> aux;
-        aux=this->c.filterByNr(nr);
-        std::cout<<aux[0].toString()<<'\n';
-
+    bool ok=false;
+    while(ok==false)
+        try {
+            std::cout<<"Introduceti numarul autobuzului dorit: ";
+            int nr;
+            std::cin>>nr;
+            std::cout<<'\n';
+            vector<Autobuz> aux;
+            aux=this->c.filterByNr(nr);
+            std::cout<<aux[0].toString()<<'\n';
+            ok=true;
+        } catch (Exception &exc) {
+            cout<<exc.getmessage();
+        }
 }
 void UI::filtrare_statie()
 {
     //filtreaza autobuzele care trec printr o anumita statie
-    std::cout<<"Introduceti statia dorita: ";
-        string statie;
-        std::cin>>statie;
-        std::cout<<'\n';
-        vector<Autobuz> aux;
-        aux=this->c.filterByStatie(statie);
-        std::cout<<"Autobuzele ce trec prin statia "<<statie<<" sunt: "<<'\n';
-        for(unsigned int i=0;i<aux.size();i+=1)
-            {
-                std::cout<<aux[i].getNumar()<<'\n';
+        bool ok=false;
+        while(ok==false)
+            try {
+                std::cout<<"Introduceti statia dorita: ";
+                string statie;
+                std::cin>>statie;
+                std::cout<<'\n';
+                vector<Autobuz> aux;
+                aux=this->c.filterByStatie(statie);
+                std::cout<<"Autobuzele ce trec prin statia "<<statie<<" sunt: "<<'\n';
+                for(unsigned int i=0;i<aux.size();i+=1)
+                {
+                    std::cout<<aux[i].getNumar()<<'\n';
+                }
+                ok=true;
+            } catch (Exception &exc) {
+                cout<<exc.getmessage();
             }
 
 }
@@ -124,16 +155,27 @@ void UI::situatie_cont(int pos)
 void UI::calatorie()
 {
     //functie care afiseaza drumul pe care trebuie un utilizator sa il urmeze pentru a face cat mai putin
-    std::cout<<"Introduceti statia de pornire: ";
+    bool ok=true;
     string pornire;
-    std::cin>>pornire;
-    std::cout<<'\n';
-    std::cout<<"Introduceti statia de sosire: ";
+    while(ok)
+        try {
+            pornire=citestestatiepornire();
+            ok=false;
+            
+        } catch (Exception &exc) {
+            cout<<exc.getmessage();
+        }
+    ok=true;
     string sosire;
-    std::cin>>sosire;
-    std::cout<<'\n';
-    BazaDateAutobuze traseu(this->c.traseuDirect(pornire,sosire));
+    while (ok)
+        try {
+            sosire=citestestatiesosire();
+            ok=false;
+        } catch (Exception &exc) {
+            cout<<exc.getmessage();
+        }
     
+    BazaDateAutobuze traseu(this->c.traseuDirect(pornire,sosire));
     std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
     std::cout<<"Ora: ";
     string ora;
@@ -282,6 +324,7 @@ void UI::client_logat()
     std::cout<<'\n';
     while(optiune<6)
     {
+        try{
     if(optiune==1)
     {
         afiseazanrautobuze();
@@ -305,8 +348,11 @@ void UI::client_logat()
     {
         calatorie();
     }
-        afisareoptiunilogat();
-        cin>>optiune;
+            afisareoptiunilogat();
+            cin>>optiune;}
+        catch (Exception &exc){
+            cout<<exc.getmessage();
+        }
     }
     
     
@@ -324,16 +370,25 @@ void UI::sign_up()
     string parola;
     std::cin>>parola;
     std::cout<<'\n';
+    int nrcard,pin;
     std::cout<<"Introduceti datele cardului: "<<'\n';
     std::cout<<"Numar card: ";
-    int nrcard,pin;
     std::cin>>nrcard;
     std::cout<<'\n';
-    std::cout<<"Pin: ";
-    std::cin>>pin;
-    std::cout<<'\n';
     RepoBilete r;
-    Card c(nrcard,pin);
+    Card c;
+    bool ok=true;
+    while(ok)
+        try{
+            std::cout<<"Pin: ";
+            std::cin>>pin;
+            std::cout<<'\n';
+            Card c(nrcard,pin);
+            ok=false;
+        }
+    catch (Exception &exc){
+        cout<<exc.getmessage()<<endl;
+    }
     Client* newClient=new ClientLogat(c,username,parola,r);
     this->c.addClient(newClient);
     this->c.AddClient_file("DataBase1.csv");

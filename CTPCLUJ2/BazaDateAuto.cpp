@@ -141,7 +141,7 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 		 * Out:vector de autobuze cu prop ceruta
 		 */
     if(esteStatie(name)==false)
-        throw Exception("Statia data nu exista in baza de date.Va rog sa incercati din nou");
+        throw Exception("Statia data nu exista in baza de date.Va rog sa incercati din nou\n");
 	vector<Autobuz> aux;
 	for(int i=0;i<V.size();i++)
 		for(int j=0; j<V[i].getOrar().getStatii().size();j++)

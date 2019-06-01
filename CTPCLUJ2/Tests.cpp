@@ -58,12 +58,12 @@ bool Tests::test_Bilet(){
 }
 
 bool Tests::test_Card(){
-	Card c(4140, 123);
+	Card c(4140, 1233);
 	assert(c.getNrCard()==4140);
-	assert(c.getPin()==123);
+	assert(c.getPin()==1233);
 	c.setNrCard(4141);
-	c.setPin(321);
-	Card d(4141, 321);
+	c.setPin(3210);
+	Card d(4141, 3210);
 	assert(c==d);
 	Card e(d);
 	assert(e==d);
@@ -71,10 +71,10 @@ bool Tests::test_Card(){
 }
 
 bool Tests::test_Client(){
-	Card a(4140, 123);
+	Card a(4140, 1233);
 	Client c(a);
 	assert(c.getInfoCard()==a);
-	Card d(4141, 321);
+	Card d(4141, 3210);
 	c.setCard(d);
 	assert(c.getInfoCard()==d);
 	Client e=c;
@@ -239,7 +239,7 @@ bool Tests::test_Autobuz()
 	return true;
 }
 bool Tests::test_Clientlogat(){
-	Card a(4140, 123);
+	Card a(4140, 1233);
 	Bilet b(1, 2);
 	Bilet c(3, 4);
 	vector<Bilet> v;
@@ -258,7 +258,7 @@ bool Tests::test_Clientlogat(){
 	return true;
 }
 bool Tests::test_BazaDateClienti(){
-	    Card a(4140, 123);
+	    Card a(4140, 1233);
 		Bilet b(1, 2);
 		Bilet c(3, 4);
 		vector<Bilet> v;
@@ -266,7 +266,7 @@ bool Tests::test_BazaDateClienti(){
 		v.push_back(c);
 		RepoBilete r(v);
 		Client* client1=new ClientLogat(a, "Ana", "1234", r);
-		Card a2(1234, 101);
+		Card a2(1234, 1010);
 		Client* client2=new Client(a2);
         BazaDateClienti baza;
 		baza.addClient(client1);
@@ -329,7 +329,7 @@ bool Tests::test_BazaDateAutobuze(){
         return true;
 }
 bool Tests::test_Ctrl(){
-    Card a(4140, 123);
+    Card a(4140, 1233);
     Bilet b(1, 2);
     Bilet c(3, 4);
     vector<Bilet> v;
@@ -337,7 +337,7 @@ bool Tests::test_Ctrl(){
     v.push_back(c);
     RepoBilete r(v);
     Client* client1=new ClientLogat(a, "Ana", "1234", r);
-    Card a2(1234, 101);
+    Card a2(1234, 1010);
     Client* client2=new Client(a2);
     BazaDateClienti baza;
     baza.addClient(client1);
