@@ -23,6 +23,7 @@ public:
     void afiseazanrautobuze();
     void afiseazanumelestatiilor();
     void sign_up();
+    void plata_client();
 };
 
 
