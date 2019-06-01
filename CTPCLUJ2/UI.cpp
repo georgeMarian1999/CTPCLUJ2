@@ -1,6 +1,5 @@
 #include "UI.h"
 #include <string>
-#include <windows.h>
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
 #define RED     "\033[31m"      /* Red */
@@ -49,7 +48,7 @@ void UI::filtrare_nr()
         std::cout<<'\n';
         vector<Autobuz> aux;
         aux=this->c.filterByNr(nr);
-        std::cout<< MAGENTA <<aux[0].toString()<< RESET <<'\n';
+        std::cout<<aux[0].toString()<<'\n';
 
 }
 void UI::filtrare_statie()
@@ -70,7 +69,7 @@ void UI::filtrare_statie()
 }
 void afisare_pret_bilete()
 {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
         //afiseaza pretul biletelor
         std::cout<<"Preturile biletelor sunt: "<<'\n';
         std::cout<<"5RON/Bilet Zona 1(Opera, Sora, Regio) "<<'\n';
@@ -132,7 +131,7 @@ void UI::situatie_cont(int pos)
         }
 
     }
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     std::cout<<" Zona 1: "<<zona1<<'\n';
     std::cout<<" Zona 2: "<<zona2<<'\n';
     
@@ -154,7 +153,7 @@ void UI::calatorie()
     if(traseu.size()!=0)
     {
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autobuzul ";
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+        //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
         std::cout<<traseu[0].getNumar();
        
         std::cout<<" ce pleaca in ... minute"<<'\n';
@@ -207,21 +206,21 @@ void UI::afisareoptiunilogat(){
 void UI::afiseazanrautobuze(){
     //afiseaza toate nr autobuzelor
     cout<<"Autobuzele disponibile sunt "<<endl;
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     for(int i=0;i<c.getvectAutoBuz().size();i++)
     {
         cout<<c.getvectAutoBuz()[i].getNumar()<<" ";
     }
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
     cout<<endl;
 }
 void UI::afiseazanumelestatiilor(){
     //afiseaza nr tuturor statiilor
     cout<<"Statiile disponibile sunt "<<endl;
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
+    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     for(int i=0;i<c.getTraseu().getGraf().size();i++)
         cout<<c.getTraseu().getGraf()[i].getinfo()<<endl;
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
+    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
     cout<<endl;
 }
 void UI::client_logat()
