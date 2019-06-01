@@ -124,6 +124,19 @@ void UI::calatorie()
     string sosire;
     std::cin>>sosire;
     std::cout<<'\n';
+    vector<Autobuz> traseu;
+    traseu=this->c.traseuDirect(pornire,sosire);
+    if(traseu.size()!=0)
+    {
+        std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autobuzul "<<traseu[0].getNumar()<<" ce pleaca in ... minute"<<'\n';
+
+    }
+    else{
+        vector<vector<Autobuz>> rezfinal;
+        vector<Statie> coborare;
+        this->c.traseuIndirect(pornire,sosire,rezfinal,coborare);
+        
+    }
     
 }
 void UI::afisareoptiunilogat(){
