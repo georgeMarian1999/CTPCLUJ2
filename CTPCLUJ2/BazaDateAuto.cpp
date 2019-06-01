@@ -183,3 +183,26 @@ vector<int> BazaDateAutobuze::filterByTime(Statie S, Ora O){
     }
     return X;
 }
+vector<Autobuz> BazaDateAutobuze::filterByStatii(string start, string stop){
+	/*Descr:filtreaza autobuzele care trec prin statia "start" si "stop"
+		* In:start, stop
+		* Out:vector de autobuze cu prop ceruta
+		 */
+	vector<Autobuz> aux;
+	for(int i=0;i<V.size();i++){
+
+		int ok1=0;
+		int ok2=0;
+		for(int j=0; j<V[i].getOrar().getStatii().size();j++){
+
+			if(V[i].getOrar().getStatii()[j].getnume()==start)
+				ok1=1;
+
+			if(V[i].getOrar().getStatii()[j].getnume()==stop && ok1==1){
+				aux.push_back(V[i]);
+				j=V[i].getOrar().getStatii().size();
+			}
+		}
+	}
+		return aux;
+}

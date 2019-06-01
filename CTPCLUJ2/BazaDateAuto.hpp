@@ -33,5 +33,6 @@ public:
     Ora diferent(Ora,Ora);
     Ora minima(vector<Ora>,Ora);
     vector<int> filterByTime(Statie,Ora);
+    vector<Autobuz> filterByStatii(string, string);
 };
 #endif /* BazaDateAuto_hpp */
