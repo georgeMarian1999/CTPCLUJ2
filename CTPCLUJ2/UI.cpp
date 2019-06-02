@@ -151,7 +151,6 @@ void UI::situatie_cont(int pos)
         }
 
     }
-    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     std::cout<<" Zona 1: "<<zona1<<'\n';
     std::cout<<" Zona 2: "<<zona2<<'\n';
     
@@ -165,8 +164,8 @@ void plata_client(BazaDateAutobuze a, Client* client)
     {
         for(unsigned int j=0;j<a.getall()[i].getOrar().getStatii().size();j+=1)
         {
-            if(zona>a[i].getall().getOrar().getStatii()[j].getzona())
-                zona=a[i].getall().getOrar().getStatii()[j].getzona();
+            if(zona>a.getall()[i].getOrar().getStatii()[j].getzona())
+                zona=a.getall()[i].getOrar().getStatii()[j].getzona();
         }
         nr+=1;
     }
