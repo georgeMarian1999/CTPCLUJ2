@@ -187,11 +187,14 @@ void UI::plataclient(BazaDateAutobuze a, Client* client)
             std::cin>>k;
             if(k==1)
             {
+                bool ok=true;
+                while(ok){
                 int pin;
                 std::cout<<"Introduceti pin-ul: ";
                 std::cin>>pin;
                 if(client->getInfoCard().getPin()==pin)
                 {
+                    ok=false;
                     int hopa;
                     if(zona==1){hopa=5;}
                     else{hopa=3;}
@@ -203,6 +206,11 @@ void UI::plataclient(BazaDateAutobuze a, Client* client)
                     {
                         std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
                     }
+                }
+                else{
+                    std::cout<<"Pin gresit!"<<'\n';
+                }
+                
                 }
             }
             
@@ -218,7 +226,8 @@ void UI::plataclient(BazaDateAutobuze a, Client* client)
             std::cin>>k;
             if(k==1)
             {
-                
+                bool ok=true;
+                while(ok){
                 int pin;
                 std::cout<<"Introduceti pin-ul: ";
                 std::cin>>pin;
@@ -237,6 +246,11 @@ void UI::plataclient(BazaDateAutobuze a, Client* client)
                     {
                         std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
                     }
+                }
+                else{
+                    std::cout<<"Pin gresit!"<<'\n';
+                    
+                }
                 }
 
     }
@@ -299,11 +313,15 @@ void UI::calatorie(int pos)
     if(traseu.getall().size()!=0)
     {
         traseu.setall(traseu.filterByTime(s,s1, O));
+        vector<Ora> ORE;
+        cout<<ORE.size()<<endl;
+        
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua: "<<'\n';
         for(unsigned int i=0;i<traseu.getall().size();i++)
         {
          
-        std::cout<<i+1<<". "<<traseu.getall()[i].getNumar()<<'\n';
+            std::cout<<i+1<<". "<<"Autobuzul "<<traseu.getall()[i].getNumar()<<" pleaca la ora ";
+            cout<<traseu.Fulger(traseu.getall()[i], s, O).toString()<<endl;
         }
         std::cout<<"Va rugam sa introduceti traseul dorit: ";
         int nrTraseu;
@@ -334,9 +352,11 @@ void UI::calatorie(int pos)
             i=rezfinal.size();
 
         }
+        Ora Auxiliara(O.getora()+1,O.getminute());
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autbuzele: "<<'\n';
-        std::cout<<"1. "<<aux[0].getNumar()<<" si sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n';
-        std::cout<<"2. "<<aux[2].getNumar()<<" si sa schimbati in statia "<<coborare[1].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n';
+        std::cout<<"1. Autobuzul "<<aux[0].getNumar()<<" care pleaca din statia "<<s.getnume()<<" la ora "<<this->c.Fulger(aux[0], s, O).toString()<<". Apoi sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n'<<" ce va ajunge la ora "<<this->c.Fulger(aux[1], coborare[0], Auxiliara).toString()<<'\n';
+
+        std::cout<<"2. Autobuzul "<<aux[2].getNumar()<<" care pleaca din statia "<<s.getnume()<<" la ora "<<this->c.Fulger(aux[2], s, O).toString()<<". Apoi sa schimbati in statia "<<coborare[position].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n'<<" ce va ajunge la ora "<<this->c.Fulger(aux[3], coborare[position], Auxiliara).toString()<<'\n';
         std::cout<<"Va rugam sa alegeti traseul dorit: ";
         int l;
         std::cin>>l;

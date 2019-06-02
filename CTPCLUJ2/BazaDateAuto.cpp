@@ -183,6 +183,13 @@ vector<Autobuz> BazaDateAutobuze::filterByTime(Statie pornire,Statie oprire, Ora
             }
     return x;
 }
+Ora BazaDateAutobuze::Fulger(Autobuz A,Statie S, Ora O){
+    for(int i=0;i<A.getOrar().getTimpiStatie(S).size();i++)
+        if(A.getOrar().getTimpiStatie(S)[i]>O)
+            return A.getOrar().getTimpiStatie(S)[i];
+    Ora X(12,0);
+    return X;
+}
 vector<Autobuz> BazaDateAutobuze::filterByStatii(string start, string stop){
 	/*Descr:filtreaza autobuzele care trec prin statia "start" si "stop"
 		* In:start, stop

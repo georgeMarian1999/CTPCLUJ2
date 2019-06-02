@@ -178,4 +178,6 @@ void Ctrl::traseuIndirect(string start, string stop, vector<vector<Autobuz>>& re
 		rezPartial.clear();
 	}
 }
-
+Ora Ctrl::Fulger(Autobuz A, Statie S, Ora O){
+    return Autobuze.Fulger(A, S, O);
+}

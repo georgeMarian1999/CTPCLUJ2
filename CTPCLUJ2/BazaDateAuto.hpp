@@ -34,6 +34,6 @@ public:
     vector<Autobuz> filterByStatii(string, string);
     bool esteAutobuz(int);
     bool esteStatie(string);
-
+    Ora Fulger(Autobuz,Statie,Ora);
 };
 #endif /* BazaDateAuto_hpp */

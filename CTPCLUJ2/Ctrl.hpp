@@ -46,6 +46,7 @@ public:
     vector<Autobuz> traseuDirect(string start, string stop);
     vector<Autobuz> filterByStatii(string, string);
     void traseuIndirect(string start, string stop, vector<vector<Autobuz>>& rezFinal, vector<Statie>& coborare);
+    Ora Fulger(Autobuz,Statie,Ora);
 
 };
 #endif /* Ctrl_hpp */
