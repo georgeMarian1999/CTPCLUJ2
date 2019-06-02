@@ -161,12 +161,8 @@ vector<Autobuz> BazaDateAutobuze::filterByTime(Statie pornire,Statie oprire, Ora
     x.clear();
     vector<Ora> L;
     L.clear();
-    cout<<"HAHHAHAHAHHAH"<<endl;
-    cout<<V.size()<<endl;
     for(int i=0;i<V.size();i++){
-        cout<<"HAHAHAHAHhAHA"<<endl;
         int j=0;
-        cout<<V[i].posStart(pornire, oprire)<<endl;
         x.push_back(V[i]);
         while(j<V[i].getOrar().getTimpi().getnrlin()&&V[i].getOrar().getTimpi(j, V[i].posStart(pornire, oprire))<O)
             j++;

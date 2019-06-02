@@ -24,7 +24,7 @@ public:
     void afiseazanrautobuze();
     void afiseazanumelestatiilor();
     void sign_up();
-    void plata_client(BazaDateAutobuze,Client*);
+    void plataclient(BazaDateAutobuze,Client*);
     string citestestatiepornire();
     string citestestatiesosire();
     Ora citireora();

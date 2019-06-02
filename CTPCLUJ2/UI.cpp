@@ -156,7 +156,7 @@ void UI::situatie_cont(int pos)
     
 
 }
-void plata_client(BazaDateAutobuze a, Client* client)
+void UI::plataclient(BazaDateAutobuze a, Client* client)
 {
     int zona=99;
     int nr=0;
@@ -173,12 +173,13 @@ void plata_client(BazaDateAutobuze a, Client* client)
     {
         for(unsigned int i=0;i<client->getBilete().getAll().size();i+=1)
         {
-            if(client->getBilete().getAll()[i].getZona()==zona)
+            if(client->getBilete().getAll()[i].getZona()==zona && nr)
             {
                 nr-=1;
             }
         }
-        if(nr)
+        cout<<nr<<endl;
+        if(nr!=0)
         {
             std::cout<<"Pentru calatoria aleasa mai aveti nevoie de "<<nr<<" bilete pentru zona "<<zona<<'\n';
             std::cout<<"1.Initializare plata"<<'\n';
@@ -186,14 +187,10 @@ void plata_client(BazaDateAutobuze a, Client* client)
             std::cin>>k;
             if(k==1)
             {
-                std::cout<<"Introduceti numar card: ";
-                int nrcard; 
                 int pin;
-                std::cin>>nrcard;
-                std::cout<<'\n';
                 std::cout<<"Introduceti pin-ul: ";
                 std::cin>>pin;
-                if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
+                if(client->getInfoCard().getPin()==pin)
                 {
                     int hopa;
                     if(zona==1){hopa=5;}
@@ -206,16 +203,13 @@ void plata_client(BazaDateAutobuze a, Client* client)
                     {
                         std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
                     }
-                    
                 }
-                
-
-
             }
-            else{
+            
+        }
+        else{
                 std::cout<<"Biletele din contul dumneavoastra vor fi folosite pentru calatoria curenta"<<'\n';
             }
-        }
     }
     else{
             std::cout<<"Pentru calatoria aleasa aveti nevoie de "<<nr<<" bilete pentru zona "<<zona<<'\n';
@@ -224,21 +218,19 @@ void plata_client(BazaDateAutobuze a, Client* client)
             std::cin>>k;
             if(k==1)
             {
-                std::cout<<"Introduceti numar card: ";
-                int nrcard; 
+                
                 int pin;
-                std::cin>>nrcard;
-                std::cout<<'\n';
                 std::cout<<"Introduceti pin-ul: ";
                 std::cin>>pin;
-                if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
+                std::cout<<'\n';
+                if(client->getInfoCard().getPin()==pin)
                 {
                     int hopa;
                     if(zona==1){hopa=5;}
                     else{hopa=3;}
 
                     for(int l=0;l<nr;l+=1)
-                    {client->getBilete().addElement(Bilet(hopa,zona));}
+                    {client->AddBilet(Bilet(hopa,zona));}
                     std::cout<<"Plata a fost realizata cu succes!"<<'\n';
                     std::cout<<"Bilete dumneavoastra curente sunt: "<<'\n';
                     for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
@@ -248,8 +240,9 @@ void plata_client(BazaDateAutobuze a, Client* client)
                 }
 
     }
-    }
 }
+}
+
 void UI::calatorie(int pos)
 {
     //functie care afiseaza drumul pe care trebuie un utilizator sa il urmeze pentru a face cat mai putin
@@ -303,22 +296,22 @@ void UI::calatorie(int pos)
     if(sosire=="Arte"||sosire=="Observator"||sosire=="Cipariu"||sosire=="Avram")
         s1.setzona(2);
     else s1.setzona(1);
-    traseu.setall(traseu.filterByTime(s,s1, O));
-    cout<<traseu.filterByTime(s,s1, O).size()<<endl;
     if(traseu.getall().size()!=0)
     {
+        traseu.setall(traseu.filterByTime(s,s1, O));
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua: "<<'\n';
         for(unsigned int i=0;i<traseu.getall().size();i++)
         {
          
-        
         std::cout<<i+1<<". "<<traseu.getall()[i].getNumar()<<'\n';
         }
         std::cout<<"Va rugam sa introduceti traseul dorit: ";
         int nrTraseu;
         std::cin>>nrTraseu;
         std::cout<<'\n';
-        plata_client(traseu,this->c.getClienti().getClient(pos));
+        BazaDateAutobuze ak;
+        ak.addElement(traseu.getall()[nrTraseu-1]);
+        plataclient(ak,this->c.getClienti().getClient(pos));
         
     }
     else{
@@ -328,7 +321,7 @@ void UI::calatorie(int pos)
         vector<Autobuz> aux;
         aux.push_back(rezfinal[0][0]);
         aux.push_back(rezfinal[0][1]);
-        int k1=0,k2=1, pos;
+        int k1=0,k2=1, position;
         for(unsigned int i=0;i<rezfinal.size();i+=1)
         {
             while(aux[0]==rezfinal[i][0] && aux[1]==rezfinal[i][1])
@@ -337,7 +330,7 @@ void UI::calatorie(int pos)
             }
             aux.push_back(rezfinal[i][0]);
             aux.push_back(rezfinal[i][1]);
-            pos=i;
+            position=i;
             i=rezfinal.size();
 
         }
@@ -358,7 +351,7 @@ void UI::calatorie(int pos)
             alex.addElement(aux[2]);
             alex.addElement(aux[3]);
         }
-        plata_client(alex,this->c.getClienti().getClient(pos));
+        plataclient(alex,this->c.getClienti().getClient(pos));
     }
     
 }

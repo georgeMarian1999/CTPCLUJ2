@@ -54,6 +54,10 @@ void ClientLogat::setBilete(RepoBilete r){
 
 	this->bilete=r;
 }
+void ClientLogat::AddBilet(Bilet b)
+{
+    this->bilete.addElement(b);
+}
 
 ClientLogat& ClientLogat::operator=(const ClientLogat& c){
     //constructor de atribuire
