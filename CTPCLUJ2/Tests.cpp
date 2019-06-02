@@ -483,6 +483,19 @@ bool Tests::test_Filtre(){
    // assert(baza.filterByTime(S, O)[2]==baza.getall()[3]);
 	return true;
 }
+bool Tests::test_dijkstra(){
+	BazaDateAutobuze baza;
+	baza.LoadFromFile("BazaDateAutobuze.txt");
+	Harta h;
+	h.create(baza);
+	vector<int> dist;
+	vector<string> drum;
+	h.dijkstra("Observator", "Sora", dist, drum);
+	assert(drum[0]=="Observator");
+	assert(drum[1]=="Opera");
+	assert(drum[2]=="Sora");
+	return true;
+}
 bool Tests::test_Exception(){
     Exception E("Test");
     assert(E.getmessage()=="Test");
@@ -493,6 +506,6 @@ void Tests::RunAllTests(){
    
 
 
-    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl()&&test_Nod()&&test_Harta()&& test_Filtre()&&test_Exception())
+    if(test_Ora()&&test_Statie()&&test_Matrix()&&test_Client()&&test_Card()&&test_Bilet()&&test_Orar()&&test_Autobuz()&& test_Clientlogat()&& test_BazaDateClienti()&&test_BazaDateAutobuze()&&test_Ctrl()&&test_Nod()&&test_Harta()&& test_Filtre()&&test_Exception()&& test_dijkstra())
         cout<<"Tests ok!"<<endl;
 }

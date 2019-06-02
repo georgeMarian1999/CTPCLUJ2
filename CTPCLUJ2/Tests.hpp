@@ -44,6 +44,7 @@ public:
     bool test_Harta();
     bool test_Exception();
     bool test_FilterByTime();
+    bool test_dijkstra();
     void RunAllTests();
 };
 #endif /* Tests_hpp */
