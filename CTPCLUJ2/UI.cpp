@@ -196,13 +196,20 @@ void plata_client(vector<Autobuz> a, Client* client)
                 std::cin>>pin;
                 if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
                 {
+                    int hopa;
+                    if(zona==1){hopa=5;}
+                    else{hopa=3;}
+                    for(int l=0;l<nr;l+=1)
+                    {client->getBilete().addElement(Bilet(hopa,zona));}
                     std::cout<<"Plata a fost realizata cu succes!"<<'\n';
                     std::cout<<"Biletele dumneavoastra curente sunt: "<<'\n';
                     for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
                     {
                         std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
                     }
+                    
                 }
+                
 
 
             }
@@ -227,6 +234,12 @@ void plata_client(vector<Autobuz> a, Client* client)
                 std::cin>>pin;
                 if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
                 {
+                    int hopa;
+                    if(zona==1){hopa=5;}
+                    else{hopa=3;}
+
+                    for(int l=0;l<nr;l+=1)
+                    {client->getBilete().addElement(Bilet(hopa,zona));}
                     std::cout<<"Plata a fost realizata cu succes!"<<'\n';
                     std::cout<<"Bilete dumneavoastra curente sunt: "<<'\n';
                     for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
