@@ -339,6 +339,21 @@ void UI::calatorie(int pos)
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autbuzele: "<<'\n';
         std::cout<<"1. "<<aux[0].getNumar()<<" si sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n';
         std::cout<<"2. "<<aux[2].getNumar()<<" si sa schimbati in statia "<<coborare[1].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n';
+        std::cout<<"Va rugam sa alegeti traseul dorit: ";
+        int l;
+        std::cin>>l;
+        std::cout<<'\n';
+        BazaDateAutobuze alex;
+        if(l==1)
+        {
+            alex.addElement(aux[0]);
+            alex.addElement(aux[1]);
+        }
+        else{
+            alex.addElement(aux[2]);
+            alex.addElement(aux[3]);
+        }
+        plata_client(alex,this->c.getClienti().getClient(pos));
     }
     
 }
