@@ -157,7 +157,101 @@ void UI::situatie_cont(int pos)
     
 
 }
-void UI::calatorie()
+void plata_client(BazaDateAutobuze a, Client* client)
+{
+    int zona=99;
+    int nr=0;
+    for(unsigned int i=0;i<a.getall().size();i+=1)
+    {
+        for(unsigned int j=0;j<a.getall()[i].getOrar().getStatii().size();j+=1)
+        {
+            if(zona>a[i].getall().getOrar().getStatii()[j].getzona())
+                zona=a[i].getall().getOrar().getStatii()[j].getzona();
+        }
+        nr+=1;
+    }
+    if(client->getBilete().getSize()!=0)
+    {
+        for(unsigned int i=0;i<client->getBilete().getAll().size();i+=1)
+        {
+            if(client->getBilete().getAll()[i].getZona()==zona)
+            {
+                nr-=1;
+            }
+        }
+        if(nr)
+        {
+            std::cout<<"Pentru calatoria aleasa mai aveti nevoie de "<<nr<<" bilete pentru zona "<<zona<<'\n';
+            std::cout<<"1.Initializare plata"<<'\n';
+            int k;
+            std::cin>>k;
+            if(k==1)
+            {
+                std::cout<<"Introduceti numar card: ";
+                int nrcard; 
+                int pin;
+                std::cin>>nrcard;
+                std::cout<<'\n';
+                std::cout<<"Introduceti pin-ul: ";
+                std::cin>>pin;
+                if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
+                {
+                    int hopa;
+                    if(zona==1){hopa=5;}
+                    else{hopa=3;}
+                    for(int l=0;l<nr;l+=1)
+                    {client->getBilete().addElement(Bilet(hopa,zona));}
+                    std::cout<<"Plata a fost realizata cu succes!"<<'\n';
+                    std::cout<<"Biletele dumneavoastra curente sunt: "<<'\n';
+                    for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
+                    {
+                        std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
+                    }
+                    
+                }
+                
+
+
+            }
+            else{
+                std::cout<<"Biletele din contul dumneavoastra vor fi folosite pentru calatoria curenta"<<'\n';
+            }
+        }
+    }
+    else{
+            std::cout<<"Pentru calatoria aleasa aveti nevoie de "<<nr<<" bilete pentru zona "<<zona<<'\n';
+            std::cout<<"1.Initializare plata"<<'\n';
+            int k;
+            std::cin>>k;
+            if(k==1)
+            {
+                std::cout<<"Introduceti numar card: ";
+                int nrcard; 
+                int pin;
+                std::cin>>nrcard;
+                std::cout<<'\n';
+                std::cout<<"Introduceti pin-ul: ";
+                std::cin>>pin;
+                if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
+                {
+                    int hopa;
+                    if(zona==1){hopa=5;}
+                    else{hopa=3;}
+
+                    for(int l=0;l<nr;l+=1)
+                    {client->getBilete().addElement(Bilet(hopa,zona));}
+                    std::cout<<"Plata a fost realizata cu succes!"<<'\n';
+                    std::cout<<"Bilete dumneavoastra curente sunt: "<<'\n';
+                    for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
+                    {
+                        std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
+                    }
+                }
+
+    }
+    }
+}
+void UI::calatorie(int pos)
 {
     //functie care afiseaza drumul pe care trebuie un utilizator sa il urmeze pentru a face cat mai putin
     bool ok=true;
@@ -220,12 +314,13 @@ void UI::calatorie()
          
         
         std::cout<<i+1<<". "<<traseu.getall()[i].getNumar()<<'\n';
-        //plata_client(nrAuto);
         }
         std::cout<<"Va rugam sa introduceti traseul dorit: ";
         int nrTraseu;
         std::cin>>nrTraseu;
         std::cout<<'\n';
+        plata_client(traseu,this->c.getClienti().getClient(pos));
+        
     }
     else{
         vector<vector<Autobuz>> rezfinal;
@@ -250,7 +345,23 @@ void UI::calatorie()
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autbuzele: "<<'\n';
         std::cout<<"1. "<<aux[0].getNumar()<<" si sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n';
         std::cout<<"2. "<<aux[2].getNumar()<<" si sa schimbati in statia "<<coborare[1].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n';
+        std::cout<<"Va rugam sa alegeti traseul dorit: ";
+        int l;
+        std::cin>>l;
+        std::cout<<'\n';
+        BazaDateAutobuze alex;
+        if(l==1)
+        {
+            alex.addElement(aux[0]);
+            alex.addElement(aux[1]);
+        }
+        else{
+            alex.addElement(aux[2]);
+            alex.addElement(aux[3]);
+        }
+        plata_client(alex,this->c.getClienti().getClient(pos));
     }
+    
 }
 void UI::afisareoptiunilogat(){
     //afiseaza optiunile unui utilizator logat
@@ -334,7 +445,7 @@ void UI::client_logat()
     }
     if(optiune==5)
     {
-        calatorie();
+        calatorie(pos);
     }
         afisareoptiunilogat();
         cin>>optiune;
