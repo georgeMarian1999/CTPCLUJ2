@@ -157,16 +157,16 @@ void UI::situatie_cont(int pos)
     
 
 }
-void plata_client(vector<Autobuz> a, Client* client)
+void plata_client(BazaDateAutobuze a, Client* client)
 {
     int zona=99;
     int nr=0;
-    for(unsigned int i=0;i<a.size();i+=1)
+    for(unsigned int i=0;i<a.getall().size();i+=1)
     {
-        for(unsigned int j=0;j<a[i].getOrar().getStatii().size();j+=1)
+        for(unsigned int j=0;j<a.getall()[i].getOrar().getStatii().size();j+=1)
         {
-            if(zona>a[i].getOrar().getStatii()[j].getzona())
-                zona=a[i].getOrar().getStatii()[j].getzona();
+            if(zona>a[i].getall().getOrar().getStatii()[j].getzona())
+                zona=a[i].getall().getOrar().getStatii()[j].getzona();
         }
         nr+=1;
     }
@@ -251,7 +251,7 @@ void plata_client(vector<Autobuz> a, Client* client)
     }
     }
 }
-void UI::calatorie()
+void UI::calatorie(int pos)
 {
     //functie care afiseaza drumul pe care trebuie un utilizator sa il urmeze pentru a face cat mai putin
     bool ok=true;
@@ -306,13 +306,15 @@ void UI::calatorie()
         {
          
         
-        std::cout<<i<<". "<<traseu.getall()[i].getNumar()<<'\n';
-        //plata_client(nrAuto);
+        std::cout<<i+1<<". "<<traseu.getall()[i].getNumar()<<'\n';
+
         }
         std::cout<<"Va rugam sa introduceti traseul dorit: ";
         int nrTraseu;
         std::cin>>nrTraseu;
         std::cout<<'\n';
+        plata_client(traseu,this->c.getClienti().getClient(pos));
+        
     }
     else{
         vector<vector<Autobuz>> rezfinal;
@@ -338,6 +340,7 @@ void UI::calatorie()
         std::cout<<"1. "<<aux[0].getNumar()<<" si sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n';
         std::cout<<"2. "<<aux[2].getNumar()<<" si sa schimbati in statia "<<coborare[1].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n';
     }
+    
 }
 void UI::afisareoptiunilogat(){
     //afiseaza optiunile unui utilizator logat
@@ -421,7 +424,7 @@ void UI::client_logat()
     }
     if(optiune==5)
     {
-        calatorie();
+        calatorie(pos);
     }
         afisareoptiunilogat();
         cin>>optiune;

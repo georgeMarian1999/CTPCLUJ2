@@ -18,13 +18,13 @@ public:
     void filtrare_nr();
     void filtrare_statie();
     void situatie_cont(int);
-    void calatorie();
+    void calatorie(int);
     void afisareoptiuninelogat();
     void afisareoptiunilogat();
     void afiseazanrautobuze();
     void afiseazanumelestatiilor();
     void sign_up();
-    void plata_client(vector<Autobuz>,Client*);
+    void plata_client(BazaDateAutobuze,Client*);
     string citestestatiepornire();
     string citestestatiesosire();
     Ora citireora();
