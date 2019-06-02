@@ -416,6 +416,7 @@ void UI::client_logat()
                 }
             
         }
+    if(pos!=-1){
     afisareoptiunilogat();
     int optiune;
     std::cin>>optiune;
@@ -448,6 +449,10 @@ void UI::client_logat()
     }
         afisareoptiunilogat();
         cin>>optiune;
+    }
+    }
+    else{
+        client_logat();
     }
 }
 void UI::sign_up()
