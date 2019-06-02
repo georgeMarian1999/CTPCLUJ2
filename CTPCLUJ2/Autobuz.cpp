@@ -97,9 +97,15 @@ int Autobuz::nr_Statii(string pornire, string sosire)
     return nr;
 }
 bool Autobuz::isStatie(Statie S){
+    //functie care decide daca exista statia S in orar
+    //input:Statie S
+    //output:true sau false
     return orar.isStatie(S);
 }
 bool Autobuz::isStatie(string nume){
+    //functie care decide daca exista statia cu numele nume in orar
+    //input:string nume
+    //output:true sau false
     return orar.isStatie(nume);
 }
 int Autobuz::posStart(Statie pornire, Statie oprire){

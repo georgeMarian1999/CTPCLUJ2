@@ -427,7 +427,6 @@ void UI::client_logat()
                     pos=i;
                     std::cout<<"Autentificarea realizata cu succes!"<<'\n';
                 }
-            
         }
     if(pos!=-1){
     afisareoptiunilogat();
@@ -465,6 +464,7 @@ void UI::client_logat()
     }
     }
     else{
+        cout<<"Username sau parola incorecta va rugam incercati din nou"<<endl;
         client_logat();
     }
 }

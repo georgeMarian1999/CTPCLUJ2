@@ -90,7 +90,11 @@ string Ora::toString(){
     //input:--
     //output:un string
     string s;
-    s=s+to_string(ora)+":"+to_string(minute);
+    if(minute<10){
+        s=s+to_string(ora)+":"+"0"+to_string(minute);
+    }
+    else
+        s=s+to_string(ora)+":"+to_string(minute);
     return s;
 }
 istream& operator>>(istream& is,Ora& O){
