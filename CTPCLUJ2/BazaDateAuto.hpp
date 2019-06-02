@@ -30,8 +30,8 @@ public:
     void LoadFromFile(const char*);
     vector<Autobuz> filterByNr(int);
     vector<Autobuz> filterByStatie(string);
-    vector<Autobuz> filterByTime(Statie,Ora);
     vector<Autobuz> filterByStatii(string, string);
+    vector<Autobuz> filterByTime(Statie,Ora);
     bool esteAutobuz(int);
     bool esteStatie(string);
     int zona(string);
