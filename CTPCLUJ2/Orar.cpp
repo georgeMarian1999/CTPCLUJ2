@@ -111,6 +111,7 @@ string Orar::toString(){
     return s;
 }
 bool Orar::isStatie(Statie S){
+    //functie
     for(int i=0;i<Statii.size();i++)
         if(S==Statii[i])
             return true;
@@ -122,9 +123,20 @@ bool Orar::isStatie(string nume){
             return true;
     return false;
 }
-int Orar::zona(string nume){
-    for(int i=0;i<Statii.size();i++)
-        if(nume.find(Statii[i].getnume())==0)
-            return Statii[i].getzona();
+int Orar::posStart(Statie start, Statie stop){
+    int pos=-1;
+    int i=0;
+    while  (i<Statii.size()&&pos==-1)
+    {
+        if(Statii[i]==start)
+             pos=i;
+        i++;
+    }
+    for(int j=pos;j<Statii.size();j++){
+        if(Statii[i]==stop)
+            return pos;
+        if(Statii[i]==start)
+            return i;
+    }
     return -1;
 }

@@ -30,10 +30,10 @@ public:
     void LoadFromFile(const char*);
     vector<Autobuz> filterByNr(int);
     vector<Autobuz> filterByStatie(string);
-    vector<Autobuz> filterByTime(Statie,Ora);
+    vector<Autobuz> filterByTime(Statie,Statie,Ora);
     vector<Autobuz> filterByStatii(string, string);
     bool esteAutobuz(int);
     bool esteStatie(string);
-    int zona(string);
+
 };
 #endif /* BazaDateAuto_hpp */

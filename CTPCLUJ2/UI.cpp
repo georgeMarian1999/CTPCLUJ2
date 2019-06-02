@@ -181,11 +181,12 @@ void UI::calatorie()
         }
     
     BazaDateAutobuze traseu(this->c.traseuDirect(pornire,sosire));
+    cout<<traseu.toString()<<endl;
     cout<<"Doriti sa plecati acum sau mai tarziu?"<<endl;
     string decizie;
     cin>>decizie;
-    Ora O(10,10);
-    /*if(decizie.find("Acum")==0||decizie.find("acum")==0)
+    Ora O;
+    if(decizie.find("Acum")==0||decizie.find("acum")==0)
     {
         time_t theTime = time(NULL);
         struct tm *aTime = localtime(&theTime);
@@ -198,13 +199,19 @@ void UI::calatorie()
         std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
         std::cout<<"Ora: ";
         O=citireora();
-        }*/
+        }
     Statie s;
     s.setnume(pornire);
-    cout<<pornire;
-    s.setzona(traseu.zona(pornire));
-    cout<<s.getzona()<<endl;
-    traseu=traseu.filterByTime(s,O);
+    if(pornire=="Arte"||pornire=="Observator"||pornire=="Cipariu"||pornire=="Avram")
+        s.setzona(2);
+    else s.setzona(1);
+    Statie s1;
+    s1.setnume(sosire);
+    if(sosire=="Arte"||sosire=="Observator"||sosire=="Cipariu"||sosire=="Avram")
+        s1.setzona(2);
+    else s1.setzona(1);
+    traseu.setall(traseu.filterByTime(s,s1, O));
+    cout<<traseu.filterByTime(s,s1, O).size()<<endl;
     if(traseu.getall().size()!=0)
     {
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua: "<<'\n';
@@ -212,7 +219,7 @@ void UI::calatorie()
         {
          
         
-        std::cout<<i<<". "<<traseu.getall()[i].getNumar()<<'\n';
+        std::cout<<i+1<<". "<<traseu.getall()[i].getNumar()<<'\n';
         //plata_client(nrAuto);
         }
         std::cout<<"Va rugam sa introduceti traseul dorit: ";

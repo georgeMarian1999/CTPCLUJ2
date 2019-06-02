@@ -153,7 +153,7 @@ vector<Autobuz> BazaDateAutobuze::filterByStatie(string name){
 
 
 }
-vector<Autobuz> BazaDateAutobuze::filterByTime(Statie S, Ora O){
+vector<Autobuz> BazaDateAutobuze::filterByTime(Statie pornire,Statie oprire, Ora O){
     //functie care returneaza lista autobuzelor care pleaca cel mai repede din statia S dupa ora O
     //input: Statie S,Ora O
     //output:vector de numere de autobuze
@@ -161,16 +161,16 @@ vector<Autobuz> BazaDateAutobuze::filterByTime(Statie S, Ora O){
     x.clear();
     vector<Ora> L;
     L.clear();
+    cout<<"HAHHAHAHAHHAH"<<endl;
+    cout<<V.size()<<endl;
     for(int i=0;i<V.size();i++){
+        cout<<"HAHAHAHAHhAHA"<<endl;
         int j=0;
-        if(V[i].isStatie(S)==true)
-        {
-            x.push_back(V[i]);
-            while(j<V[i].getOrar().getTimpiStatie(S).size()&&V[i].getOrar().getTimpiStatie(S)[j]<O)
-                j++;
-            L.push_back(V[i].getOrar().getTimpiStatie(S)[j]);
-            
-        }
+        cout<<V[i].posStart(pornire, oprire)<<endl;
+        x.push_back(V[i]);
+        while(j<V[i].getOrar().getTimpi().getnrlin()&&V[i].getOrar().getTimpi(j, V[i].posStart(pornire, oprire))<O)
+            j++;
+        L.push_back(V[i].getOrar().getTimpi(j, V[i].posStart(pornire, oprire)));
     }
     for(int k=0;k<L.size()-1;k++)
         for(int i=k+1;i<L.size();i++)
@@ -221,10 +221,4 @@ bool BazaDateAutobuze::esteStatie(string nume){
         if(V[i].isStatie(nume)==true)
             return true;
     return false;
-}
-int BazaDateAutobuze::zona(string nume){
-    for(int i=0;i<V.size();i++)
-        if(V[i].zona(nume)!=-1)
-            return V[i].zona(nume);
-    return -1;
 }
