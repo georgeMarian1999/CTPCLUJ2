@@ -24,7 +24,7 @@ public:
     void afiseazanrautobuze();
     void afiseazanumelestatiilor();
     void sign_up();
-    void plata_client();
+    void plata_client(vector<Autobuz>,Client*);
     string citestestatiepornire();
     string citestestatiesosire();
     Ora citireora();

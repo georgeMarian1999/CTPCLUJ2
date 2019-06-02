@@ -157,6 +157,87 @@ void UI::situatie_cont(int pos)
     
 
 }
+void plata_client(vector<Autobuz> a, Client* client)
+{
+    int zona=99;
+    int nr=0;
+    for(unsigned int i=0;i<a.size();i+=1)
+    {
+        for(unsigned int j=0;j<a[i].getOrar().getStatii().size();j+=1)
+        {
+            if(zona>a[i].getOrar().getStatii()[j].getzona())
+                zona=a[i].getOrar().getStatii()[j].getzona();
+        }
+        nr+=1;
+    }
+    if(client->getBilete().getSize()!=0)
+    {
+        for(unsigned int i=0;i<client->getBilete().getAll().size();i+=1)
+        {
+            if(client->getBilete().getAll()[i].getZona()==zona)
+            {
+                nr-=1;
+            }
+        }
+        if(nr)
+        {
+            std::cout<<"Pentru calatoria aleasa mai aveti nevoie de "<<nr<<" bilete pentru zona "<<zona<<'\n';
+            std::cout<<"1.Initializare plata"<<'\n';
+            int k;
+            std::cin>>k;
+            if(k==1)
+            {
+                std::cout<<"Introduceti numar card: ";
+                int nrcard; 
+                int pin;
+                std::cin>>nrcard;
+                std::cout<<'\n';
+                std::cout<<"Introduceti pin-ul: ";
+                std::cin>>pin;
+                if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
+                {
+                    std::cout<<"Plata a fost realizata cu succes!"<<'\n';
+                    std::cout<<"Biletele dumneavoastra curente sunt: "<<'\n';
+                    for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
+                    {
+                        std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
+                    }
+                }
+
+
+            }
+            else{
+                std::cout<<"Biletele din contul dumneavoastra vor fi folosite pentru calatoria curenta"<<'\n';
+            }
+        }
+    }
+    else{
+            std::cout<<"Pentru calatoria aleasa aveti nevoie de "<<nr<<" bilete pentru zona "<<zona<<'\n';
+            std::cout<<"1.Initializare plata"<<'\n';
+            int k;
+            std::cin>>k;
+            if(k==1)
+            {
+                std::cout<<"Introduceti numar card: ";
+                int nrcard; 
+                int pin;
+                std::cin>>nrcard;
+                std::cout<<'\n';
+                std::cout<<"Introduceti pin-ul: ";
+                std::cin>>pin;
+                if(client->getInfoCard().getNrCard()==nrcard && client->getInfoCard().getPin()==pin)
+                {
+                    std::cout<<"Plata a fost realizata cu succes!"<<'\n';
+                    std::cout<<"Bilete dumneavoastra curente sunt: "<<'\n';
+                    for(unsigned int j=0;j<client->getBilete().getSize();j+=1)
+                    {
+                        std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
+                    }
+                }
+
+    }
+    }
+}
 void UI::calatorie()
 {
     //functie care afiseaza drumul pe care trebuie un utilizator sa il urmeze pentru a face cat mai putin
