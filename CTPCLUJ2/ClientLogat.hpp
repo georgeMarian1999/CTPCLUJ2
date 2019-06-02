@@ -29,6 +29,7 @@ public:
     bool operator!=(const ClientLogat&);
 	ClientLogat(const ClientLogat&);
 	string toString();
+    void AddBilet(Bilet);
 };
 
 

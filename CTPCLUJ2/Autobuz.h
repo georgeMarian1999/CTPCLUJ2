@@ -23,7 +23,7 @@ public:
 	int nr_Statii(string,string);
     bool isStatie(Statie);
     bool isStatie(string);
-    int zona(string);
+    int posStart(Statie,Statie);
 };
 
 

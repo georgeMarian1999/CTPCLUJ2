@@ -27,6 +27,7 @@ public:
     virtual string getParola();
     virtual string getUserName();
 	virtual string toString();
+    virtual void AddBilet(Bilet){}
 
 };
 
