@@ -393,16 +393,13 @@ void UI::afiseazanrautobuze(){
     {
         cout<<c.getvectAutoBuz()[i].getNumar()<<" ";
     }
-    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
     cout<<endl;
 }
 void UI::afiseazanumelestatiilor(){
     //afiseaza nr tuturor statiilor
     cout<<"Statiile disponibile sunt "<<endl;
-    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),10);
     for(int i=0;i<c.getTraseu().getGraf().size();i++)
         cout<<c.getTraseu().getGraf()[i].getinfo()<<endl;
-    //SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
     cout<<endl;
 }
 void UI::client_logat()
