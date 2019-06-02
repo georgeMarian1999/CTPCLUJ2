@@ -295,11 +295,14 @@ void UI::calatorie(int pos)
         O.setora(hour);
         O.setminute(min);
     }
-    else{
+    if(decizie.find("Alta ora")==0||decizie.find("alta ora")==0){
         std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
         std::cout<<"Ora: ";
         O=citireora();
         }
+    else{
+        cout<<"Comanda invaliza!"<<endl;
+    }
     Statie s;
     s.setnume(pornire);
     if(pornire=="Arte"||pornire=="Observator"||pornire=="Cipariu"||pornire=="Avram")
@@ -352,10 +355,9 @@ void UI::calatorie(int pos)
             i=rezfinal.size();
 
         }
-        Ora Auxiliara(O.getora()+1,O.getminute());
+        Ora Auxiliara(O.getora(),O.getminute()+10);
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autbuzele: "<<'\n';
         std::cout<<"1. Autobuzul "<<aux[0].getNumar()<<" care pleaca din statia "<<s.getnume()<<" la ora "<<this->c.Fulger(aux[0], s, O).toString()<<". Apoi sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n'<<" ce va ajunge la ora "<<this->c.Fulger(aux[1], coborare[0], Auxiliara).toString()<<'\n';
-
         std::cout<<"2. Autobuzul "<<aux[2].getNumar()<<" care pleaca din statia "<<s.getnume()<<" la ora "<<this->c.Fulger(aux[2], s, O).toString()<<". Apoi sa schimbati in statia "<<coborare[position].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n'<<" ce va ajunge la ora "<<this->c.Fulger(aux[3], coborare[position], Auxiliara).toString()<<'\n';
         std::cout<<"Va rugam sa alegeti traseul dorit: ";
         int l;
