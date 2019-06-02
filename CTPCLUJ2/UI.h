@@ -3,6 +3,7 @@
 
 #include "Ctrl.hpp"
 #include "Tests.hpp"
+#include <time.h>
 class UI{
 private:
     Ctrl c;
@@ -26,6 +27,7 @@ public:
     void plata_client();
     string citestestatiepornire();
     string citestestatiesosire();
+    Ora citireora();
 };
 
 

@@ -37,7 +37,14 @@ int UI::decide_client()
     std::cin>>k;
     std::cout<<'\n';
     return k;
-
+}
+Ora UI::citireora(){
+    string s;
+    cin>>s;
+    int ora=(s[0]-'0')*10+(s[1]-'0');
+    int min=(s[3]-'0')*10+(s[4]-'0');
+    Ora O(ora,min);
+    return O;
 }
 void UI::filtrare_nr()
 {
@@ -174,48 +181,29 @@ void UI::calatorie()
         }
     
     BazaDateAutobuze traseu(this->c.traseuDirect(pornire,sosire));
-    std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
-    std::cout<<"Ora: ";
-    string ora;
-    std::cin>>ora;
-    std::cout<<'\n';
-    Ora O;
-    if(ora=="")
+    cout<<"Doriti sa plecati acum sau mai tarziu?"<<endl;
+    string decizie;
+    cin>>decizie;
+    Ora O(10,10);
+    /*if(decizie.find("Acum")==0||decizie.find("acum")==0)
     {
-        std::cout<<"Doriti sa plecati acum sau mai tarziu?"<<'\n';
-        string p;
-        std::cin>>p;
-        if(p[0]=='a' || p[0]=='A')
-        {
-            //GEORGE O SA INCARCE ORA DE LA SYSTEM PT CA EU NU MA PRICEP
-            //MULTUMESC
-
-        }
-        else{
-             std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
-            std::cout<<"Ora: ";
-            string aux;
-            std::cin>>aux;
-            std::cout<<'\n';
-            int o=int(aux[0])*10+int(aux[1]);
-            int m=int(aux[3])*10+int(aux[4]);
-            O.setora(o);
-            O.setminute(m);
-            
-
-
-        }
-        
+        time_t theTime = time(NULL);
+        struct tm *aTime = localtime(&theTime);
+        int hour=aTime->tm_hour;
+        int min=aTime->tm_min;
+        O.setora(hour);
+        O.setminute(min);
     }
     else{
-        //ora o sa fie 12:31
-        int o=int(ora[0])*10+int(ora[1]);
-        int m=int(ora[3])*10+int(ora[4]);
-        O.setora(o);
-        O.setminute(m);
-    }
+        std::cout<<"Introducet ora dorita pentru calatorie:"<<'\n';
+        std::cout<<"Ora: ";
+        O=citireora();
+        }*/
     Statie s;
     s.setnume(pornire);
+    cout<<pornire;
+    s.setzona(traseu.zona(pornire));
+    cout<<s.getzona()<<endl;
     traseu=traseu.filterByTime(s,O);
     if(traseu.getall().size()!=0)
     {
@@ -255,12 +243,7 @@ void UI::calatorie()
         std::cout<<"Pentru a ajunge din statia "<<pornire<<" in statia "<<sosire<<" puteti lua autbuzele: "<<'\n';
         std::cout<<"1. "<<aux[0].getNumar()<<" si sa schimbati in statia "<<coborare[0].getnume()<<" cu autobuzul "<<aux[1].getNumar()<<'\n';
         std::cout<<"2. "<<aux[2].getNumar()<<" si sa schimbati in statia "<<coborare[1].getnume()<<" cu autobuzul "<<aux[3].getNumar()<<'\n';
-
-
-       
-
     }
-    
 }
 void UI::afisareoptiunilogat(){
     //afiseaza optiunile unui utilizator logat
@@ -328,26 +311,26 @@ void UI::client_logat()
         afiseazanrautobuze();
         filtrare_nr();
     }
-    else if(optiune==2)
+    if(optiune==2)
     {
         afiseazanumelestatiilor();
         filtrare_statie();
 
     }
-    else if(optiune==3)
+    if(optiune==3)
     {
         afisare_pret_bilete();
     }
-    else if(optiune==4)
+    if(optiune==4)
     {
         situatie_cont(pos);
     }
-    else if(optiune==5)
+    if(optiune==5)
     {
         calatorie();
     }
-            afisareoptiunilogat();
-            cin>>optiune;
+        afisareoptiunilogat();
+        cin>>optiune;
     }
 }
 void UI::sign_up()

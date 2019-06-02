@@ -102,3 +102,6 @@ bool Autobuz::isStatie(Statie S){
 bool Autobuz::isStatie(string nume){
     return orar.isStatie(nume);
 }
+int Autobuz::zona(string nume){
+    return orar.zona(nume);
+}

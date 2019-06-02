@@ -122,3 +122,9 @@ bool Orar::isStatie(string nume){
             return true;
     return false;
 }
+int Orar::zona(string nume){
+    for(int i=0;i<Statii.size();i++)
+        if(nume.find(Statii[i].getnume())==0)
+            return Statii[i].getzona();
+    return -1;
+}
