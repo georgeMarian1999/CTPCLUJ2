@@ -30,8 +30,4 @@ public:
     virtual void AddBilet(Bilet){}
 
 };
-
-
-
-
 #endif /* CLIENT_H_ */
