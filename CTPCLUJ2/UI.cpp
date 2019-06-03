@@ -246,6 +246,7 @@ void UI::plataclient(BazaDateAutobuze a, Client* client)
                     {
                         std::cout<<client->getBilete().getAll()[j].toString()<<'\n';
                     }
+                    c.AddClient_file("DataBase1.csv");
                 }
                 else{
                     std::cout<<"Pin gresit!"<<'\n';
